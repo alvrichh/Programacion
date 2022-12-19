@@ -1,0 +1,17 @@
+package unico;
+
+public class Exjercicio2 {
+
+	public static void main(String[] args) {
+
+		System.out.println(contarPalabraExsistente("Una noche y otra noche oscura", "noche"));
+	}
+
+	public static int contarPalabraExsistente(String texto, String palabra) {
+		int res = 0;
+		for(int pos = 0; pos< texto.length(); pos++) {
+			res += (texto.substring(pos)==palabra) ? res++: res;
+		}
+	}
+
+}

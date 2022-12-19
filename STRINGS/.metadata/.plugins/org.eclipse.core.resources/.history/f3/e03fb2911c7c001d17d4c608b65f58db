@@ -1,0 +1,22 @@
+package unico;
+
+public class ejercicio2 {
+//Implementar un método que reciba frase pedida al usuario por teclado e indique cuántos espacios en blanco tiene.
+
+
+	public static void main(String[] args) {
+		
+	System.out.println(esEspacio(Util.leerString("Introduzca una frase: ")));
+		
+
+	}
+
+private static boolean esEspacio(String cad) {
+	boolean res;
+
+	res = cad.substring(cad.length()/2, (cad.length()/2)+1).equals(" ") ? true : false;
+	
+	return res;
+}
+
+}

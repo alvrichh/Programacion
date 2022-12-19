@@ -1,0 +1,104 @@
+package unico;
+
+public class Coche {
+
+	// ATRIBUTOS
+	private String matricula;
+	private int potencia;
+	private Double velocidad;
+
+	public Coche() {
+		this.setMatricula("sin especificar");
+		this.setPotencia = 0;
+		this.setVelocidad = 0.0;
+	}
+	// CONSTRUCTORES
+
+
+
+	
+	
+	//SETTERS
+	public void setMatricula(String matricula){
+		this.matricula = matricula;
+	}
+	public void setPotencia(int potencia) {
+		this.potencia = potencia;
+	}
+	public void setVelocidad(Double velocidad) {
+		this.velocidad = velocidad;
+	}
+	//GETTERS
+	public String getMatricula() {
+		return this.matricula;
+	}
+	public int getPotencia() {
+		return this.potencia;
+	}
+	public Double getVelocidad() {
+		return this.velocidad;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	CuentaCorriente(String num,Double dinerito){
+//		numero = num;
+//		saldo = dinerito;
+//	}
+	public Coche(String numero, Double saldo) {
+		this.setNumero(numero);
+		this.saldo = saldo;
+	}
+
+	public void setSaldo(Double saldo) {
+		if (saldo <= 0.0) {
+			this.saldo = saldo;
+		}
+	}
+
+	//
+	public Double getSaldo() {
+		return this.saldo;
+	}
+
+	public void setNumero(String numero) {
+
+		this.numero = numero;
+	}
+
+	String getNumero() {
+		return this.numero;
+	}
+
+	public void vaciar() {
+		setSaldo(0.0);
+	}
+
+	public void ingresar(Double cantidad) {
+		// this.saldo = this.saldo + cantidad;
+		setSaldo(getSaldo() + cantidad);
+	}
+
+	@Override
+	public String toString() {
+		String txt = "";
+
+		txt = getNumero() + "" + getSaldo() + " €";
+
+		return txt;
+	}
+}
