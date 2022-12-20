@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;unico.ejercicio3&apos; to &apos;ejercicio4&apos;&#x0D;&#x0A;- Original project: &apos;EJ4&apos;&#x0D;&#x0A;- Original element: &apos;unico.ejercicio3&apos;&#x0D;&#x0A;- Renamed element: &apos;unico.ejercicio4&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ejercicio3&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;unico{ejercicio3.java[ejercicio3" matchStrategy="1" name="ejercicio4" qualified="false" references="true" similarDeclarations="false" stamp="1671072282492" textual="false" version="1.0"/>
-</session>
