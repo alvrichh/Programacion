@@ -1,0 +1,23 @@
+package unico;
+
+public class CuentaCorriente {
+	
+	//ATRIBUTOS
+	String numero;
+	Double saldo; //si fuera en minúscula sale 0.0 en lugar de null
+	
+	CuentaCorriente(){
+	}
+	//CONSTRUCTORES
+	
+	CuentaCorriente(Double saldo){
+		this.saldo = saldo;
+	}
+	CuentaCorriente(String numero){
+		this.numero = numero;
+	}
+	CuentaCorriente(String num,Double dinerito){
+		numero = num;
+		saldo = dinerito;
+	}
+}

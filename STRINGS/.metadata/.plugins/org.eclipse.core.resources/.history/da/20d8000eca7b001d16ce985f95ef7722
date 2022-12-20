@@ -1,0 +1,67 @@
+package unico;
+
+public class Coche {
+
+	// ATRIBUTOS
+	private String matricula;
+	private int potencia;
+	private Double velocidad;
+
+	public Coche() {
+		setMatricula("sin especificar");
+		setPotencia(0);
+		setVelocidad(0.0);
+	}
+
+	// CONSTRUCTORES
+	public Coche(String matricula) {
+		setMatricula(matricula);
+	}
+	public Coche(String matricula, int potencia) {
+		setMatricula(matricula);
+		setPotencia(potencia);
+	}
+	// SETTERS
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+
+	public void setPotencia(int potencia) {
+		this.potencia = potencia;
+	}
+
+	public void setVelocidad(Double velocidad) {
+		this.velocidad = velocidad;
+	}
+
+	// GETTERS
+	public String getMatricula() {
+		return this.matricula;
+	}
+
+	public int getPotencia() {
+		return this.potencia;
+	}
+
+	public Double getVelocidad() {
+		return this.velocidad;
+	}
+
+//	public void vaciar() {
+//		setSaldo(0.0);
+//	}
+//
+//	public void ingresar(Double cantidad) {
+//		// this.saldo = this.saldo + cantidad;
+//		setSaldo(getSaldo() + cantidad);
+//	}
+//
+//	@Override
+//	public String toString() {
+//		String txt = "";
+//
+//		txt = getNumero() + "" + getSaldo() + " €";
+//
+//		return txt;
+//	}
+}

@@ -1,0 +1,23 @@
+package unico;
+
+/*
+ * 		  {-> ATRIBUTOS
+ * CLASE {		 +		  {-> CONSTRUCTORES
+ * 		  {-> MÉTODOS ---{
+ * 
+ * 
+ * 
+ * 
+ */
+public class Principal {
+
+	public static void main(String[] args) {
+
+
+
+		System.out.println(cc2);
+		
+
+	}
+
+}
