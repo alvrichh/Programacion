@@ -1,0 +1,42 @@
+package model;
+
+public class Persona {
+
+	private String nombre;
+	private String dni;
+	private Integer edad;
+
+	public Persona(String nombre, String dni, Integer edad) {
+		setNombre(nombre);
+		setDni(dni);
+		setEdad(edad);
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public Integer getEdad() {
+		return edad;
+	}
+	try {
+	public void setEdad(Integer edad) throws EdadException {
+	}		if(edad < 18) {
+			throws new EdadException;
+		}
+		this.edad = edad;
+	}
+
+}

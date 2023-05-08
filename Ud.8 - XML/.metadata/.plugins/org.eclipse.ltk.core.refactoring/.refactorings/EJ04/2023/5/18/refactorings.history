@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;EJ04/PB.xml&apos; to &apos;Alumnos.xml&apos;" description="Rename resource &apos;PB.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="PB.xml" name="Alumnos.xml" stamp="1683214055161" updateReferences="true"/>
+</session>

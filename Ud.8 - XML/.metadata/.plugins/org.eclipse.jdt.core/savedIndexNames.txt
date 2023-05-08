@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\Users\alvar\Desktop\GRADO SUPERIOR\PROG\DAW-JAVA\Ud.8 - XML\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+656144491.index
+351582088.index

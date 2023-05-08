@@ -1,0 +1,43 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.xml.XMLConstants;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+public class ParseadorDOMPersonas {
+
+	//Documento XML
+	private Document docXML;
+	
+	//metodo que inicia la lectura del fichero
+	public XML_DOM(String fileName) throws Exception {
+		readXML(fileName);
+	}
+	//lee el fichero y lo guarda en el objeto docXML
+	private void readXML(String fileName) throws Exception{
+		try {
+			//abrir el fichero
+			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+			//Asignamos mayor seguridad contra ataques
+			docBuilderFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+			
+			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+			docXML = docBuilder.parse(fileName);
+			docXML.getDocumentElement().normalize();
+		}
+		catch (ParserConfigurationException e) { throw new Exception("FALLO. Parser de configuraci�n." + " " + e.getMessage()); }
+		catch (SAXException e)                 { throw new Exception("FALLO. Error SAX. " + " " + e.getMessage()); }
+		catch (IOException e)                  { throw new Exception("FALLO. Error accediendo al fichero: " + fileName+ " " + e.getMessage()); }
+		catch (Exception e)                    { throw new Exception("FALLO. General." + " " + e.getMessage()); }
+	
+	}
+	
+	
+
+}

@@ -1,0 +1,36 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.xml.XMLConstants;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+public class TemperaturaDOMCcaa {
+
+	private Document docXML;
+	public XML_DOM(String fileName) throws Exception {
+		readXML(fileName);
+
+		private void readXML(String fileName) throws Exception {
+			try {
+				// Abrir el fichero XML
+		        DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+		          
+		        // La siguiente propiedad es opcional pero recomendada. Previene ataques como XML External Entities (XXE)
+		        docBuilderFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+		        DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+				docXML = docBuilder.parse(fileName);
+				docXML.getDocumentElement().normalize();
+			}
+			catch (ParserConfigurationException e) { throw new Exception("FALLO. Parser de configuraci�n." + " " + e.getMessage()); }
+			catch (SAXException e)                 { throw new Exception("FALLO. Error SAX. " + " " + e.getMessage()); }
+			catch (IOException e)                  { throw new Exception("FALLO. Error accediendo al fichero: " + fileName+ " " + e.getMessage()); }
+			catch (Exception e)                    { throw new Exception("FALLO. General." + " " + e.getMessage()); }
+		}
+}

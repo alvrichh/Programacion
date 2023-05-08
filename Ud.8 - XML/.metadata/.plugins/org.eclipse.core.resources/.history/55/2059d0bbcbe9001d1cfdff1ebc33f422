@@ -1,0 +1,9 @@
+package model;
+
+public class Provincia {
+
+	Ccaa ccaa;
+	Integer id;
+	String nombre;
+	List<Ciudad> Ciudad;
+}

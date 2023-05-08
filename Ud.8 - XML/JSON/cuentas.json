@@ -1,0 +1,56 @@
+[
+  null,
+  null,
+  {
+    "MAX_TITULARES": 3,
+    "titular": [
+      {
+        "nombre": "",
+        "apellidos": "",
+        "DNI": "",
+        "domicilio": {
+          "calle": "",
+          "numero": 0,
+          "codPost": ""
+        }
+      },
+      {
+        "nombre": "",
+        "apellidos": "",
+        "DNI": "",
+        "domicilio": {
+          "calle": "",
+          "numero": 0,
+          "codPost": ""
+        }
+      },
+      {
+        "nombre": "",
+        "apellidos": "",
+        "DNI": "",
+        "domicilio": {
+          "calle": "",
+          "numero": 0,
+          "codPost": ""
+        }
+      }
+    ],
+    "saldo": 0.0,
+    "tipo": "DEBITO",
+    "bco": {
+      "nombre": "",
+      "direccFiscal": {
+        "calle": "",
+        "numero": 0,
+        "codPost": ""
+      }
+    }
+  },
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+]

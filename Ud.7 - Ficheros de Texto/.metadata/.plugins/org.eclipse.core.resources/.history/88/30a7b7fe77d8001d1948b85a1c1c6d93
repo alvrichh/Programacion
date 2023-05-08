@@ -1,0 +1,10 @@
+package view;
+import view.Util;
+public class Principal {
+
+
+	static void PedirNum() {
+		num = Util.teclado;
+		Util.teclado = Double.parseDouble(num);
+	}
+}

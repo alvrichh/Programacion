@@ -1,0 +1,9 @@
+package model;
+
+public class Ccaa {
+	
+	Integer id;
+	String nombre;
+	List<Provincia> ArrayList;
+	
+}

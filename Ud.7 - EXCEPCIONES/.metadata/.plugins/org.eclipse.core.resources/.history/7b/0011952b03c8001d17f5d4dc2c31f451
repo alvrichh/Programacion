@@ -1,0 +1,39 @@
+package model;
+
+public class Persona {
+	
+	String nombre;
+	String dni;
+	Integer edad;
+	
+	
+	
+	
+	
+	public Persona(String nombre, String dni, Integer edad) {
+		setNombre(nombre);
+		setDni(dni);
+		setEdad(edad);
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	public Integer getEdad() {
+		return edad;
+	}
+	public void setEdad(Integer edad) {
+		this.edad = edad;
+	}
+	
+	
+
+}

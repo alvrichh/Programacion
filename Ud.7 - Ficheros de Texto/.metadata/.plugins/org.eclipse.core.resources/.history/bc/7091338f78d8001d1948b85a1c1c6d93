@@ -1,0 +1,28 @@
+package view;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import view.Util;
+public class Principal {
+	
+	
+	public static void main(String[] args) {
+		
+		try {
+		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.println("Introduzca un número con decimales: ");
+		String respuesta = teclado.readLine();
+		Double numero = Double.parseDouble(respuesta);
+		catch(IOException ioe) {
+			System.err.println("Fallo con el dispositivo E/S");
+		}
+		
+		
+		}
+		
+		
+	}
+
+}

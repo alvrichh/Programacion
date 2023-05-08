@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><game>
+    <jugador numero="393">
+        <nombre>Pepe</nombre>
+        <apellidos>López Gutiérrez</apellidos>
+        <nick>Batman</nick>
+        <puntos>1200</puntos>
+    </jugador>
+    <jugador numero="493">
+        <nombre>Ana María</nombre>
+        <apellidos>Cantilejo Gómez</apellidos>
+        <nick>Sevillana</nick>
+        <puntos>1475</puntos>
+    </jugador>
+    <jugador numero="593">
+        <nick>JazzMan</nick>
+        <nombre>Julián</nombre>
+        <apellidos>Torres Martínez</apellidos>
+        <puntos>831</puntos>
+    </jugador>
+    <arbitro colegiado="123">
+		<nombre>Hernesto</nombre>
+        <ciudad>Sevilla</ciudad>
+    </arbitro>
+    <arbitro colegiado="456">
+		<nombre>Cecilia</nombre>
+        <ciudad>Madrd</ciudad>
+    </arbitro>
+</game>
