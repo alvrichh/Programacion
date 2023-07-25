@@ -1,0 +1,14 @@
+package model;
+
+@SuppressWarnings("serial")
+public class EjesException extends Exception {
+
+	public EjesException(int ejes) {
+				
+		switch(ejes){
+		case 1 -> System.out.println("aqui no ze respeta o ke paza");
+		
+		}
+	}
+	
+}

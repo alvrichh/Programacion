@@ -1,0 +1,19 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Products;
+
+public class CTRLProduct {
+
+	public List<Products> getListaProductos(){
+		
+		List<Products> lista = new ArrayList<Products>();
+		
+		
+		
+		return lista;
+		
+		}
+}

@@ -1,0 +1,44 @@
+package model;
+
+import model.TipoCristal;
+
+
+public class Cristal extends Material implements Mezclar {
+    public Cristal(String nombre, int masa, int capacidadQuemarse, int capacidadDiluirse, boolean movible, Tipo tipo) {
+        super(nombre, masa, capacidadQuemarse, capacidadDiluirse, movible);
+        this.tipo = tipo;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    @Override
+	public String toString() {
+		return "Cristal [getTipo()=" + getTipo() + "]";
+	}
+
+	@Override
+    public void mezclarConMaterial(Material material) {
+        System.out.println("Nuevo material: Cristal de ópalo");
+    }
+}

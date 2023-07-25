@@ -1,0 +1,15 @@
+package model;
+
+@SuppressWarnings("serial")
+public class CpuException extends ComponenteException {
+
+	public CpuException(String mensaje) {
+		/*
+		 * if memoria
+		 */
+		super(mensaje);
+	}
+	
+	
+
+}

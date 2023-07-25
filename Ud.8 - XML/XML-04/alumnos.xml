@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colegio>
+	<!-- Información de los alumnos matriculados este año -->
+    <alumno dni="12345M">
+        <nombre>Pepe</nombre>
+        <apellidos>González</apellidos>
+        <curso>1</curso>
+    </alumno>
+    <alumno dni="2468D">
+        <nombre>Juan</nombre>
+        <apellidos>Gallardo</apellidos>
+        <curso>2</curso>
+    </alumno>
+    <alumno dni="3579G">
+        <nombre>María</nombre>
+        <apellidos>Díaz</apellidos>
+        <curso>1</curso>
+    </alumno>
+    <alumno dni="6786D">
+        <nombre>Carlos</nombre>
+        <apellidos>Benjumea</apellidos>
+        <curso>3</curso>
+    </alumno>
+    <alumno dni="2366A">
+        <nombre>Carmen</nombre>
+        <apellidos>Olmedo</apellidos>
+        <curso>2</curso>
+    </alumno>
+</colegio>

@@ -1,0 +1,22 @@
+package view;
+
+import java.util.Scanner;
+
+class Util {
+
+	private static Scanner entrada = new Scanner(System.in);
+	// Al no tener el paquete util creo los metodos aqui en un plisplas
+	static int leerInt(String texto){
+		int resultado;
+		System.out.print(texto);
+		resultado = Integer.parseInt(entrada.nextLine());
+		return resultado;
+		
+	}
+	
+	public static void escribir(String texto) {
+		System.out.println(texto);
+	}
+	
+	
+}

@@ -1,0 +1,44 @@
+package model;
+
+public class Ordenador {
+	
+	private Integer memoria;
+	private Double cpu;
+	private String disco;
+	private Double precio;
+	
+	
+	public void validarMemoria() {
+		if (memoria != 4 && memoria != 8 && memoria != 16 && memoria != 32) {
+			throw new MemoriaExcepcion();
+		}
+	}
+	public Integer getMemoria() {
+		return memoria;
+	}
+	public void setMemoria(Integer memoria) {
+		validarMemoria();
+		this.memoria = memoria;
+	}
+	public Double getCpu() {
+		return cpu;
+	}
+	public void setCpu(Double cpu) {
+		this.cpu = cpu;
+	}
+	public String getDisco() {
+		return disco;
+	}
+	public void setDisco(String disco) {
+		this.disco = disco;
+	}
+	public Double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+	
+	
+
+}

@@ -1,0 +1,17 @@
+Created with UCDetector 2.0.0	2023-02-11 01:29:24	http://www.ucdetector.org/	Created by class: org.ucdetector.report.TextReport	
+Location	Description	Java	Marker	Author
+controller.COAC.agrupacion(COAC.java:22)	Change visibility of Field "COAC.agrupacion" to private	COAC.agrupacion	org.ucdetector.analyzeMarkerVisibilityPrivate	
+controller.COAC.agrupacionOficial(COAC.java:23)	Change visibility of Field "COAC.agrupacionOficial" to private	COAC.agrupacionOficial	org.ucdetector.analyzeMarkerVisibilityPrivate	
+controller.COAC.integrante(COAC.java:24)	Change visibility of Field "COAC.integrante" to private	COAC.integrante	org.ucdetector.analyzeMarkerVisibilityPrivate	
+model.AgrupacionOficial.AgrupacionOficial(AgrupacionOficial.java:14)	Change visibility of Constructor "AgrupacionOficial.AgrupacionOficial(int,String,String,String,String,*)" to default	AgrupacionOficial.AgrupacionOficial(int,String,String,String,String,*)	org.ucdetector.analyzeMarkerVisibilityDefault	
+model.AgrupacionOficial.insertarIntegrante(AgrupacionOficial.java:21)	Method "AgrupacionOficial.insertarIntegrante(Integrante)" has 0 references	AgrupacionOficial.insertarIntegrante(Integrante)	org.ucdetector.analyzeMarkerReference	
+model.AgrupacionOficial.eliminarIntegrante(AgrupacionOficial.java:42)	Method "AgrupacionOficial.eliminarIntegrante(Integrante)" has 0 references	AgrupacionOficial.eliminarIntegrante(Integrante)	org.ucdetector.analyzeMarkerReference	
+model.AgrupacionOficial.setIntegrantes(AgrupacionOficial.java:63)	Method "AgrupacionOficial.setIntegrantes(int,Integrante)" has 0 references	AgrupacionOficial.setIntegrantes(int,Integrante)	org.ucdetector.analyzeMarkerReference	
+model.OrdenAutorLetra.<init>(OrdenAutorLetra.java:5)	Class "OrdenAutorLetra" has 0 references	OrdenAutorLetra	org.ucdetector.analyzeMarkerReference	
+model.Agrupacion.Agrupacion(Agrupacion.java:15)	Change visibility of Constructor "Agrupacion.Agrupacion(String,String,String,String,String)" to default	Agrupacion.Agrupacion(String,String,String,String,String)	org.ucdetector.analyzeMarkerVisibilityDefault	
+model.Callejera.<init>(Callejera.java:3)	Change visibility of Interface "Callejera" to default - May cause compile errors!	Callejera	org.ucdetector.analyzeMarkerVisibilityDefault	
+view.Util.<init>(Util.java:5)	Change visibility of Class "Util" to default - May cause compile errors!	Util	org.ucdetector.analyzeMarkerVisibilityDefault	
+view.Util.leerInt(Util.java:9)	Change visibility of Method "Util.leerInt(String)" to default	Util.leerInt(String)	org.ucdetector.analyzeMarkerVisibilityDefault	
+view.Util.escribir(Util.java:17)	Change visibility of Method "Util.escribir(String)" to default	Util.escribir(String)	org.ucdetector.analyzeMarkerVisibilityDefault	
+view.Util.entrada(Util.java:7)	Change visibility of Field "Util.entrada" to private	Util.entrada	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Principal.<init>(Principal.java:3)	Class "Principal" has 0 references	Principal	org.ucdetector.analyzeMarkerReference	

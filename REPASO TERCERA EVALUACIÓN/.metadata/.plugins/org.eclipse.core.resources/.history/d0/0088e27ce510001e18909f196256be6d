@@ -1,0 +1,10 @@
+package model;
+
+public class Desayuno {
+	
+	private String name;
+	private Double price;
+	private String descripcion;
+	private int calories;
+
+}

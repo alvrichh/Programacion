@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/SoketMedia/SoketMedia.uml:uml:Type:type">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Type:type">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="pathmap://Codegen_PROFILES/languages.uml#_pDuwsCjREeayco6FJ_OtTQ"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+				<item value="platform:/resource/SoketMedia/SoketMedia.uml#_V8UqALniEe2cGL0uA1OkiQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/SoketMedia/SoketMedia.uml:uml:Property:redefinedProperty">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_org.eclipse.papyrus.infra.hyperlink.editorTreeView">
+	</section>
+</section>

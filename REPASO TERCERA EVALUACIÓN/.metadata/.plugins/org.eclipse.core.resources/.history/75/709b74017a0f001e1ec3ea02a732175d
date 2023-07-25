@@ -1,0 +1,11 @@
+package controller;
+
+import java.util.ArrayList;
+
+import org.xml.sax.helpers.DefaultHandler;
+
+public class XML_SAX extends DefaultHandler{
+	
+	private List<Municipio> listaMunicipios = new ArrayList<Municipio>()
+
+}

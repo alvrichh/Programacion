@@ -1,0 +1,108 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Viajes {
+	
+	Map<Pais, Ciudad> =
+
+	
+	public static boolean addPais() {
+		boolean add = false;
+		
+		if(Pais.contain) //Si se puede hacer pasamos un true
+		{
+			add = true;
+		}
+		return add;
+
+	}
+	public static boolean addCiudad(){
+		
+	}
+	
+	public static boolean addLugar(){
+		
+	}
+	
+	public static List<Ciudad> getCiudades(){
+		
+		
+		
+		
+	}
+	
+	public static String getUbicacion();
+	
+	public static boolean getCiudadesConHabitantes(){
+		
+		collection.sort();
+	}
+}
+
+class Pais {
+    String nombre;
+    List<Ciudad> ciudades;
+
+    public Pais(String nombre) {
+        this.nombre = nombre;
+        ciudades = new ArrayList<>();
+    }
+}
+
+class Ciudad {
+    String nombre;
+    int habitantes;
+    List<Lugar> lugares;
+
+    public Ciudad(String nombre, int habitantes) {
+        this.nombre = nombre;
+        this.habitantes = habitantes;
+        lugares = new ArrayList<>();
+    }
+}
+
+class Lugar {
+    String nombre;
+
+    public Lugar(String nombre) {
+        this.nombre = nombre;
+    }
+}
+
+public class App {
+    Map<String, Pais> paises;
+
+    public App() {
+        paises = new HashMap<>();
+    }
+
+    public void addPais(Pais pais) {
+        if (!paises.containsKey(pais.nombre)) {
+            paises.put(pais.nombre, pais);
+        }
+    }
+
+    public void addCiudad(String pais_nombre, Ciudad ciudad) {
+        if (paises.containsKey(pais_nombre)) {
+            paises.get(pais_nombre).ciudades.add(ciudad);
+        }
+    }
+
+    public void addLugar(String pais_nombre, String ciudad_nombre, Lugar lugar) {
+        if (paises.containsKey(pais_nombre)) {
+            Pais pais = paises.get(pais_nombre);
+            for (Ciudad ciudad : pais.ciudades) {
+                if (ciudad.nombre.equals(ciudad_nombre)) {
+                    ciudad.lugares.add(lugar);
+                    break;
+                }
+            }
+        }
+    }
+
+    public List<String> getCiudades(String pais_nombre
+

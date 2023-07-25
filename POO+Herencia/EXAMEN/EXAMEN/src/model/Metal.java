@@ -1,0 +1,38 @@
+package model;
+
+public class Metal extends Material implements Mezclar {
+	
+	    private boolean imantable;
+
+	    public Metal(String nombre, int masa, int capacidadQuemarse, int capacidadDiluirse, boolean movible, boolean imantable) {
+	        super(nombre, masa, capacidadQuemarse, capacidadDiluirse, movible);
+	        setImantable(imantable);
+	    }
+	    
+	    public boolean isImantable() {
+			return imantable;
+		}
+
+		public void setImantable(boolean imantable) {
+			this.imantable = imantable;
+		}
+
+		@Override
+	    public void mezclarConMaterial(Material material) {
+	        if (material instanceof Metal) {
+	            if (imantable = true) {
+	                System.out.println("Imán de metal fusionado.");
+	            } else {
+	                System.out.println("No se puede fusionar metales que no sean imantables.");
+	            }
+	        } else {
+	            System.out.println("No se puede fusionar metal con " + material.getNombre() + ".");
+	        }
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "Metal" + (imantable ? " imantable: " : ": ") + super.toString();
+	    }
+	}
+

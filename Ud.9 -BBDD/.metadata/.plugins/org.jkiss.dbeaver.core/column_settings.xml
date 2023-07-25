@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="NodeList/DBNProjectDatabases/DBNResource/DBNBookmarkFolder/DBNDiagramFolder">
+		<column name="Name" visible="true" order="0" width="128"/>
+		<column name="Path" visible="true" order="1" width="167"/>
+		<column name="Size" visible="true" order="2" width="100"/>
+		<column name="Last modified" visible="true" order="3" width="138"/>
+	</item>
+	<item id="NodeList/DBNResource">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Path" visible="true" order="1" width="136"/>
+		<column name="Size" visible="true" order="2" width="100"/>
+		<column name="Last modified" visible="true" order="3" width="100"/>
+	</item>
+	<item id="NodeList/DataSourceDescriptor">
+		<column name="Name" visible="true" order="0" width="156"/>
+		<column name="Description" visible="true" order="1" width="100"/>
+		<column name="Origin" visible="true" order="2" width="100"/>
+		<column name="Driver Type" visible="true" order="3" width="100"/>
+	</item>
+	<item id="Suggestion/NodeList/SQLiteTableColumn">
+		<column name="Column Name" visible="true" order="0" width="224"/>
+		<column name="#" visible="true" order="1" width="103"/>
+		<column name="Data Type" visible="false" order="2" width="100"/>
+		<column name="Length" visible="false" order="3" width="100"/>
+		<column name="Not Null" visible="false" order="4" width="100"/>
+		<column name="Auto Increment" visible="false" order="5" width="116"/>
+		<column name="Default" visible="false" order="6" width="100"/>
+		<column name="Description" visible="true" order="2" width="160"/>
+	</item>
+	<item id="scriptSelectorViewer">
+		<column name="Script" visible="true" order="0" width="149"/>
+		<column name="Time" visible="true" order="1" width="181"/>
+		<column name="Info" visible="true" order="2" width="84"/>
+		<column name="Folder" visible="true" order="3" width="96"/>
+	</item>
+</items>

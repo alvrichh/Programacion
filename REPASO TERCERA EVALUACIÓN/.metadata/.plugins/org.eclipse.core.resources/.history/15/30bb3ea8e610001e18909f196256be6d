@@ -1,0 +1,23 @@
+package controller;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+
+public class RecorridoDOM {
+	
+	private Document docXML;
+	
+	public RecorridoDOM(String fileName) throws Exception {
+		try {
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = new dbf.newDocumentBuilder()
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}		
+	}
+	
+	
+	
+}

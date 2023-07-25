@@ -1,0 +1,13 @@
+package model;
+
+public class PrecioException extends Exception {
+	
+	private Double precio;
+	public PrecioException (Double precio) {
+		if(precio < 0) {
+			super(mensaje);
+		}
+		
+	}
+
+}

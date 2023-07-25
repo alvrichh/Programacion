@@ -1,0 +1,35 @@
+package controller;
+
+import java.util.Collection;
+
+public class Viajes {
+
+	
+	public static boolean addPais() {
+		boolean add = false;
+		if() //Si se puede hacer pasamos un true
+		{
+			add = true;
+		}
+		return add;
+
+	}
+	public static boolean addCiudad(){
+		
+	}
+	
+	public static boolean addLugar(){
+		
+	}
+	
+	public static boolean getCiudades(){
+		
+	}
+	
+	public static String getUbicacion();
+	
+	public static boolean getCiudadesConHabitantes(){
+		
+		collection.sort();
+	}
+}

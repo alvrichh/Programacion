@@ -1,0 +1,5 @@
+DBTYPE:mysql
+DBNAME:strattonapp
+DBHOST:3308
+DBUSER:alvrich
+DBPASS:daw1

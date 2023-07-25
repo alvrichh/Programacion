@@ -1,0 +1,10 @@
+package model;
+
+public class Casa {
+	
+	private Integer id;
+	private Double precio;
+	private List<componente> componente;
+	
+
+}

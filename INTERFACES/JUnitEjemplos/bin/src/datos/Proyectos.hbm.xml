@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-feb-2014 0:31:32 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="datos.Proyectos" table="proyectos" catalog="proveedores">
+        <id name="codigo" type="string">
+            <column name="CODIGO" length="6" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="zonas" class="datos.Zonas" fetch="select">
+            <column name="CODZONA" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="40" not-null="true" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="CIUDAD" length="40" />
+        </property>
+        <property name="presupuesto" type="java.lang.Integer">
+            <column name="PRESUPUESTO" precision="6" scale="0" />
+        </property>
+        <set name="gestions" table="gestion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CODPROYECTO" length="6" not-null="true" />
+            </key>
+            <one-to-many class="datos.Gestion" />
+        </set>
+    </class>
+</hibernate-mapping>

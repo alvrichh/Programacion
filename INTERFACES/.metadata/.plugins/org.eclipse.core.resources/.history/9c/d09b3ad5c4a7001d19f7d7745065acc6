@@ -1,0 +1,18 @@
+package view;
+
+import model.Coro;
+import model.Integrante;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		
+		Coro c = new Coro();
+		
+		System.out.println(c);
+		if(c.insertarIntegrante(new Integrante())) System.out.println("Add");
+		
+	}
+
+}

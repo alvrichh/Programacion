@@ -1,0 +1,26 @@
+package model;
+
+public class Pais {
+
+	
+
+
+	private String nombre;
+	
+	public Pais(String nombre) {
+	}
+
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	//EL PAÍS SOLO CON SABER SU NOMBRE YA SE SABRÁ TODAS LAS DEMÁS COSAS COMO
+	//CIUDADES Y LUGARES FAMOSOS, ENTONCES PAIS DEBE SER OTRA COSA
+	
+	
+}

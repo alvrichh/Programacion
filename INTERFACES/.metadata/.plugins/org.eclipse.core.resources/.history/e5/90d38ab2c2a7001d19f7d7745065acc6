@@ -1,0 +1,39 @@
+package model;
+
+public abstract class AgrupacionOficial extends Agrupacion {
+
+	private Integrante[] Integrantes;
+
+	public AgrupacionOficial() {
+
+	}
+
+	public AgrupacionOficial(String nombre, String autor, String autorMusica, String autorLetra, String tipo) {
+		super(nombre, autor, autorMusica, autorLetra, tipo);
+		// No especifica el tamaño de este array, asigno 5
+		setIntegrantes(new Integrante[5]);
+	}
+
+	public boolean insertarIntegrante(Integrante i) {
+		boolean isInserted = false;
+
+		return isInserted;
+	}
+
+	public boolean eliminarIntegrante(Integrante i) {
+		boolean isDeleted = false;
+
+		return isDeleted;
+	}
+
+	public abstract String caminitoFalla();
+
+	public Integrante[] getIntegrantes() {
+		return Integrantes;
+	}
+
+	public void setIntegrantes(Integrante[] integrantes) {
+		Integrantes = integrantes;
+	}
+
+}

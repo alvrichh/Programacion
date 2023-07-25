@@ -1,0 +1,23 @@
+package view;
+
+import java.util.List;
+
+import controller.ParseJSON;
+import model.Casa;
+
+public class Principal {
+
+	public static void main(String[] args) throws Exception {
+
+		final String FILE_NAME = "casas.json";
+
+		ParseJSON json = new ParseJSON();
+
+		//LEER EL ARCHIVO JSON
+		System.out.println("\nLeer un objeto casa del fichero: " + FILE_NAME +  " y mostrarlo por pantalla.");
+		List<Casa> listado2 = ParseJSON.leerCasa(FILE_NAME);
+		
+
+	}
+
+}

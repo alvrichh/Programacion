@@ -1,0 +1,15 @@
+package start;
+
+import exam.Academia;
+
+public class Principal_ {
+
+	public static void main(String[] args) {
+		a[1] = new Asignatura(n, a, d, d1);
+
+		
+		Academia a = new Academia("IES ALIXAR");
+		System.out.println(a);
+	}
+
+}

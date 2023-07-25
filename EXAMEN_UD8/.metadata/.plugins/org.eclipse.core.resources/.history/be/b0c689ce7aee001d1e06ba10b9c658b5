@@ -1,0 +1,12 @@
+package model;
+
+public class Cartelera {
+	
+	private String categoria;
+	private String pelicula;
+	private String titulo;
+	private String director;
+	private String year;
+	private String pais;
+
+}

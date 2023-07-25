@@ -1,0 +1,9 @@
+package model;
+
+public class PrecioException extends Exception {
+	
+	public PrecioException(precio) {
+		
+	}
+
+}

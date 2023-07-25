@@ -1,0 +1,14 @@
+package view;
+
+import model.Coro;
+import model.Integrante;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Menu.inicio();
+
+	}
+
+}

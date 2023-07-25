@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Vivienda {
+    private int id;
+    private double precio;
+    private List<Zona> zonas;
+
+    public Vivienda(int id, double precio, List<Zona> zonas) {
+        this.id = id;
+        this.precio = precio;
+        this.zonas = zonas;
+    }
+
+}
+

@@ -1,0 +1,18 @@
+package controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import model.Coro;
+
+class COACTest {
+
+	@Test
+	void testInscribir_agrupacion() {
+		COAC coac = new COAC();
+		coac.inscribir_agrupacion(new Coro(2,2,2,"PEPE","autor","autorMusica","autorLetra","tipo"));
+		assertTrue(false);
+	}
+
+}

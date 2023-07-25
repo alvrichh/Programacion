@@ -1,0 +1,54 @@
+package controller;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+public class EscribirDOM {
+
+public EscribirDOM(){
+	
+	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+
+	// Crear un nuevo documento XML
+	Document doc = docBuilder.newDocument();
+
+	// Crear el elemento raíz
+	Element viviendasElement = doc.createElement("viviendas");
+	doc.appendChild(viviendasElement);
+
+	// Recorrer las viviendas
+	for (Vivienda vivienda : viviendas) {
+	    // Crear el elemento "vivienda"
+	    Element viviendaElement = doc.createElement("vivienda");
+	    viviendasElement.appendChild(viviendaElement);
+
+	    // Añadir atributos a la vivienda
+	    viviendaElement.setAttribute("id", String.valueOf(vivienda.getId()));
+	    viviendaElement.setAttribute("precio", String.valueOf(vivienda.getPrecio()));
+
+	    // Recorrer las zonas
+	    for (Zona zona : vivienda.getZonas()) {
+	        // Crear el elemento "zona"
+	        Element zonaElement = doc.createElement("zona");
+	        viviendaElement.appendChild(zonaElement);
+
+	        // Añadir atributos a la zona
+	        zonaElement.setAttribute("tipo", zona.getTipo().name());
+	        zonaElement.setAttribute("descripcion", zona.getDescripcion());
+	    }
+	}
+
+	// Escribir el contenido del documento en un archivo XML
+	TransformerFactory transformerFactory = TransformerFactory.newInstance();
+	Transformer transformer = transformerFactory.newTransformer();
+	DOMSource source = new DOMSource(doc);
+	StreamResult result = new StreamResult(new File("viviendas.xml"));
+	transformer.transform(source, result);
+
+}
+
+}

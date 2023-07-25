@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="model.Lavadora"/>
+    <fullyQualifiedTypeName name="model.Instrumento.NotaMusical"/>
+    <fullyQualifiedTypeName name="model.Piano"/>
+    <fullyQualifiedTypeName name="model.Television"/>
+    <fullyQualifiedTypeName name="model.Electrodomestico.Color"/>
+    <fullyQualifiedTypeName name="model.Electrodomestico.ConsumoEnergetico"/>
+    <fullyQualifiedTypeName name="model.Electrodomestico"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.sql.Array"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+</qualifiedTypeNameHistroy>

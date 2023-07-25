@@ -1,0 +1,53 @@
+package view.src.controller;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class GestionAspirantes implements FileConfig {
+
+	private static Integer id = 0;
+
+	private static Map<Integer, Aspirante> aspirantes = new HashMap<Integer, Aspirante>();
+
+	public Map<Integer, Aspirante> getAspirantes() {
+		return aspirantes;
+	}
+
+	public void addAspirante(Aspirante a) {
+		aspirantes.put(id++, a);
+	}
+
+	public void guardarDatosFichero() throws Exception {
+		List<Integer> lstIds = new ArrayList<Integer>();
+
+		for (Map.Entry<Integer, Aspirante> entry : getAspirantes().entrySet()) {
+			lstIds.add(entry.getKey());
+		}
+
+		guardar(FILE_IDS, lstIds);
+		guardar(FILE_DAT, aspirantes);
+	}
+
+	private void guardar(String fileName, Object data) throws Exception {
+		ObjectOutputStream fichero = null;
+
+		try {
+			fichero = new ObjectOutputStream(new FileOutputStream(fileName));
+			fichero.writeObject(data);
+		}
+		catch (IOException ioe) { throw new Exception("Fallo escribiendo en el fichero: " + fileName + " " + ioe.getMessage()); }
+		catch (Exception e)     { throw new Exception("Fallo general. " + e.getMessage()); }
+
+		finally {
+			try { if (fichero != null) fichero.close(); }
+			catch (IOException ioe) { throw new Exception("Fallo cerrando el fichero: " + fileName + " " + ioe.getMessage()); }
+		}
+
+	}
+
+}

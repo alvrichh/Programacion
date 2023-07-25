@@ -1,0 +1,12 @@
+package model;
+
+@SuppressWarnings("serial")
+public class ComponenteException extends Exception {
+
+	public ComponenteException(String mensaje) {
+		
+		super(mensaje);
+		
+	}
+	
+}

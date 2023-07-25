@@ -1,0 +1,42 @@
+package model;
+
+public class Ordenador {
+	
+	private Integer memoria;
+	private Double cpu;
+	private String disco;
+	private Double precio;
+	
+	
+	public void validarMemoria(memoria) {
+		if
+	}
+	public Integer getMemoria() {
+		return memoria;
+	}
+	public void setMemoria(Integer memoria) {
+		validarMemoria();
+		this.memoria = memoria;
+	}
+	public Double getCpu() {
+		return cpu;
+	}
+	public void setCpu(Double cpu) {
+		this.cpu = cpu;
+	}
+	public String getDisco() {
+		return disco;
+	}
+	public void setDisco(String disco) {
+		this.disco = disco;
+	}
+	public Double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+	
+	
+
+}

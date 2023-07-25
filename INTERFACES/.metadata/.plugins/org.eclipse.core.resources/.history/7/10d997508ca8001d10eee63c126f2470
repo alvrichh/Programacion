@@ -1,0 +1,83 @@
+package model;
+
+public class Integrante implements Comparable<Integrante> {
+
+	private static int numeroParticipante = 0;
+	private int numeroActual;
+	private String nombre;
+	private int edad;
+	private String localidad;
+
+	public Integrante() {
+		this("", 0, "");
+	}
+
+	public Integrante(String nombre, int edad, String localidad) {
+		this.nombre = nombre;
+		this.edad = edad;
+		this.localidad = localidad;
+		setNumeroActual(getNumeroParticipante());
+		setNumeroParticipante(getNumeroParticipante() + 1);
+
+	}
+
+	public int getNumeroParticipante() {
+		return numeroParticipante;
+	}
+
+	public void setNumeroParticipante(int numeroParticipante) {
+		this.numeroParticipante = numeroParticipante;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+
+	public int getNumeroActual() {
+		return numeroActual;
+	}
+
+	public void setNumeroActual(int numeroActual) {
+		this.numeroActual = numeroActual;
+	}
+
+	public boolean equals(Integrante integrante) {
+		return (this.nombre.equals(integrante.getNombre()) && this.edad == integrante.getEdad());
+
+	}
+
+	@Override
+	public String toString() {
+		return "Integrante [getNombre()=" + getNombre() + ", getEdad()=" + getEdad() + ", getLocalidad()="
+				+ getLocalidad() + ", getNumeroActual()=" + getNumeroActual() + "]";
+	}
+
+	@Override
+	public int compareTo(Integrante o) {
+		int resultado = 0;
+		if (this != null && o != null)
+			resultado = this.getNombre().compareTo(o.getNombre());
+		return resultado;
+	}
+
+}

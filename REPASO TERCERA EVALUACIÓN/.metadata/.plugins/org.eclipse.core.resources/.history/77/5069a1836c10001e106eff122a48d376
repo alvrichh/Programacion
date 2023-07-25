@@ -1,0 +1,27 @@
+package controller;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+
+public class AlumnosDOM {
+	
+	private Document docXML;
+	
+	public AlumnosDOM(String fileName) {
+		readXML(fileName);
+	}
+	private void readXML(String fileName) throws Exception{
+		try {
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			
+			docXML = db.parse(fileName);
+			docXML.getDocumentElement().normalize();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

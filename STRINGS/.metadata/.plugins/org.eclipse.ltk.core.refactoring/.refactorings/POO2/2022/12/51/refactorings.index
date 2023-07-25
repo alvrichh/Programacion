@@ -1,0 +1,11 @@
+1671547381067	Move compilation unit
+1671547568041	Encapsulate field 'tipo'
+1671552222499	Encapsulate field 'nombre'
+1671552229874	Encapsulate field 'apellidos'
+1671552235435	Encapsulate field 'DNI'
+1671634409528	Encapsulate field 'direccFiscal'
+1671634688857	Encapsulate field 'bco'
+1671634800678	Encapsulate field 'nombre'
+1671634807535	Encapsulate field 'direccionPostal'
+1671634853933	Delete element
+1671635208500	Rename compilation unit 'TipoC.java'

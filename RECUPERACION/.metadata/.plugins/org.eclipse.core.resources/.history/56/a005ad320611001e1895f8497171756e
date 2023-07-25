@@ -1,0 +1,70 @@
+package model;
+
+public class Ordenador {
+	
+	private Integer memoria;
+	private Double cpu;
+	private String disco;
+	private Double precio;
+	
+	
+	
+	public Ordenador(Integer memoria, Double cpu, String disco, Double precio) throws ComponenteException, PrecioException {
+		validarMemoria(memoria);
+		
+		setMemoria(memoria);
+		setCpu(cpu);
+		setDisco(disco);
+		setPrecio(precio);
+	}
+	public void validarMemoria(Integer memoria) throws MemoriaException {
+		if (memoria != 4 && memoria != 8 && memoria != 16 && memoria != 32) {
+			throw new MemoriaException();
+		}
+	}
+	public void validarCpu(Double cpu) throws CpuException{
+		if (cpu< 1.2 && cpu> 4.0 && cpu % 2 != 0) {
+			throw new CpuException("ERROR, la CPU solo puede estar entre 1.2 y 4.0, y debe ser par");
+		}
+	}
+	public void validarDisco(String disco) throws DiscosException{
+		if(!disco.equals(Discos.HD) || !disco.equals(Discos.SSD)) {
+			throw new DiscosException("ERROR, los discos solo pueden ser SSD o HD");
+			
+		}
+		
+	}
+	public Integer getMemoria() {
+		return memoria;
+	}
+	public void setMemoria(Integer memoria) throws ComponenteException {
+		validarMemoria(memoria);
+		this.memoria = memoria;
+	}
+	public Double getCpu() {
+		return cpu;
+	}
+	public void setCpu(Double cpu) throws ComponenteException {
+		validarCpu(cpu);
+		this.cpu = cpu;
+	}
+	public String getDisco() {
+		return disco;
+	}
+	public void setDisco(String disco) throws ComponenteException {
+		validarDisco(disco);
+		this.disco = disco;
+	}
+	public Double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Double precio) throws PrecioException{
+		if (precio < 0 && precio > 1000.0) {
+			throw new PrecioException(precio);
+		}
+		this.precio = precio;
+	}
+	
+	
+
+}

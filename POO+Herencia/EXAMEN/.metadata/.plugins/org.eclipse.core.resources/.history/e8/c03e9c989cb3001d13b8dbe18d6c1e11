@@ -1,0 +1,66 @@
+package controller;
+
+import java.util.Arrays;
+
+import model.*;
+
+public class Minecraft {
+    private Material[] materiales;
+    private int cantidadMateriales;
+
+    public Minecraft() {
+        this.materiales = new Material[10];
+        this.cantidadMateriales = 0;
+    }
+
+    public void addMaterial(Material material) {
+        if (this.cantidadMateriales < 10) {
+            this.materiales[this.cantidadMateriales] = material;
+            this.cantidadMateriales++;
+        } else {
+            System.out.println("No se pueden añadir más materiales");
+        }
+    }
+
+    public void borrarMaterialSinMasa() {
+        for (int i = 0; i < this.cantidadMateriales; i++) {
+            if (this.materiales[i].getMasa() <= 0) {
+                for (int j = i; j < this.cantidadMateriales - 1; j++) {
+                    this.materiales[j] = this.materiales[j + 1];
+                }
+                this.materiales[this.cantidadMateriales - 1] = null;
+                this.cantidadMateriales--;
+                i--;
+            }
+        }
+    }
+
+    public void mostrarEstado() {
+        for (int i = 0; i < this.cantidadMateriales; i++) {
+            System.out.println(this.materiales[i]);
+        }
+    }
+
+    public void mostrarOrdenadoPorMasa() {
+        Arrays.sort(this.materiales, 0, this.cantidadMateriales);
+        mostrarEstado();
+    }
+
+    public void mostrarOrdenadoPorQuemarse() {
+        Arrays.sort(this.materiales, 0, this.cantidadMateriales, new ComparadorQuemarse());
+        mostrarEstado();
+    }
+
+    public void mostrarOrdenadoPorDiluirse() {
+        Arrays.sort(this.materiales, 0, this.cantidadMateriales, new ComparadorDiluirse());
+        mostrarEstado();
+    }
+
+    public void ultimoMaterialQueQueda() {
+        if (this.cantidadMateriales == 1 && this.materiales[0].getMasa() <= 0) {
+            System.out.println(this.materiales[0]);
+        } else {
+            System.out.println("No hay un solo material sin masa");
+        }
+    }
+}

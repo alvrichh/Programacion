@@ -1,0 +1,10 @@
+package control;
+
+import model.Libro;
+
+public class GestionLibros {
+	
+	private Libro[] registro;
+	
+	
+}

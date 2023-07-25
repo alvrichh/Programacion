@@ -1,0 +1,36 @@
+package view;
+
+/*
+ * Dada la base de datos que se adjunta se pide, siguiendo los patrones de diseño MVC y Singleton, una aplicación que realice lo siguiente:
+Modificar de un determinado producto, su cantidad en stock (quantityInStock) y su precio de venta (MSRP), mediante una transacción.
+Se debe verificar, antes de realizar la modificación, que ese producto exista.
+Informar al usuario si el proceso ha ido bien o no
+ */
+import model.*;
+public class Pantalla {
+	
+
+	public static void main(String[] args) {
+		
+		//Informar al usuario
+		modificarProducto(null, null);
+		
+		}
+
+	public static void modificarProducto(String Code, Integer Stock) {
+		
+		boolean existe = true;
+		
+	//MODIFICAR CANTIDAD EN STOCK DE UN PRODUCTO
+	//1º PEDIR PRODUCTO 
+
+/*		} catch (ControllerException | ProductoNoEncontradoException e) {
+			Util.escribirError("Error consultado si existe ese producto." + e.getMessage());
+		}
+		if (!existe)
+			Util.escribir("No existe ese producto.");
+	} while (!existe);
+
+
+	}
+	*/

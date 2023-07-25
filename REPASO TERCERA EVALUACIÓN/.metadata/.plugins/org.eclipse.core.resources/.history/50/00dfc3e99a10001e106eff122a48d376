@@ -1,0 +1,14 @@
+package view;
+
+import model.Camion;
+import model.EjesException;
+
+public class Principal {
+
+	public static void main(String[] args) throws EjesException {
+
+
+		Camion c1 = new Camion(1);
+	}
+
+}

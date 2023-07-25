@@ -1,0 +1,22 @@
+package model;
+
+import model.TipoZona;
+
+public class Zona {
+	private TipoZona tipo;
+    private String descripcion;
+
+    public Zona(TipoZona tipo, String descripcion) {
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+    }
+
+    public TipoZona getTipo() {
+        return tipo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+}
+}

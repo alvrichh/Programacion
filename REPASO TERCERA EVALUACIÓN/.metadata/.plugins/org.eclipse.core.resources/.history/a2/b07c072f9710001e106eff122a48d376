@@ -1,0 +1,8 @@
+package model;
+
+public class PruebaFicheros {
+
+	//creación de ficheros de texto
+	
+	FileReader(String enero.txt);
+}

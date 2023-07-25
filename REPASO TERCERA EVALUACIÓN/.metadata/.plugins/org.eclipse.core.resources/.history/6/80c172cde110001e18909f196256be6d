@@ -1,0 +1,17 @@
+package view;
+
+import model.Camion;
+import model.ComponenteException;
+import model.PrecioException;
+
+public class Principal {
+
+	public static void main(String[] args) throws ComponenteException, PrecioException {
+      
+		Camion c1 = new Camion(4, 30.0, "leña", 9.0);
+    	
+		System.out.println(c1);
+            }
+        
+    }
+

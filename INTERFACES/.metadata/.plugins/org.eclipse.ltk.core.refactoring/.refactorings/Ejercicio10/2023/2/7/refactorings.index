@@ -1,0 +1,60 @@
+1676253749380	Copy compilation unit
+1676254433077	Rename method 'eliminar_agrupacion'
+1676254445567	Rename method 'inscribir_agrupacion'
+1676254460481	Rename method 'añadirParticipante'
+1676255084601	Rename method 'eliminar_agrupacion'
+1676255455379	Delete element
+1676255498399	Rename method 'mostrarMenuAñadirAgrupacion'
+1676384575396	Delete elements
+1676385103993	Move compilation unit
+1676385338693	Delete element
+1676385986924	Move compilation unit
+1676386025589	Copy package
+1676386038467	Delete element
+1676386076414	Delete element
+1676386118057	Copy package
+1676386128049	Delete element
+1676386146801	Delete element
+1676386148126	Delete element
+1676386149186	Delete element
+1676386150287	Delete element
+1676386151791	Delete element
+1676386152478	Delete element
+1676386153116	Delete element
+1676386153935	Delete element
+1676386194717	Delete element
+1676386246312	Move compilation unit
+1676386252737	Delete element
+1676386263625	Move compilation unit
+1676386271285	Move compilation unit
+1676386286000	Move compilation unit
+1676386305903	Delete element
+1676386313211	Delete element
+1676386336094	Delete element
+1676386591886	Delete element
+1676389004113	Extract method 'opc3'
+1676390277356	Extract method 'extracted_TEXT'
+1676400405822	Extract method 'isVacioAgrupacion'
+1676403001631	Extract method 'opc7'
+1676403009484	Extract method 'opc8'
+1676403014743	Extract method 'opc9'
+1676403023405	Extract method 'opc10'
+1676403031771	Extract method 'opc11'
+1676403047545	Extract method 'opc12'
+1676403054237	Extract method 'opc13'
+1676403065061	Extract method 'opc14'
+1676404887292	Extract method 'concOpc1'
+1676404900659	Extract method 'concOpc2'
+1676404910119	Extract method 'concOpc3'
+1676404922962	Extract method 'concOpc4'
+1676405030943	Extract method 'concOpc10'
+1676405039389	Extract method 'concOpc11'
+1676405048769	Extract method 'concOpc12'
+1676405080882	Extract method 'concOpc13'
+1676405499007	Extract method 'introVolver'
+1676408681199	Rename local variable 'opcT'
+1676408803085	Extract method 'opc1'
+1676408809191	Extract method 'opc2'
+1676408818112	Extract method 'opc3'
+1676408823710	Extract method 'opc5'
+1676408844312	Extract method 'opc6'

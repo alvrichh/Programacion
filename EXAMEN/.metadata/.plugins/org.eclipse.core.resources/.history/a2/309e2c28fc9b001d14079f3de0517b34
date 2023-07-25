@@ -1,0 +1,8 @@
+package exam;
+
+public class DatoContact {
+
+	private Integer telefono;
+	private String correo;
+	private String insta;
+}

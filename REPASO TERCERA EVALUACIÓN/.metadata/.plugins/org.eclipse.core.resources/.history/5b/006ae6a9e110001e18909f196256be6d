@@ -1,0 +1,14 @@
+package view;
+
+import model.Camion;
+
+public class Principal {
+
+	public static void main(String[] args) {
+      
+		Camion c1 = new Camion(2, 30.0, "leña", 9.0);
+    	
+            }
+        
+    }
+

@@ -1,0 +1,61 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import model.Votacion;
+
+public class XML_SAX extends DefaultHandler {
+	
+	private List<Votacion> listaVotaciones = new ArrayList<>();
+	private Votacion votacion = null;
+	private StringBuilder caracteresLeidos = new StringBuilder();
+	private boolean isMunicipi = false;
+	private boolean isSinglesCandidatura = false;
+	private boolean isVots = false;
+
+	@Override
+	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+		if (qName.equals("row")) {
+			votacion = new Votacion();
+		} else if (qName.equals("municipi")) {
+			isMunicipi = true;
+		} else if (qName.equals("singles_candidatura")) {
+			isSinglesCandidatura = true;
+		} else if (qName.equals("vots")) {
+			isVots = true;
+		}
+	}
+
+	@Override
+	public void characters(char[] ch, int start, int length) throws SAXException {
+		caracteresLeidos.append(ch, start, length);
+	}
+
+	@Override
+	public void endElement(String uri, String localName, String qName) throws SAXException {
+		if (qName.equals("row")) {
+			listaVotaciones.add(votacion);
+			votacion = null;
+		} else if (qName.equals("municipi") && isMunicipi) {
+			votacion.setMunicipio(caracteresLeidos.toString().trim());
+			isMunicipi = false;
+		} else if (qName.equals("singles_candidatura") && isSinglesCandidatura) {
+			votacion.setPartido(caracteresLeidos.toString().trim());
+			isSinglesCandidatura = false;
+		} else if (qName.equals("vots") && isVots) {
+			votacion.setVotos(Integer.parseInt(caracteresLeidos.toString().trim()));
+			isVots = false;
+		}
+
+		caracteresLeidos.setLength(0);
+	}
+
+	public List<Votacion> getListaVotaciones() {
+		return listaVotaciones;
+	}
+}

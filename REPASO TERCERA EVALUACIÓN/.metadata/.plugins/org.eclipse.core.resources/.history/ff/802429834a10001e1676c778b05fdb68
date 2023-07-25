@@ -1,0 +1,12 @@
+package view;
+
+public class Cubos {
+
+	public static void main(String[] args) {
+		
+		System.out.println("BIENVENIDO A LOS NÚMEROS AL CUBO JEJE EKISDE LOL");
+		
+		
+		for 
+	}
+}

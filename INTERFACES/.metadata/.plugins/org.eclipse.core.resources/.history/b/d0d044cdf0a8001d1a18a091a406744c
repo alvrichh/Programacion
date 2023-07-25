@@ -1,0 +1,20 @@
+package view;
+
+import controller.COAC;
+import model.AgrupacionOficial;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		
+		COAC coac = new COAC();
+		
+		for (int i = 0; i < ((AgrupacionOficial)coac.getAgrupacion()[0]).getIntegrantes().length; i++) {
+			System.out.println(((AgrupacionOficial)coac.getAgrupacion()[0]).getIntegrantes()[i].length);
+		}
+		
+		Menu.gestionPrograma();
+	}
+
+}

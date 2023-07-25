@@ -1,0 +1,14 @@
+package controller;
+
+import java.io.BufferedReader;
+
+public class ViviendasDOM {
+	
+	public ViviendasDOM() {
+		
+		lector = new BufferedReader("viviendas.json");
+				}
+
+	
+
+}

@@ -1,0 +1,17 @@
+package model;
+
+public class Votacion {
+	
+	private String municipio;
+	private String partido;
+	private Integer votos;
+	public String getMunicipio() {
+		return municipio;
+	}
+	public void setMunicipio(String municipio) {
+		this.municipio = municipio;
+	}
+	
+	
+
+}

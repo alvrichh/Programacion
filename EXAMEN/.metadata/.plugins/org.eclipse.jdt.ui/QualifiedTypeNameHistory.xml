@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="exam.Alumno.Tipo"/>
+    <fullyQualifiedTypeName name="exam.Academia"/>
+    <fullyQualifiedTypeName name="exam.Asignatura"/>
+    <fullyQualifiedTypeName name="exam.Alumno"/>
+    <fullyQualifiedTypeName name="exam.DatoPers"/>
+    <fullyQualifiedTypeName name="exam.DatoContact"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,33 @@
+package view;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Discos;
+import model.Ordenador;
+
+public class Principalç {
+    public static void main(String[] args) {
+        List<Ordenador> ordenadores = new ArrayList<>();
+
+        try {
+            Ordenador ordenador1 = new Ordenador(8, 2.4, Discos.SSD, 799.99);
+            Ordenador ordenador2 = new Ordenador(16, 3.0, Discos.HD, 599.99);
+            Ordenador ordenador3 = new Ordenador(32, 4.0, Discos.SSD, 899.99);
+
+            ordenadores.add(ordenador1);
+            ordenadores.add(ordenador2);
+            ordenadores.add(ordenador3);
+
+            // Escribir en el archivo "ordenadores.txt"
+            FileWriter writer = new FileWriter("ordenadores.txt");
+            for (Ordenador ordenador : ordenadores) {
+                writer.write(ordenador.toString() + "\n");
+            }
+            writer.close();
+        } catch (ComponenteException | PrecioException | IOException e) {
+        }
+    }
+}
+

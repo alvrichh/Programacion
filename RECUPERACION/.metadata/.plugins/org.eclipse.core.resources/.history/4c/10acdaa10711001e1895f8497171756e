@@ -1,0 +1,10 @@
+package model;
+
+@SuppressWarnings("serial")
+public class MemoriaException extends ComponenteException {
+	
+	public MemoriaException(Integer memoria) {
+	
+		super(mensaje)
+}
+

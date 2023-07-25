@@ -1,0 +1,5 @@
+Created with UCDetector 2.0.0	2023-02-11 01:23:05	http://www.ucdetector.org/	Created by class: org.ucdetector.report.TextReport	
+Location	Description	Java	Marker	Author
+controller.COAC.agrupacion(COAC.java:22)	Change visibility of Field "COAC.agrupacion" to private	COAC.agrupacion	org.ucdetector.analyzeMarkerVisibilityPrivate	
+controller.COAC.agrupacionOficial(COAC.java:23)	Change visibility of Field "COAC.agrupacionOficial" to private	COAC.agrupacionOficial	org.ucdetector.analyzeMarkerVisibilityPrivate	
+controller.COAC.integrante(COAC.java:24)	Change visibility of Field "COAC.integrante" to private	COAC.integrante	org.ucdetector.analyzeMarkerVisibilityPrivate	

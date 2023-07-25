@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cartelera>
+   <categoria nombre="ACCION">
+      <pelicula codigo="1">
+         <titulo>John Wick</titulo>
+         <director>Chad Stahelski</director>
+         <year>2014</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+      <pelicula codigo="2">
+         <titulo>The Matrix</titulo>
+         <director>Lana Wachowski, Lilly Wachowski</director>
+         <year>1999</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+      <pelicula codigo="3">
+         <titulo>Terminator 2: Judgment Day</titulo>
+         <director>James Cameron</director>
+         <year>1991</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+   </categoria>
+   <categoria nombre="AVENTURAS">
+      <pelicula codigo="4">
+         <titulo>Indiana Jones and the Raiders of the Lost Ark</titulo>
+         <director>Steven Spielberg</director>
+         <year>1981</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+      <pelicula codigo="5">
+         <titulo>The Goonies</titulo>
+         <director>Richard Donner</director>
+         <year>1985</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+      <pelicula codigo="6">
+         <titulo>Jurassic Park</titulo>
+         <director>Steven Spielberg</director>
+         <year>1993</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+      <pelicula codigo="7">
+         <titulo>Pirates of the Caribbean: The Curse of the Black Pearl</titulo>
+         <director>Gore Verbinski</director>
+         <year>2003</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+   </categoria>
+   <categoria nombre="COMEDIA">
+      <pelicula codigo="8">
+         <titulo>Ocho Apellidos Vascos</titulo>
+         <director>Emilio Martínez-Lázaro</director>
+         <year>2014</year>
+         <pais>España</pais>
+      </pelicula>
+      <pelicula codigo="9">
+         <titulo>Toc Toc</titulo>
+         <director>Vicente Villanueva</director>
+         <year>2017</year>
+         <pais>España</pais>
+      </pelicula>
+      <pelicula>
+         <titulo>The 40-Year-Old Virgin</titulo>
+         <director>Judd Apatow</director>
+         <year>2005</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+      <pelicula codigo="10">
+         <titulo>La llamada</titulo>
+         <director>Javier Calvo, Javier Ambrossi</director>
+         <year>2017</year>
+         <pais>España</pais>
+      </pelicula>
+   </categoria>
+   <categoria nombre="DRAMA">
+      <pelicula codigo="11">
+         <titulo>El Padrino</titulo>
+         <director>Francis Ford Coppola</director>
+         <year>1972</year>
+         <pais>Estados Unidos</pais>
+      </pelicula>
+      <pelicula codigo="12">
+         <titulo>La Vida es Bella</titulo>
+         <director>Roberto Benigni</director>
+         <year>1997</year>
+         <pais>Italia</pais>
+      </pelicula>
+      <pelicula codigo="13">
+         <titulo>Celda 211</titulo>
+         <director>Daniel Monzón</director>
+         <year>2009</year>
+         <pais>España</pais>
+      </pelicula>
+      <pelicula codigo="14">
+         <titulo>El Laberinto del Fauno</titulo>
+         <director>Guillermo del Toro</director>
+         <year>2006</year>
+         <pais>México, España</pais>
+      </pelicula>
+      <pelicula codigo="15">
+         <titulo>El Hijo de Saúl</titulo>
+         <director>László Nemes</director>
+         <year>2015</year>
+         <pais>Hungría</pais>
+      </pelicula>
+   </categoria>
+</cartelera>

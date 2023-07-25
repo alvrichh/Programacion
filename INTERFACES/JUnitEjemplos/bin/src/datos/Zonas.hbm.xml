@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-feb-2014 0:31:32 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="datos.Zonas" table="zonas" catalog="proveedores">
+        <id name="codigo" type="int">
+            <column name="CODIGO" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="15" not-null="true" />
+        </property>
+        <property name="tasa" type="big_decimal">
+            <column name="TASA" precision="6" />
+        </property>
+        <set name="proyectoses" table="proyectos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CODZONA" />
+            </key>
+            <one-to-many class="datos.Proyectos" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+package model;
+
+import java.util.ArrayList;
+
+public class Cartelera {
+	
+	private List<Categoria> Categoria;
+	
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+}

@@ -1,0 +1,43 @@
+package model;
+
+public class Vivienda {
+
+	private int id;
+	private Integer precio;
+	private Zona zona;
+	private String descripcion;
+
+	
+	public Vivienda(int id, Integer precio, Zona zona, String descripcion) {
+		setId(id);
+		setPrecio(precio);
+		setZona(zona);
+		setDescripcion(descripcion);
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Integer getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Integer precio) {
+		this.precio = precio;
+	}
+	public Zona getZona() {
+		return zona;
+	}
+	public void setZona(Zona zona) {
+		this.zona = zona;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	
+}

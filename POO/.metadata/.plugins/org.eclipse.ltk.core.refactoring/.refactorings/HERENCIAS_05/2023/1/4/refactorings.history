@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;model.Lavadora.carga&apos; in &apos;model.Lavadora&apos;&#x0D;&#x0A;- Original project: &apos;HERENCIAS_05&apos;&#x0D;&#x0A;- Original element: &apos;model.Lavadora.carga&apos;&#x0D;&#x0A;- Getter method name: &apos;getCarga&apos;&#x0D;&#x0A;- Setter method name: &apos;setCarga&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;carga&apos;" flags="589830" getter="getCarga" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;model{Lavadora.java[Lavadora^carga" insertion="0" setter="setCarga" stamp="1674750543449" version="1.0" visibility="1"/>
+</session>

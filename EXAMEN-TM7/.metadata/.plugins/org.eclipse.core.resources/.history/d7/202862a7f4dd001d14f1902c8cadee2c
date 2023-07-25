@@ -1,0 +1,27 @@
+package view;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Principal {
+	
+
+	public static void main(String[] args) {
+		
+		final String FCH_1 = "enero.txt";
+		final String FCH_2 = "febrero.txt";
+		final String FCH_3 = "marzo.txt";
+		
+		BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	}
+}

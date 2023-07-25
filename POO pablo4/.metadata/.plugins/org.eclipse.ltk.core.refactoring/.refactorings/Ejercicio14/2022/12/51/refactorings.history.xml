@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;pizzeria.TamañoPizzaEnum&apos; to &apos;TamañoPizza&apos;&#x0D;&#x0A;- Original project: &apos;Ejercicio14&apos;&#x0D;&#x0A;- Original element: &apos;pizzeria.TamañoPizzaEnum&apos;&#x0D;&#x0A;- Renamed element: &apos;pizzeria.TamañoPizza&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TamañoPizzaEnum&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;pizzeria{TamañoPizzaEnum.java[TamañoPizzaEnum" matchStrategy="1" name="TamañoPizza" qualified="false" references="true" similarDeclarations="false" stamp="1671757847218" textual="false" version="1.0"/>
+</session>

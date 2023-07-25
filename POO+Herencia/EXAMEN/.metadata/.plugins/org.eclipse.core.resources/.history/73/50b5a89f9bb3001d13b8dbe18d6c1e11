@@ -1,0 +1,54 @@
+package controller;
+
+import model.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Materiales {
+
+	private ArrayList<Material> listaMateriales;
+
+	public Materiales() {
+		listaMateriales = new ArrayList<Material>();
+	}
+
+	public void addMaterial(Material m) {
+		if (listaMateriales.size() < 10 && m.getMasa() > 0) {
+			listaMateriales.add(m);
+		}
+	}
+
+	public void borrarMaterialSinMasa() {
+		for (int i = 0; i < listaMateriales.size(); i++) {
+			if (listaMateriales.get(i).getMasa() <= 0) {
+				listaMateriales.remove(i);
+				i--;
+			}
+		}
+	}
+
+	public void mostrarEstado() {
+		for (Material m : listaMateriales) {
+			System.out.println(m.toString());
+		}
+	}
+
+	public Material ultimoMaterialQueQueda() {
+		Material ultimoMaterial = null;
+		int contadorMaterialesSinMasa = 0;
+		for (Material m : listaMateriales) {
+			if (m.getMasa() > 0) {
+				ultimoMaterial = m;
+				contadorMaterialesSinMasa++;
+			}
+		}
+		if (contadorMaterialesSinMasa == 1) {
+			System.out.println("Último material sin masa:");
+			System.out.println(ultimoMaterial.toString());
+			return ultimoMaterial;
+		} else {
+			return null;
+		}
+	}
+}

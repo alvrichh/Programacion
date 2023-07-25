@@ -1,0 +1,57 @@
+package controller;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import model.Material;
+
+public class Minecraft {
+
+	private Material[] materiales = new Material[10];
+	private int numMateriales = 0;
+
+	public boolean addMaterial(Material m) {
+		if (numMateriales == 10) {
+			return false;
+		}
+		materiales[numMateriales++] = m;
+		return true;
+	}
+
+	public void borrarMaterialSinMasa() {
+		for (int i = 0; i < numMateriales; i++) {
+			if (materiales[i].getMasa() <= 0) {
+				materiales[i] = null;
+			}
+		}
+		materiales = Arrays.stream(materiales).filter(material -> material != null).toArray(Material[]::new);
+		numMateriales = materiales.length;
+	}
+
+	public void mostrarEstado() {
+		for (int i = 0; i < numMateriales; i++) {
+			System.out.println(materiales[i].toString());
+		}
+	}
+
+	public void ordenarMaterialesPorMasa() {
+		Arrays.sort(materiales, Comparator.compareTo(Material::getMasa));
+	}
+
+	public void ordenarMaterialesPorQuemarseDiluirse() {
+	
+	}
+
+	public void ultimoMaterialQueQueda() {
+		int numMaterialesSinMasa = 0;
+		Material ultimoMaterialSinMasa = null;
+		for (int i = 0; i < numMateriales; i++) {
+			if (materiales[i].getMasa() <= 0) {
+				numMaterialesSinMasa++;
+				ultimoMaterialSinMasa = materiales[i];
+			}
+		}
+		if (numMaterialesSinMasa == 1) {
+			System.out.println(ultimoMaterialSinMasa.toString());
+		}
+	}
+}

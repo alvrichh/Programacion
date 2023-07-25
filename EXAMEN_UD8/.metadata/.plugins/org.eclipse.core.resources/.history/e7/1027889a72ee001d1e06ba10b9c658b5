@@ -1,0 +1,7 @@
+package model;
+
+public class Componente {
+
+	private Tipo tipo;
+	private String descripcion;
+}

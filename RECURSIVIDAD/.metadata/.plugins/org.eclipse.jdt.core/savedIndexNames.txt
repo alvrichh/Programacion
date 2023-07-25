@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+D:\Users\alvar\Desktop\GRADO SUPERIOR\PROG\DAW-JAVA\RECURSIVIDAD\.metadata\.plugins\org.eclipse.jdt.core
+2374403992.index
+4202805006.index
+2029916379.index
+344970786.index
+1865797976.index

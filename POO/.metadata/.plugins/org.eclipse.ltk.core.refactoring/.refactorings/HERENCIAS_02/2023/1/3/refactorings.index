@@ -1,0 +1,7 @@
+1674146987470	Delete element
+1674147183320	Encapsulate field 'notas'
+1674147191926	Encapsulate field 'MAX'
+1674147299980	Convert local variable 'msj' to field
+1674147310831	Encapsulate field 'msj'
+1674148392173	Encapsulate field 'nota'
+1674148397131	Encapsulate field 'num'

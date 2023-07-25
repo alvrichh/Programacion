@@ -1,0 +1,14 @@
+package view;
+
+import model.Agrupacion;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		
+		// No es especifica el tamaño asi que pongo 10
+		Menu.inicio();
+	}
+
+}

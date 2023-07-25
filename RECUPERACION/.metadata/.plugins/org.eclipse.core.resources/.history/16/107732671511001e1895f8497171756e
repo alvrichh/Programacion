@@ -1,0 +1,8 @@
+
+public class Vivienda {
+    private int id;
+    private double precio;
+    private List<Zona> zonas;
+
+}
+

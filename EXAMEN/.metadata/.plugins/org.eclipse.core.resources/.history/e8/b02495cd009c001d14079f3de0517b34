@@ -1,0 +1,10 @@
+package start;
+
+public class Principal_ {
+
+	public static void main(String[] args) {
+
+		Academia a = new Academia();
+	}
+
+}

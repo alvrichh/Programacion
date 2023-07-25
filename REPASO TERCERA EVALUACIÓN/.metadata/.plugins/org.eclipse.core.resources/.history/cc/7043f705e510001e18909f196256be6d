@@ -1,0 +1,14 @@
+package view;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Principal {
+	public static void main(String[] args) throws IOException {
+
+		FileWriter desayunos= new FileWriter("desayunos.xml");
+			desayunos.write("pueblo");
+			desayunos.close();
+	}
+
+}

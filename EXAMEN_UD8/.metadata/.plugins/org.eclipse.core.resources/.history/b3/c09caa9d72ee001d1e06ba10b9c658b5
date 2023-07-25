@@ -1,0 +1,13 @@
+package model;
+
+public class Componente {
+
+	private Tipo tipo;
+	private String descripcion;
+	public Tipo getTipo() {
+		return tipo;
+	}
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+}

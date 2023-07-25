@@ -1,0 +1,18 @@
+1675955183178	Delete element
+1675955243898	Rename package 'start'
+1675958482784	Rename type 'AgrupacionesCarnavalescas'
+1675958998388	Encapsulate field 'puntosObtenidos'
+1675959318346	Encapsulate field 'numeroBandurrias'
+1675959322403	Encapsulate field 'numeroGuitarras'
+1675960048139	Encapsulate field 'numParticipante'
+1675960051412	Encapsulate field 'numero'
+1675960057244	Encapsulate field 'nombre'
+1675960060782	Encapsulate field 'edad'
+1675960064232	Encapsulate field 'localidad'
+1675960335743	Encapsulate field 'integrante'
+1675960399169	Encapsulate field 'numeroCuples'
+1675960565669	Encapsulate field 'empresaAtrezzo'
+1675960635259	Encapsulate field 'numeroMiembros'
+1675960699337	Encapsulate field 'tematicaCartelon'
+1675960837670	Delete element
+1675961158480	Encapsulate field 'componente'

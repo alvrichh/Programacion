@@ -1,0 +1,15 @@
+package view;
+
+import java.util.Scanner;
+
+public class Util {
+
+	Scanner entrada = new Scanner(System.in);
+	// Al no tener el paquete util creo los metodos aqui en un plisplas
+	public int leerInt(String texto){
+		int resultado;
+		System.out.print(texto);
+		
+		
+	}
+}

@@ -1,0 +1,10 @@
+package view;
+
+public class Util {
+
+	
+	// Al no tener el paquete util creo los metodos aqui en un plisplas
+	public int Util.leerInt(){
+		
+	}
+}

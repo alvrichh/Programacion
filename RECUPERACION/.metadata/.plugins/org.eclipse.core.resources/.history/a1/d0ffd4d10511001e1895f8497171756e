@@ -1,0 +1,14 @@
+package model;
+
+@SuppressWarnings("serial")
+public class CpuException extends ComponenteException {
+
+	private String motivo;
+	public CpuException(String mensaje) {
+
+		super(mensaje);
+	}
+	
+	
+
+}

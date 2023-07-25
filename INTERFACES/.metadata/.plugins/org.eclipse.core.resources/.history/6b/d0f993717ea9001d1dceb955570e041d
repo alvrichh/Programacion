@@ -1,0 +1,756 @@
+package controller;
+
+import java.util.Arrays;
+import java.util.Iterator;
+
+import model.Agrupacion;
+import model.AgrupacionOficial;
+import model.Chirigota;
+import model.Comparsa;
+import model.Coro;
+import model.Cuarteto;
+import model.Integrante;
+import model.OrdenAutor;
+import model.OrdenAutorLetra;
+import model.OrdenAutorMusica;
+import model.OrdenIntegranteNombre;
+import model.Romancero;
+
+public class COAC {
+
+	Agrupacion[] agrupacion;
+	AgrupacionOficial[] agrupacionOficial;
+	Integrante[] integrante;
+
+	public COAC() {
+		agrupacion = new Agrupacion[10];
+		agrupacionOficial = new AgrupacionOficial[10];
+		integrante = new Integrante[10];
+		// SOLO DE PRUEBA
+		integrante[0] = new Integrante("Belen", 23, "Coria");
+		integrante[1] = new Integrante("Alejandro", 28, "Coria");
+
+		agrupacion[0] = new Coro(2, 4, 0, "Corito", "Jose", "Pepe", "Manu", "Clasico");
+		agrupacion[1] = new Comparsa("SL PEPE", 0, "Manuel", "pe", "pepe", "ajja", "TIpoCl");
+		agrupacion[2] = new Cuarteto(2, 4, "Corito23", "Jose", "Pepe", "Manu", "Clasico");
+		agrupacion[3] = new Coro(2, 4, 0, "Mantito", "Jose", "Pepe", "Manu", "Clasico");
+		agrupacion[4] = new Romancero();
+		((AgrupacionOficial) agrupacion[0]).setIntegrantes(integrante);
+		integrante[2] = new Integrante("Pablo", 28, "Coria");
+
+	}
+
+	public boolean inscribir_agrupacion(Agrupacion agrupacion) {
+
+		boolean isAdded = false;
+		for (int i = 0; i < this.agrupacion.length; i++) {
+			if (this.agrupacion[i] == null) {
+				this.agrupacion[i] = agrupacion;
+				isAdded = true;
+				break;
+			}
+
+		}
+		return isAdded;
+	}
+
+	public boolean eliminar_agrupacion(Agrupacion agrupacion) {
+		boolean isDeleted = false;
+		for (int i = 0; i < this.agrupacion.length; i++) {
+			if (this.agrupacion[i] != null && this.agrupacion[i].equals(agrupacion)) {
+				this.agrupacion[i] = null;
+				isDeleted = true;
+				break;
+			}
+		}
+		return isDeleted;
+	}
+
+	public boolean eliminar_agrupacion(int pos) {
+		boolean isDeleted = false;
+		if (agrupacion[pos - 1] != null) {
+			agrupacion[pos - 1] = null;
+			isDeleted = true;
+		}
+		return isDeleted;
+	}
+
+	public int tamañoActualAgrupacion() {
+		int counter = 0;
+		for (int i = 0; i < agrupacion.length; i++) {
+			if (agrupacion[i] != null)
+				counter++;
+		}
+		return counter;
+	}
+
+	public int tamañoActualIntegrante() {
+		int counter = 0;
+		for (int i = 0; i < integrante.length; i++) {
+			if (integrante[i] != null)
+				counter++;
+		}
+		return counter;
+	}
+
+	public String listarTodo() {
+		String txt = "\n***Lista De Agrupaciones***\n---------------------------\n";
+		boolean vacio = true;
+		for (int i = 0; i < agrupacion.length; i++) {
+			if (agrupacion[i] != null)
+				vacio = false;
+		}
+		if (!vacio) {
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null) {
+					txt += (i + 1) + ". " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+							+ agrupacion[i].getNombre() + "\n";
+
+				}
+
+			}
+			txt += "\n---------------------------\n";
+		} else {
+			txt += "        LISTA VACIA\n---------------------------";
+		}
+		return txt;
+	}
+
+	public void ordenarAgrupaciones(String item) {
+		item = item.toLowerCase();
+		switch (item) {
+		case "nombre" -> {
+			Arrays.sort(agrupacion, new OrdenAutor());
+		}
+		case "autor" -> {
+		}
+		case "musicaLetra" -> {
+		}
+		}
+	}
+
+	public String listarConcurso() {
+		String txt = "\n***Lista De Agrupaciones***\n---------------------------\n";
+		boolean vacio = true;
+		for (int i = 0; i < agrupacion.length; i++) {
+			if (agrupacion[i] != null)
+				vacio = false;
+		}
+		if (!vacio) {
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null && !(agrupacion[i] instanceof Romancero)) {
+					txt += (i + 1) + ". " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+							+ agrupacion[i].getNombre() + ", Puntos del concurso: "
+							+ ((AgrupacionOficial) agrupacion[i]).getPuntosObtenidos() + "\n";
+
+				}
+
+			}
+			txt += "\n---------------------------\n";
+		} else {
+			txt += "        LISTA VACIA\n---------------------------";
+		}
+		return txt;
+	}
+
+	public String concursoCaminoFalla(int pos) {
+		String txt = "";
+		pos--;
+
+		if (agrupacion[pos] instanceof Coro && agrupacion[pos] != null) {
+			txt += "La agrupación tipo Coro con nombre " + agrupacion[pos].getNombre() + " va camino de la falla";
+		} else {
+			if (agrupacion[pos] instanceof Chirigota) {
+				txt += "La agrupación tipo Chirigota con nombre " + agrupacion[pos].getNombre()
+						+ " va camino de la falla";
+
+			} else {
+				if (agrupacion[pos] instanceof Cuarteto) {
+					txt += "La agrupación tipo Cuarteto con nombre " + agrupacion[pos].getNombre()
+							+ " va camino de la falla";
+
+				} else {
+					if (agrupacion[pos] instanceof Comparsa) {
+						txt += "La agrupación tipo Comparsa con nombre " + agrupacion[pos].getNombre()
+								+ " va camino de la falla";
+
+					}
+				}
+			}
+		}
+		return txt;
+	}
+
+	public boolean asignarPuntos(int pos, int puntos) {
+		boolean isAsigned = false;
+		pos--;
+		if (agrupacion[pos] != null) {
+			((AgrupacionOficial) agrupacion[pos]).setPuntosObtenidos(puntos);
+			isAsigned = true;
+		} else {
+
+		}
+
+		return isAsigned;
+	}
+
+	public String concursoCantaPresentacion(int pos) {
+		String txt = "";
+		pos--;
+
+		if (agrupacion[pos] instanceof Coro && agrupacion[pos] != null) {
+			txt += "La agrupación tipo Coro con nombre " + agrupacion[pos].getNombre() + " canta la presentación";
+		} else {
+			if (agrupacion[pos] instanceof Chirigota) {
+				txt += "La agrupación tipo Chirigota con nombre " + agrupacion[pos].getNombre()
+						+ " canta la presentación";
+
+			} else {
+				if (agrupacion[pos] instanceof Cuarteto) {
+					txt += "La agrupación tipo Cuarteto con nombre " + agrupacion[pos].getNombre()
+							+ " canta la presentación";
+
+				} else {
+					if (agrupacion[pos] instanceof Comparsa) {
+						txt += "La agrupación tipo Comparsa con nombre " + agrupacion[pos].getNombre()
+								+ " canta la presentación";
+
+					}
+				}
+			}
+		}
+		return txt;
+	}
+
+	public String concursoHaceTipo(int pos) {
+		String txt = "";
+		pos--;
+
+		if (agrupacion[pos] instanceof Coro && agrupacion[pos] != null) {
+			txt += "La agrupación tipo Coro con nombre " + agrupacion[pos].getNombre() + " hace el tipo";
+		} else {
+			if (agrupacion[pos] instanceof Chirigota) {
+				txt += "La agrupación tipo Chirigota con nombre " + agrupacion[pos].getNombre() + " hace el tipo";
+
+			} else {
+				if (agrupacion[pos] instanceof Cuarteto) {
+					txt += "La agrupación tipo Cuarteto con nombre " + agrupacion[pos].getNombre() + " hace el tipo";
+
+				} else {
+					if (agrupacion[pos] instanceof Comparsa) {
+						txt += "La agrupación tipo Comparsa con nombre " + agrupacion[pos].getNombre()
+								+ " hace el tipo";
+
+					}
+				}
+			}
+		}
+		return txt;
+	}
+
+	public String listasIndividuales(String item) {
+		String txt = "";
+		switch (item.toLowerCase()) {
+		case "coro" -> {
+			txt = "\n***Lista De Coros***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioCoros = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Coro) {
+						txt += (i + 1) + " " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + "\n";
+						vacioCoros = false;
+					}
+				}
+			}
+			if (vacioCoros)
+				txt += "No hay ningun coro\n";
+
+		}
+		case "comparsa" -> {
+			txt = "\n***Lista De Comparsas***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioComparsa = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Comparsa) {
+						txt += (i + 1) + " " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + "\n";
+						vacioComparsa = false;
+					}
+				}
+			}
+			if (vacioComparsa)
+				txt += "No hay ninguna comparsa\n";
+
+		}
+		case "chirigota" -> {
+			txt = "\n***Lista De Chirigotas***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioChirigota = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Chirigota) {
+						txt += (i + 1) + " " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + "\n";
+						vacioChirigota = false;
+					}
+				}
+			}
+			if (vacioChirigota)
+				txt += "No hay ninguna chirigota\n";
+
+		}
+		case "cuarteto" -> {
+			txt = "\n***Lista De Cuartetos***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioCuarteto = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Cuarteto) {
+						txt += (i + 1) + " " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + "\n";
+						vacioCuarteto = false;
+					}
+				}
+			}
+			if (vacioCuarteto)
+				txt += "No hay ningun cuarteto\n";
+
+		}
+		case "romancero" -> {
+			txt = "\n***Lista De Romancero***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioRomancero = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Romancero) {
+						txt += (i + 1) + " " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + "\n";
+						vacioRomancero = false;
+					}
+				}
+			}
+			if (vacioRomancero)
+				txt += "No hay ningun romancero\n";
+
+		}
+		}
+		return txt;
+	}
+
+	public String listasIndividualesConcurso(String item) {
+		String txt = "";
+		switch (item.toLowerCase()) {
+		case "coro" -> {
+			txt = "\n***Lista De Coros***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioCoros = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Coro) {
+						txt += (i + 1) + ". " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + ", Puntos del concurso: "
+								+ ((AgrupacionOficial) agrupacion[i]).getPuntosObtenidos() + "\n";
+						vacioCoros = false;
+					}
+				}
+			}
+			if (vacioCoros)
+				txt += "No hay ningun coro\n";
+
+		}
+		case "comparsa" -> {
+			txt = "\n***Lista De Comparsas***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioComparsa = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Comparsa) {
+						txt += (i + 1) + ". " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + ", Puntos del concurso: "
+								+ ((AgrupacionOficial) agrupacion[i]).getPuntosObtenidos() + "\n";
+						vacioComparsa = false;
+					}
+				}
+			}
+			if (vacioComparsa)
+				txt += "No hay ninguna comparsa\n";
+
+		}
+		case "chirigota" -> {
+			txt = "\n***Lista De Chirigotas***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioChirigota = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Chirigota) {
+						txt += (i + 1) + ". " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + ", Puntos del concurso: "
+								+ ((AgrupacionOficial) agrupacion[i]).getPuntosObtenidos() + "\n";
+						vacioChirigota = false;
+					}
+				}
+			}
+			if (vacioChirigota)
+				txt += "No hay ninguna chirigota\n";
+
+		}
+		case "cuarteto" -> {
+			txt = "\n***Lista De Cuartetos***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioCuarteto = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Cuarteto) {
+						txt += (i + 1) + ". " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + ", Puntos del concurso: "
+								+ ((AgrupacionOficial) agrupacion[i]).getPuntosObtenidos() + "\n";
+						vacioCuarteto = false;
+					}
+				}
+			}
+			if (vacioCuarteto)
+				txt += "No hay ningun cuarteto\n";
+
+		}
+		case "romancero" -> {
+			txt = "\n***Lista De Romancero***\n---------------------------\n";
+			boolean vacio = true;
+			boolean vacioRomancero = true;
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					vacio = false;
+			}
+			if (!vacio) {
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] instanceof Romancero) {
+						txt += (i + 1) + ". " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+								+ agrupacion[i].getNombre() + ", Puntos del concurso: "
+								+ ((AgrupacionOficial) agrupacion[i]).getPuntosObtenidos() + "\n";
+						vacioRomancero = false;
+					}
+				}
+			}
+			if (vacioRomancero)
+				txt += "No hay ningun romancero\n";
+
+		}
+		}
+		return txt;
+	}
+
+	public void ordenarConcurso(String tipo) {
+		switch (tipo.toLowerCase()) {
+		case "puntos" -> {
+			// TODO
+		}
+		case "nombre" -> {
+		}
+		case "autor" -> {
+		}
+		case "autorMusicaLetra" -> {
+		}
+		}
+	}
+
+	public int numeroIntegrantes() {
+		int cont = 0;
+		for (int i = 0; i < integrante.length; i++) {
+			if (integrante[i] != null)
+				cont++;
+		}
+		return cont;
+	}
+
+	public int numeroDeAgrupaciones() {
+		int cont = 0;
+		for (int i = 0; i < agrupacion.length; i++) {
+			if (agrupacion[i] != null)
+				cont++;
+		}
+		return cont;
+	}
+
+	public int numeroDeAgrupacionesConcurso() {
+		int cont = 0;
+		for (int i = 0; i < agrupacion.length; i++) {
+			if (agrupacion[i] != null && !(agrupacion[i] instanceof Romancero))
+				cont++;
+		}
+		return cont;
+	}
+
+	public Agrupacion[] getAgrupacion() {
+		return agrupacion;
+	}
+
+	public void setAgrupacion(Agrupacion[] agrupacion) {
+		this.agrupacion = agrupacion;
+	}
+
+	public boolean añadirParticipante(String nombre, int edad, String localidad) {
+		boolean isAdded = false;
+		for (int i = 0; i < integrante.length; i++) {
+			if (integrante[i] == null && edad > 17) {
+				integrante[i] = new Integrante(nombre, edad, localidad);
+				isAdded = true;
+				break;
+
+			}
+		}
+		return isAdded;
+	}
+
+	public boolean borrarParticipante(int pos) {
+		boolean isDeleted = false;
+		boolean vacio = true;
+		for (int i = 0; i < integrante.length; i++) {
+			if (integrante[i] != null)
+				vacio = false;
+		}
+		if (!vacio) {
+			if (integrante[pos - 1] != null) {
+				integrante[pos - 1] = null;
+				isDeleted = true;
+			}
+		}
+
+		return isDeleted;
+	}
+
+	public boolean editarParticipante(int pos, String nombre, int edad, String localidad) {
+		boolean isDone = false;
+		boolean vacio = true;
+		for (int i = 0; i < integrante.length; i++) {
+			if (integrante[i] != null)
+				vacio = false;
+		}
+		if (!vacio) {
+			if (integrante[pos - 1] != null) {
+				if (nombre.length() > 0)
+					integrante[pos - 1].setNombre(nombre);
+				if (edad > 17)
+					integrante[pos - 1].setEdad(edad);
+				if (localidad.length() > 0)
+					integrante[pos - 1].setLocalidad(localidad);
+
+				isDone = true;
+
+			}
+		}
+		return isDone;
+	}
+
+	public String getTipoClase(Agrupacion a) {
+		return a.getClass().getSimpleName();
+	}
+
+	public boolean editarAgrupacion(int pos, String nombre, String autor, String autorMusica, String autorLetra,
+			String tipo, int puntosObtenidos, int numeroBandurrias, int numeroGuitarras, String empresaAtrezzo,
+			int numeroCupies, int numeroMiembros, String tematica) {
+		boolean isDone = false;
+		pos--;
+
+		if (agrupacion[pos] != null) {
+			agrupacion[pos].setNombre(nombre);
+			agrupacion[pos].setAutor(autor);
+			agrupacion[pos].setAutorMusica(autorMusica);
+			agrupacion[pos].setAutorLetra(autorLetra);
+			agrupacion[pos].setTipo(tipo);
+			if (agrupacion[pos] instanceof Coro) {
+				((Coro) agrupacion[pos]).setNumeroBandurrias(numeroBandurrias);
+				((Coro) agrupacion[pos]).setNumeroGuitarras(numeroGuitarras);
+			}
+			if (agrupacion[pos] instanceof Comparsa) {
+				((Comparsa) agrupacion[pos]).setEmpresaAtrezzo(empresaAtrezzo);
+			}
+			if (agrupacion[pos] instanceof Chirigota) {
+				((Chirigota) agrupacion[pos]).setNumeroCupies(numeroCupies);
+			}
+			if (agrupacion[pos] instanceof Cuarteto) {
+				((Cuarteto) agrupacion[pos]).setNumeroMiembros(numeroMiembros);
+			}
+			if (agrupacion[pos] instanceof Romancero) {
+				((Romancero) agrupacion[pos]).setTematica(tematica);
+			}
+			isDone = true;
+		}
+
+		return isDone;
+	}
+
+	public String getDatosParticipante(int pos) {
+		String txt = "";
+		if (integrante[pos - 1] != null) {
+			txt += integrante[pos - 1].getNombre() + "," + integrante[pos - 1].getEdad() + ","
+					+ integrante[pos - 1].getLocalidad();
+		}
+		return txt;
+	}
+
+	public String listarParticipante() {
+		String txt = "\n***Lista De Participantes***\n---------------------------\n";
+		boolean vacio = true;
+		for (int i = 0; i < integrante.length; i++) {
+			if (integrante[i] != null)
+				vacio = false;
+		}
+		if (!vacio) {
+			for (int i = 0; i < integrante.length; i++) {
+				if (integrante[i] != null) {
+					txt += (i + 1) + ". Nombre: " + integrante[i].getNombre() + ", Edad: " + integrante[i].getEdad()
+							+ ", Localidad: " + integrante[i].getLocalidad() + ".\n";
+
+				}
+
+			}
+			txt += "\n---------------------------";
+		} else {
+			txt += "        LISTA VACIA";
+		}
+		return txt;
+	}
+
+	public String agrupacionesDeParticipante(int pos) {
+		pos--;
+		String txt = "\n**************************************************\nLISTA DE AGRUPACIONES DEL PARTICIPANTE "
+				+ integrante[pos].getNombre().toUpperCase() + "\n**************************************************\n";
+		boolean pertenece = false;
+
+		// TODO PRUEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+//		for (int i = 0; i < agrupacion.length; i++) {
+//			if ((!(agrupacion[i] instanceof Romancero)) && agrupacion[i] != null)
+//				for (int j = 0; j < ((AgrupacionOficial) agrupacion[i]).getIntegrantes().length; j++) {
+//					if (agrupacion[i] != null && ((AgrupacionOficial) agrupacion[i]).getIntegrantes()[j] != null
+//							&& (!(agrupacion[i] instanceof Romancero)) && agrupacion[i] != null) {
+//						if (((AgrupacionOficial) agrupacion[i]).getIntegrantes()[j].getNombre()
+//								.equals(integrante[pos].getNombre())) {
+//							System.out.println(agrupacion[i]);
+//						}
+//					}
+//				}
+//		}
+
+		// TODO PRUEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA FIIIIIIIIIIIIIN
+
+		for (int i = 0; i < agrupacion.length; i++) {
+			if (!(agrupacion[i] instanceof Romancero) && agrupacion[i] != null) {
+				for (int j = 0; j < ((AgrupacionOficial) agrupacion[i]).getIntegrantes().length; j++) {
+					if (((AgrupacionOficial) agrupacion[i]).getIntegrantes()[j] != null
+							&& ((AgrupacionOficial) agrupacion[i]).getIntegrantes()[j].getNombre()
+									.equals(agrupacion[i].getNombre())) {
+						pertenece = true;
+
+					}
+				}
+			}
+
+		}
+		if (pertenece) {
+			txt += integrante[pos].getNombre() + " pertenece a : \n";
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (!(agrupacion[i] instanceof Romancero) && agrupacion[i] != null) {
+					for (int j = 0; j < ((AgrupacionOficial) agrupacion[i]).getIntegrantes().length; j++) {
+						if (((AgrupacionOficial) agrupacion[i]).getIntegrantes()[j] != null
+								&& ((AgrupacionOficial) agrupacion[i]).getIntegrantes()[j].equals(integrante[pos])) {
+							txt += (i + 1) + " " + agrupacion[i].getClass().getSimpleName() + ": Nombre: "
+									+ agrupacion[i].getNombre() + "\n";
+						}
+					}
+				}
+			}
+
+		} else {
+			txt += "No pertenece a ninguna agrupacion";
+		}
+
+		return txt;
+	}
+
+	public boolean addIntegrante() {
+		boolean isAdded = false;
+//		Integrante integranteTemporal;
+//		pos--;
+//		if (!(agrupacion[pos] instanceof Romancero)) {
+//			for (int i = integrante.length - 1; i >= 0; i--) {
+//				if (integrante[i] != null) {
+//					integranteTemporal = integrante[i];
+//					break;
+//				}
+//			}
+		for (int i = agrupacion.length - 1; i >= 0; i--) {
+			if (agrupacion[i] != null && (!(agrupacion[i] instanceof Romancero))) {
+				for (int j = 0; j < ((AgrupacionOficial) agrupacion[i]).getIntegrantes().length; j++) {
+					if (((AgrupacionOficial) agrupacion[i]).getIntegrantes() != null
+							&& ((AgrupacionOficial) agrupacion[i]).getIntegrantes()[j] == null) {
+						((AgrupacionOficial) agrupacion[i]).setIntegrantes(integrante);
+						isAdded = true;
+						break;
+					}
+				}
+			}
+		}
+//	}
+		return isAdded;
+	}
+
+	public AgrupacionOficial[] getAgrupacionOficial() {
+		return agrupacionOficial;
+	}
+
+	public void setAgrupacionOficial(AgrupacionOficial[] agrupacionOficial) {
+		this.agrupacionOficial = agrupacionOficial;
+	}
+
+	public Integrante[] getIntegrante() {
+		return integrante;
+	}
+
+	public void setIntegrante(Integrante[] integrante) {
+		this.integrante = integrante;
+	}
+
+	// TODO
+	public void ordenarParticipantesPorNombre() {
+		Arrays.sort(integrante, new OrdenIntegranteNombre());
+	}
+
+}

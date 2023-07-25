@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "precio": 15000,
+    "componente": [
+      {
+        "tipo": "BAÑOS",
+        "descripcion": "2"
+      },
+      {
+        "tipo": "DORMITORIOS",
+        "descripcion": "3"
+      },
+      {
+        "tipo": "PATIOS",
+        "descripcion": "1"
+      },
+      {
+        "tipo": "OTRO",
+        "descripcion": "Garaje"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "precio": 12000,
+    "componente": [
+      {
+        "tipo": "BAÑOS",
+        "descripcion": "1"
+      },
+      {
+        "tipo": "DORMITORIOS",
+        "descripcion": "2"
+      },
+      {
+        "tipo": "PATIOS",
+        "descripcion": "2"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "precio": 11000,
+    "componente": [
+      {
+        "tipo": "BAÑOS",
+        "descripcion": "1"
+      },
+      {
+        "tipo": "DORMITORIOS",
+        "descripcion": "4"
+      },
+      {
+        "tipo": "PATIOS",
+        "descripcion": "1"
+      },
+      {
+        "tipo": "OTRO",
+        "descripcion": "Piscina"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "precio": 95025,
+    "componente": [
+      {
+        "tipo": "BAÑOS",
+        "descripcion": "1"
+      },
+      {
+        "tipo": "DORMITORIOS",
+        "descripcion": "1"
+      },
+      {
+        "tipo": "OTRO",
+        "descripcion": "WiFi"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "precio": 11500,
+    "componente": [
+      {
+        "tipo": "BAÑOS",
+        "descripcion": "2"
+      },
+      {
+        "tipo": "DORMITORIOS",
+        "descripcion": "2"
+      },
+      {
+        "tipo": "PATIOS",
+        "descripcion": "2"
+      }
+    ]
+  }
+]

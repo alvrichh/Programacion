@@ -1,0 +1,70 @@
+package model;
+
+public abstract class Material {
+	
+	private String nombre;
+	private int masa;
+	private int capacidadQuemarse;//entre 0 y 100
+	private int capacidadDiluirse; //entre 0 y 1000
+	private boolean movible;
+	
+	
+    public abstract Material mezclarConMaterial(Material material);
+
+    public Material(String nombre, int masa, int capacidadQuemarse, int capacidadDiluirse, boolean movible) {
+        this.nombre = nombre;
+        this.masa = masa;
+        this.capacidadQuemarse = capacidadQuemarse;
+        this.capacidadDiluirse = capacidadDiluirse;
+        this.movible = movible;
+    }
+
+	//Getters & Setters
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public int getMasa() {
+		return masa;
+	}
+	public void setMasa(int masa) {
+		this.masa = masa;
+	}
+	public int getCapacidadQuemarse() {
+		return capacidadQuemarse;
+	}
+	public void setCapacidadQuemarse(int capacidadQuemarse) {
+		if(capacidadQuemarse < 0 || capacidadQuemarse >100) {
+			capacidadQuemarse = 0;
+			System.out.println("Fuera de rango");
+		}
+		this.capacidadQuemarse = capacidadQuemarse;
+
+		
+	}
+	public int getDiluirse() {
+		return capacidadDiluirse;
+	}
+	public void setDiluirse(int capacidadDiluirse) {
+		if(capacidadDiluirse < 0 || capacidadDiluirse > 1000) {
+			capacidadDiluirse = 0;
+			System.out.println("Fuera de rango");
+		}
+		this.capacidadDiluirse = capacidadDiluirse;
+	}
+	public boolean isMovible() {
+		return movible;
+	}
+	public void setMovible(boolean movible) {
+		this.movible = movible;
+	}
+	@Override
+	public String toString() {
+		return "Material [getNombre()=" + getNombre() + ", getMasa()=" + getMasa() + ", getCapacidadQuemarse()="
+				+ getCapacidadQuemarse() + ", getDiluirse()=" + getDiluirse() + ", isMovible()=" + isMovible()
+				+ "]";
+	}
+		
+}

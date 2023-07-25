@@ -1,0 +1,122 @@
+package unico;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class AlvaroRodriguez extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField Nombre;
+	private JTextField Local;
+	private JTextField Cod;
+	private JButton btnInsertarDatos;
+	private JButton btnLimpiarDatos;
+	private JPanel panel;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AlvaroRodriguez frame = new AlvaroRodriguez();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public AlvaroRodriguez() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		panel = new JPanel();
+		panel.setBounds(60, 10, 314, 147);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel id_departamento = new JLabel("DATOS DE DEPARTAMENTO");
+		id_departamento.setBounds(81, 10, 166, 16);
+		panel.add(id_departamento);
+		
+		JLabel lblNewLabel_1 = new JLabel("C\u00F3digo Departamento:");
+		lblNewLabel_1.setBounds(10, 50, 138, 16);
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Nombre Departamento:");
+		lblNewLabel_1_1.setBounds(10, 76, 138, 16);
+		panel.add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("Localidad Departamento:");
+		lblNewLabel_1_1_1.setBounds(10, 102, 148, 16);
+		panel.add(lblNewLabel_1_1_1);
+		
+		Nombre = new JTextField();
+		Nombre.setBounds(158, 74, 146, 20);
+		panel.add(Nombre);
+		Nombre.setColumns(10);
+		
+		Local = new JTextField();
+		Local.setColumns(10);
+		Local.setBounds(158, 100, 146, 20);
+		panel.add(Local);
+		
+		Cod = new JTextField();
+		Cod.setBackground(new Color(128, 128, 128));
+		Cod.setForeground(new Color(0, 0, 0));
+		Cod.setColumns(10);
+		Cod.setBounds(158, 48, 53, 20);
+		panel.add(Cod);
+		
+		btnInsertarDatos = new JButton("Insertar Datos");
+		btnInsertarDatos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("SE HA PULSADO EL BOTÓN INSERTAR");
+			}
+		});
+		btnInsertarDatos.setBounds(86, 167, 114, 26);
+		contentPane.add(btnInsertarDatos);
+		
+		btnLimpiarDatos = new JButton("Limpiar Datos");
+		btnLimpiarDatos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("SE HA PULSADO EL BOTÓN LIMPIAR");
+
+			}
+		});
+		btnLimpiarDatos.setBounds(229, 167, 114, 26);
+		contentPane.add(btnLimpiarDatos);
+		//INSERTAR
+		System.out.println("Cod Tecleado: " + Cod.getText());
+		System.out.println("Cod Tecleado: " + Nombre.getText());
+		System.out.println("Cod Tecleado: " + Local.getText());
+		//LIMPIAR
+		Cod.setText("");
+		Nombre.setText("");
+		Local.setText("");
+
+
+
+	}
+	
+}

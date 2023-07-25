@@ -1,0 +1,5 @@
+DBTYPE:sqlite
+DBNAME:sampledatabase.db
+DBHOST:localhost
+DBUSER:Pepe
+DBPASS:123

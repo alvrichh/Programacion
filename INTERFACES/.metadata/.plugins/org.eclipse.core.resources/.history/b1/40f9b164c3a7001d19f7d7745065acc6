@@ -1,0 +1,55 @@
+package model;
+
+public class Cuarteto extends AgrupacionOficial implements Callejera {
+
+	private int numeroMiembros;
+	private int puntosObtenidos;
+
+	public Cuarteto() {
+		this(0,0,"","","","","");
+	}
+
+	public Cuarteto(int numeroMiembros, int puntosObtenidos, String nombre, String autor, String autorMusica,
+			String autorLetra, String tipo) {
+		super(nombre, autor, autorMusica, autorLetra, tipo);
+		this.numeroMiembros = numeroMiembros;
+		this.puntosObtenidos = puntosObtenidos;
+	}
+
+	public int getNumeroMiembros() {
+		return numeroMiembros;
+	}
+
+	public void setNumeroMiembros(int numeroMiembros) {
+		this.numeroMiembros = numeroMiembros;
+	}
+
+	public int getPuntosObtenidos() {
+		return puntosObtenidos;
+	}
+
+	public void setPuntosObtenidos(int puntosObtenidos) {
+		this.puntosObtenidos = puntosObtenidos;
+	}
+
+	@Override
+	public String cantarPresentacion() {
+		return "Cantando la presentación del Cuarteto de nombre " + getNombre();
+	}
+
+	@Override
+	public String hacerTipo() {
+		return "El Cuarteto " + getNombre() + " va de " + getTipo();
+	}
+
+	@Override
+	public String caminitoFalla() {
+		return "El Cuarteto " + getNombre() + " va caminito del Falla";
+	}
+
+	@Override
+	public String amoAescucha() {
+		return "Amo a escuchá el Cuarteto " + getNombre();
+	}
+
+}

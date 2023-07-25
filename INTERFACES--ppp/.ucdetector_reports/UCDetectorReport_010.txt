@@ -1,0 +1,3 @@
+Created with UCDetector 2.0.0	2023-02-11 01:35:52	http://www.ucdetector.org/	Created by class: org.ucdetector.report.TextReport	
+Location	Description	Java	Marker	Author
+controller.COAC.integrante(COAC.java:23)	Change visibility of Field "COAC.integrante" to private	COAC.integrante	org.ucdetector.analyzeMarkerVisibilityPrivate	

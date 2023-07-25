@@ -1,0 +1,13 @@
+package model;
+
+	public abstract class Herramienta extends Material {
+
+	    public Herramienta(String nombre, int masa, int capacidadQuemarse, int capacidadDiluirse) {
+	        super(nombre, masa, capacidadQuemarse, capacidadDiluirse, true);
+	    }
+
+	    public abstract void hacer(Material material);
+
+	    public abstract void deshacer(Material material);
+	}
+

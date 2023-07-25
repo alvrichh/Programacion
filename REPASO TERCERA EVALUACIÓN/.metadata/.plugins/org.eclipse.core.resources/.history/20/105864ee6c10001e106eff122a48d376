@@ -1,0 +1,34 @@
+package controller;
+
+import java.text.ParseException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+public class AlumnosDOM {
+	
+	private Document docXML;
+	
+	public AlumnosDOM(String fileName) throws Exception {
+		readXML(fileName);
+	}
+	private void readXML(String fileName) throws Exception{
+		try {
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			
+			docXML = db.parse(fileName);
+			docXML.getDocumentElement().normalize();
+			
+		}
+		catch (ParserConfigurationException pce) { System.err.println("ERROR GENERAL " + pce.getMessage());}
+		catch (SAXException sax) { System.err.println("ERROR GENERAL " + sax.getMessage());}
+		catch (Exception e) { System.err.println("ERROR GENERAL " + e.getMessage());}
+		catch (Exception e) { System.err.println("ERROR GENERAL " + e.getMessage());}
+		
+	}
+}

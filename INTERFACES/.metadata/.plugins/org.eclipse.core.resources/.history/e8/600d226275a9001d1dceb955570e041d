@@ -1,0 +1,13 @@
+package view;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		int[] nums = {4,5,2,5};
+		
+		for (int i : nums) {
+			System.out.println(i);
+		}
+	}
+
+}

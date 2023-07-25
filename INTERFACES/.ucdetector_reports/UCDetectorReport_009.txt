@@ -1,0 +1,9 @@
+Created with UCDetector 2.0.0	2023-02-11 01:29:43	http://www.ucdetector.org/	Created by class: org.ucdetector.report.TextReport	
+Location	Description	Java	Marker	Author
+model.Agrupacion.Agrupacion(Agrupacion.java:15)	Change visibility of Constructor "Agrupacion.Agrupacion(String,String,String,String,String)" to default	Agrupacion.Agrupacion(String,String,String,String,String)	org.ucdetector.analyzeMarkerVisibilityDefault	
+model.AgrupacionOficial.AgrupacionOficial(AgrupacionOficial.java:14)	Change visibility of Constructor "AgrupacionOficial.AgrupacionOficial(int,String,String,String,String,*)" to default	AgrupacionOficial.AgrupacionOficial(int,String,String,String,String,*)	org.ucdetector.analyzeMarkerVisibilityDefault	
+model.AgrupacionOficial.insertarIntegrante(AgrupacionOficial.java:21)	Method "AgrupacionOficial.insertarIntegrante(Integrante)" has 0 references	AgrupacionOficial.insertarIntegrante(Integrante)	org.ucdetector.analyzeMarkerReference	
+model.AgrupacionOficial.eliminarIntegrante(AgrupacionOficial.java:42)	Method "AgrupacionOficial.eliminarIntegrante(Integrante)" has 0 references	AgrupacionOficial.eliminarIntegrante(Integrante)	org.ucdetector.analyzeMarkerReference	
+model.AgrupacionOficial.setIntegrantes(AgrupacionOficial.java:63)	Method "AgrupacionOficial.setIntegrantes(int,Integrante)" has 0 references	AgrupacionOficial.setIntegrantes(int,Integrante)	org.ucdetector.analyzeMarkerReference	
+model.Callejera.<init>(Callejera.java:3)	Change visibility of Interface "Callejera" to default - May cause compile errors!	Callejera	org.ucdetector.analyzeMarkerVisibilityDefault	
+model.OrdenAutorLetra.<init>(OrdenAutorLetra.java:5)	Class "OrdenAutorLetra" has 0 references	OrdenAutorLetra	org.ucdetector.analyzeMarkerReference	

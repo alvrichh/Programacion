@@ -1,0 +1,32 @@
+package unico;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		List<String> palabras = new ArrayList<String>();
+		List<String> palabrasSinRepetir = new ArrayList<String>();
+		List<String> palabrasRepetidas = new ArrayList<String>();
+		
+		String cadena = "Hola qué tal Hola tú bien qué haces tú";
+		
+		StringTokenizer st = new StringTokenizer(cadena, " ");
+		
+		while(st.hasMoreTokens()) {
+			palabras.add(st.nextToken());
+		}
+		
+		for (String p : palabras) {
+			if(!palabrasSinRepetir.contains(p)) {
+				palabrasSinRepetir.add(p);
+			}
+		}
+		System.out.println(palabras);
+		
+		
+	}
+}

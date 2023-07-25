@@ -1,0 +1,119 @@
+package controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
+import model.*;
+public class AlumnosDOM {
+	
+	private Document docXML;
+	
+	public AlumnosDOM(String fileName) throws Exception {
+		readXML(fileName);
+		writeXML(fileName);
+	}
+	/*
+	 * LEER EL DOCUMENTO
+	 */
+
+	private void readXML(String fileName) throws Exception {
+	
+		try {
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			
+			docXML = db.parse(fileName);
+			docXML.getDocumentElement().normalize();
+			
+		} catch (Exception e) { System.err.println("Error" + e.getMessage());
+		}
+		
+	}
+	private void writeXML(String fileName) throws Exception{
+		try {
+			Transformer t = TransformerFactory.newInstance().newTransformer();
+			t.setOutputProperty(OutputKeys.METHOD, "xml");
+			t.setOutputProperty(OutputKeys.ENCODING, "utf-8");
+			t.transform(new DOMSource(docXML),new StreamResult(fileName));
+		} 
+		catch (TransformerFactoryConfigurationError e) { System.err.println("Error general al escribir " + e.getMessage());}
+		catch (TransformerConfigurationException e) { System.err.println("Error general al escribir " + e.getMessage());}
+		catch (TransformerException e) { System.err.println("Error general al escribir " + e.getMessage());}
+		catch (Exception e) { System.err.println("Error general al escribir " + e.getMessage());}
+	}
+	public void addAlumno(Alumno alumno) throws Exception{
+		//Creamos elemento nombre
+		Node nNombre_tag= docXML.createElement("nombre");
+		Node nNombre_value =docXML.createTextNode(alumno.getNombre());
+		nNombre_tag.appendChild(nNombre_value);
+		
+		//Creamos elemento apellido
+		Node nApellido_tag = docXML.createElement("apellido");
+		Node nApellido_value = docXML.createTextNode(alumno.getApellido());
+		nApellido_tag.appendChild(nApellido_value);
+		
+		//creamos el elemento direccion
+		Node nDireccion_tag = docXML.createElement("direccion");
+		Node nDireccion_value = docXML.createTextNode(alumno.getDireccion());
+		nDireccion_tag.appendChild(nDireccion_value);
+		
+		//El elemento alumno será el nodo raiz
+		Node nAlumno_tag = docXML.createElement("alumno");
+		
+		//se le añade el atributo dni
+		((Element) nAlumno_tag).setAttribute("dni", alumno.getDni());
+		
+		
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

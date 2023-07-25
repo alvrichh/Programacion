@@ -1,0 +1,16 @@
+package model;
+
+@SuppressWarnings("serial")
+public class RazaNoIndicadaException extends Exception {
+
+	private String raza;
+	
+	public RazaNoIndicadaException(String raza) {
+		this.raza = raza;
+	}
+	
+	@Override
+	public String getMessage() {
+		message = "Debe indicar una raza";
+	}
+}

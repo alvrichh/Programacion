@@ -1,0 +1,8 @@
+package controller;
+
+import java.util.ArrayList;
+
+public class JSONArray {
+
+	List<Vivienda> viviendas = new ArrayList<Vivienda>();
+}

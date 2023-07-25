@@ -1,0 +1,66 @@
+package controller;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+
+import model.Perro;
+
+public class GestionConcursoStreams extends Concurso implements IConcurso {
+
+	public GestionConcursoStreams() {
+		this("", "");
+	}
+
+	public GestionConcursoStreams(String nombre, String localidad) {
+		super(nombre, localidad);
+	}
+
+	/**
+	 * En esta expresión Stream, estamos utilizando el método computeIfAbsent() de la clase Map
+	 * para obtener un TreeSet de perros para la raza especificada.
+	 * Si el TreeSet no existe, lo creamos utilizando una expresión lambda.
+	 * Luego, llamamos al método add() en el TreeSet para agregar el perro y devolver el resultado de esa operación.
+	 * Si la raza del perro no coincide con la raza especificada, entonces el método devuelve false.
+	 */
+	@Override
+	public boolean addDog(String raza, Perro perro) {
+	    return raza.equals(perro.getRaza())
+	    		&& super.getPerros()
+	    			.computeIfAbsent(raza, k -> new TreeSet<>())
+	    			.add(perro);
+	}
+
+	@Override
+	public boolean disqualifyDog(Perro perro) {
+		return super.getPerros().get(perro.getRaza()).remove(perro);
+	}
+
+	@Override
+	public List<Perro> ownerDogs(Long socio) {
+	    return super.getPerros().values()
+	            .stream()
+	            .flatMap(Collection::stream)
+	            .filter(p -> p.getPropietario().getSocio().equals(socio))
+	            .collect(Collectors.toList());
+	}
+
+
+	@Override
+	public List<Perro> perrosPorPeso(String raza) {
+	    return super.getPerros().get(raza)
+	            .stream()
+	            .sorted(new CompPerroPorPeso().reversed())
+	            .collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Perro> perrosPorEdad(String raza) {
+		return super.getPerros().get(raza)
+	            .stream()
+	            .sorted(new CompPerroPorEdad().reversed())
+	            .collect(Collectors.toList());
+	}
+
+}

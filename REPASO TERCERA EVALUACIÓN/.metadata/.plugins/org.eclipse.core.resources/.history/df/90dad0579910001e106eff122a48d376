@@ -1,0 +1,10 @@
+package model;
+
+@SuppressWarnings("serial")
+public class EjesException extends Exception {
+
+	public EjesException() {
+		
+	}
+	
+}

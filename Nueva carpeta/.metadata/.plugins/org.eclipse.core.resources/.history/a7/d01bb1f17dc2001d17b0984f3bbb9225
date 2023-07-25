@@ -1,0 +1,14 @@
+package exam;
+
+public class Persona {
+
+	
+	public List<Persona> obtenerPersonasOrdenadas() {
+		   List<Persona> aux = new ArrayList<Persona>();
+		   for (Empleado e : getEmpleados().keySet()) {
+		      aux.addAll(getEmpleados().get(e));
+		   }
+		   Collections.sort(aux);
+		   return aux;
+		}
+}

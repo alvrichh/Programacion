@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="controller.ParseJSON"/>
+    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="model.Casa"/>
+    <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
+    <fullyQualifiedTypeName name="javax.swing.text.Document"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.Transformer"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.OutputKeys"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.dom.DOMSource"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.stream.StreamResult"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.TransformerFactory"/>
+    <fullyQualifiedTypeName name="model.Tipo"/>
+    <fullyQualifiedTypeName name="model.Componente"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

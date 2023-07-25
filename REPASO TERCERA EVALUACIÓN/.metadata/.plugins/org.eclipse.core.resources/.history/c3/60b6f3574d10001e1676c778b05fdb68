@@ -1,0 +1,17 @@
+package view;
+
+import java.io.FileWriter;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		
+		
+		FileWriter archivo = new FileWriter("alumnos.xml");
+		
+		archivo.write(null);
+		
+		archivo.close();
+	}
+}

@@ -1,0 +1,19 @@
+Created with UCDetector 2.0.0	2023-02-11 01:23:37	http://www.ucdetector.org/	Created by class: org.ucdetector.report.TextReport	
+Location	Description	Java	Marker	Author
+view.Menu.<init>(Menu.java:13)	Change visibility of Class "Menu" to default - May cause compile errors!	Menu	org.ucdetector.analyzeMarkerVisibilityDefault	
+view.Menu.gestionPrograma(Menu.java:26)	Change visibility of Method "Menu.gestionPrograma()" to default	Menu.gestionPrograma()	org.ucdetector.analyzeMarkerVisibilityDefault	
+view.Menu.opcIntegrantes(Menu.java:175)	Change visibility of Method "Menu.opcIntegrantes()" to private	Menu.opcIntegrantes()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.opcAñadirAgrupacion(Menu.java:376)	Change visibility of Method "Menu.opcAñadirAgrupacion()" to private	Menu.opcAñadirAgrupacion()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.opcEditarAgrupacion(Menu.java:617)	Change visibility of Method "Menu.opcEditarAgrupacion()" to private	Menu.opcEditarAgrupacion()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.opcConcurso(Menu.java:733)	Change visibility of Method "Menu.opcConcurso()" to private	Menu.opcConcurso()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.mostrarMenuAñadirAgrupacion(Menu.java:993)	Change visibility of Method "Menu.mostrarMenuAñadirAgrupacion()" to private	Menu.mostrarMenuAñadirAgrupacion()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.mostrarMenuPrincipal(Menu.java:1005)	Change visibility of Method "Menu.mostrarMenuPrincipal()" to private	Menu.mostrarMenuPrincipal()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.mostrarMenuIntegrantes(Menu.java:1030)	Change visibility of Method "Menu.mostrarMenuIntegrantes()" to private	Menu.mostrarMenuIntegrantes()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.mostrarMenuConcurso(Menu.java:1043)	Change visibility of Method "Menu.mostrarMenuConcurso()" to private	Menu.mostrarMenuConcurso()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.finDelPrograma(Menu.java:1066)	Change visibility of Method "Menu.finDelPrograma()" to private	Menu.finDelPrograma()	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.INTDEFECTO(Menu.java:15)	Change visibility of Constant "Menu.INTDEFECTO" to private	Menu.INTDEFECTO	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.STRINGDEFECTO(Menu.java:16)	Change visibility of Constant "Menu.STRINGDEFECTO" to private	Menu.STRINGDEFECTO	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.MSGSTRINGDEFECTO(Menu.java:17)	Change visibility of Constant "Menu.MSGSTRINGDEFECTO" to private	Menu.MSGSTRINGDEFECTO	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.MSGINTDEFECTO(Menu.java:19)	Change visibility of Constant "Menu.MSGINTDEFECTO" to private	Menu.MSGINTDEFECTO	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.entrada(Menu.java:22)	Change visibility of Field "Menu.entrada" to private	Menu.entrada	org.ucdetector.analyzeMarkerVisibilityPrivate	
+view.Menu.coac(Menu.java:23)	Change visibility of Field "Menu.coac" to private	Menu.coac	org.ucdetector.analyzeMarkerVisibilityPrivate	

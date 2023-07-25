@@ -1,0 +1,113 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import model.Casa;
+
+public class ParseDOM {
+	
+	
+
+	public static List<Casa> parse(String fileName) throws Exception{
+		
+		List<Casa> list = new ArrayList<Casa>();
+		try {
+			Document docXML = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(fileName);
+
+		}
+		public static void writeXML(String nomFile, List<Casa> listado) throws Exception {
+
+			// Creación del documento XML
+			Document docXML = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+			
+			Element root = docXML.createElement("casas"); //le añadimos los elementos
+			docXML.appendChild(root); //elemento raiz
+			
+			for (Casa c : listado) {
+				Node Casa = docXML.createElement("casa");
+				Casa.appendChild(docXML.createTextNode(c.Casa()));
+
+				Node nEdad = docXML.createElement("edad");
+				nEdad.appendChild(docXML.createTextNode(p.getEdad().toString()));
+
+				Node nPersona = docXML.createElement("persona");
+				nPersona.appendChild(nNombre);
+				nPersona.appendChild(nEdad);
+				
+				root.appendChild(nPersona);
+			}
+			
+			// Escribir el documento XML en el fichero
+			Transformer	t = TransformerFactory.newInstance().newTransformer();
+			t.setOutputProperty(OutputKeys.METHOD, "xml");
+			t.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+			t.transform(new DOMSource(docXML), new StreamResult(nomFile));
+			
+		}
+		
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ class ParseadorDOMPersonas {
+
+	public static List<Persona> parse(String nomFile) throws Exception {
+
+		List<Persona> listado = new ArrayList<Persona>();
+
+		try {
+
+			Document docXML = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(nomFile);
+
+			NodeList nodeList = docXML.getElementsByTagName("persona");
+
+			for (int i = 0; i < nodeList.getLength(); i++) {
+				Node nNode = nodeList.item(i);
+
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element elemento = (Element) nNode;
+
+					String nombre = elemento.getElementsByTagName("nombre").item(0).getTextContent();
+					Integer edad = Integer.parseInt(elemento.getElementsByTagName("edad").item(0).getTextContent());
+					listado.add(new Persona(nombre, edad));
+
+				}
+
+			}
+		} catch (ParserConfigurationException | SAXException | IOException e) {
+			throw new Exception(e);
+		}
+
+		return listado;
+
+	}
+
+	
+
+}

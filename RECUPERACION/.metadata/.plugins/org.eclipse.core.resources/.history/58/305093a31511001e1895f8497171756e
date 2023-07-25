@@ -1,0 +1,27 @@
+package controller;
+
+import java.io.FileReader;
+
+import org.xml.sax.helpers.DefaultHandler;
+
+public class LeerJSON {
+
+public LeerJSON() {
+	
+	JSONParser parser = new JSONParser();
+
+	try (FileReader reader = new FileReader("datos_viviendas.json")) {
+	    // Parsear el archivo JSON
+	    Object obj = parser.parse(reader);
+
+	    // Obtener el array JSON raíz
+	    JSONArray viviendasArray = (JSONArray) obj;
+
+	    // ...
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
+
+
+}
+}

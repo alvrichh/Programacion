@@ -1,0 +1,15 @@
+package model;
+
+public class PrecioException extends Exception {
+	
+	private Double precio;
+	public PrecioException (Double precio) {
+		String mensaje = "";
+		if(precio < 0) {
+			mensaje = "ERROR en el  precio, el precio no puede ser negativo";
+			super(mensaje);
+		}
+		
+	}
+
+}

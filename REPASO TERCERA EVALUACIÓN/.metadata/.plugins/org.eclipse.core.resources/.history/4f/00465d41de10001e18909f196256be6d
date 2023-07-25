@@ -1,0 +1,8 @@
+package model;
+
+public class ComponenteException extends Exception {
+	public ComponenteException(String mensaje) {
+		super(mensaje);
+	}
+
+}

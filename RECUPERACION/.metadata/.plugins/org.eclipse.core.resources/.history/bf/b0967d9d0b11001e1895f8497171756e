@@ -1,0 +1,13 @@
+package controller;
+
+public class ViviendasDOM {
+	
+	public Document docXML;
+	public ViviendasDOM() {
+		
+	}
+	public readXML() {
+		
+	}
+
+}

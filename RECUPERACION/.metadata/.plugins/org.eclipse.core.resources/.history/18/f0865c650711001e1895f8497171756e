@@ -1,0 +1,17 @@
+package model;
+
+@SuppressWarnings("serial")
+public class MemoriaException extends ComponenteException {
+	
+	public MemoriaException(Integer memoria) {
+		String mensaje;
+		if (memoria < 0 ) {
+			mensaje = "ERROR, la memoria no puede ser negativa";
+			
+		}
+		if (memoria >1000.0) {
+			
+		}
+	}
+}
+

@@ -1,0 +1,23 @@
+package view;
+
+import java.io.FileWriter;
+
+import controller.AlumnosDOM;
+
+public class Principal {
+
+	public static void main(String[] args) {
+	
+		final String FCH_NAME = "alumnos.xml";
+		
+		try {
+
+			AlumnosDOM lectura = new AlumnosDOM(FCH_NAME);
+			System.out.println(lectura);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+}

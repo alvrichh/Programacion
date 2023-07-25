@@ -1,0 +1,10 @@
+package controller;
+
+public class ViviendasJSON {
+	
+	static Gson g = new GsonBuilder().setPrettyPrinting().create();
+
+	public static String printJson(String fileName, List<Vivienda> lista) {
+		return g.toJson(lista);
+}
+}

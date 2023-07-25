@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="start.EstadoBombilla"/>
+    <fullyQualifiedTypeName name="ferroviaria.personal.Maquinista"/>
+    <fullyQualifiedTypeName name="ferroviaria.maquinaria.Tren"/>
+    <fullyQualifiedTypeName name="ferroviaria.maquinaria.Locomotora"/>
+    <fullyQualifiedTypeName name="ferroviaria.maquinaria.Vagon"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="pizzeria.Pizza.tipo"/>
+    <fullyQualifiedTypeName name="pizzeria.Ingrediente"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="model.Persona"/>
+    <fullyQualifiedTypeName name="model.Empleado"/>
+    <fullyQualifiedTypeName name="model.Fijo"/>
+    <fullyQualifiedTypeName name="model.Hora"/>
+    <fullyQualifiedTypeName name="model.Hora12"/>
+    <fullyQualifiedTypeName name="model.Hora12.Meridian"/>
+    <fullyQualifiedTypeName name="unico.Util"/>
+    <fullyQualifiedTypeName name="banco.TipoCC"/>
+    <fullyQualifiedTypeName name="pizzeria.Pedido"/>
+    <fullyQualifiedTypeName name="model.TipoConsumo"/>
+    <fullyQualifiedTypeName name="model.Electrodomestico"/>
+</qualifiedTypeNameHistroy>

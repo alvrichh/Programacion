@@ -1,0 +1,159 @@
+
+x
+java:S6201â"JReplace this instanceof check and cast with 'instanceof Cuarteto cuarteto'(ÅÂŠ…H´±RMINORZ
+CODE_SMELL
+j	java:S106q"9Replace this use of System.out or System.err by a logger.(õ°ıÿÿÿÿHû°RMAJORZ
+CODE_SMELL
+g
+java:S1118":Add a private constructor to hide the implicit public one.(ïÕ€ÚH÷°RMAJORZ
+CODE_SMELL
+k	java:S106Í"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿH‘²RMAJORZ
+CODE_SMELL
+f	java:S106‹"9Replace this use of System.out or System.err by a logger.(·ô»Hı°RMAJORZ
+CODE_SMELL
+e	java:S106W"9Replace this use of System.out or System.err by a logger.(·ô»H”±RMAJORZ
+CODE_SMELL
+f	java:S106…"9Replace this use of System.out or System.err by a logger.(îÕâH•²RMAJORZ
+CODE_SMELL
+k	java:S106Ú"9Replace this use of System.out or System.err by a logger.(¢ìÖÅûÿÿÿÿH„±RMAJORZ
+CODE_SMELL
+k	java:S106¯"9Replace this use of System.out or System.err by a logger.(Û¬ñĞÿÿÿÿÿH²±RMAJORZ
+CODE_SMELL
+k	java:S106´"9Replace this use of System.out or System.err by a logger.(Û¬ñĞÿÿÿÿÿH±RMAJORZ
+CODE_SMELL
+k	java:S106Ä"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHÄ±RMAJORZ
+CODE_SMELL
+f	java:S106§"9Replace this use of System.out or System.err by a logger.(íŞÈîHÿ°RMAJORZ
+CODE_SMELL
+f	java:S106ò"9Replace this use of System.out or System.err by a logger.(¥×›÷H¿±RMAJORZ
+CODE_SMELL
+x
+java:S6201Ğ"JReplace this instanceof check and cast with 'instanceof Comparsa comparsa'(¢–¯´H‚±RMINORZ
+CODE_SMELL
+k	java:S106¾"9Replace this use of System.out or System.err by a logger.(€şñúÿÿÿÿÿHÃ±RMAJORZ
+CODE_SMELL
+k	java:S106Ñ"9Replace this use of System.out or System.err by a logger.(Şãš»şÿÿÿÿH±RMAJORZ
+CODE_SMELL
+f	java:S106¹"9Replace this use of System.out or System.err by a logger.(ûÉïÈHŒ±RMAJORZ
+CODE_SMELL
+z
+java:S6201×"LReplace this instanceof check and cast with 'instanceof Chirigota chirigota'(®›ŒéH“²RMINORZ
+CODE_SMELL
+k	java:S106ß"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHˆ±RMAJORZ
+CODE_SMELL
+e	java:S106Ğ"9Replace this use of System.out or System.err by a logger.(©í½NH²RMAJORZ
+CODE_SMELL
+k	java:S106é"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿH¶±RMAJORZ
+CODE_SMELL
+k	java:S106ã"9Replace this use of System.out or System.err by a logger.(¨ÑÎâùÿÿÿÿH³±RMAJORZ
+CODE_SMELL
+k	java:S106”"9Replace this use of System.out or System.err by a logger.(¸êİ˜şÿÿÿÿH‡²RMAJORZ
+CODE_SMELL
+k	java:S106œ"9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿHÂ±RMAJORZ
+CODE_SMELL
+f	java:S106"9Replace this use of System.out or System.err by a logger.(ÿ­ãÔH±±RMAJORZ
+CODE_SMELL
+k	java:S106è"9Replace this use of System.out or System.err by a logger.(ÚÉ»¾ıÿÿÿÿHÁ±RMAJORZ
+CODE_SMELL
+k	java:S106Í"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHÅ±RMAJORZ
+CODE_SMELL
+
+java:S6201ì"LReplace this instanceof check and cast with 'instanceof Romancero romancero'(Œ¶´üıÿÿÿÿH€±RMINORZ
+CODE_SMELL
+	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ×úúÿÿÿÿHñ°RMINORZ
+CODE_SMELL
+k	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(Œ©üùÿÿÿÿHÀ±RMAJORZ
+CODE_SMELL
+e	java:S106H"9Replace this use of System.out or System.err by a logger.(‘°µÆH¯±RMAJORZ
+CODE_SMELL
+k	java:S106«"9Replace this use of System.out or System.err by a logger.(Œ©üùÿÿÿÿH±RMAJORZ
+CODE_SMELL
+f	java:S106²"9Replace this use of System.out or System.err by a logger.(Ö¬ï¡Hó°RMAJORZ
+CODE_SMELL
+f	java:S106¸"9Replace this use of System.out or System.err by a logger.(·ô»Hş°RMAJORZ
+CODE_SMELL
+j	java:S106{"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHÉ±RMAJORZ
+CODE_SMELL
+e	java:S106D"9Replace this use of System.out or System.err by a logger.(·ô»HÍ±RMAJORZ
+CODE_SMELL
+k	java:S106œ"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿH°±RMAJORZ
+CODE_SMELL
+k	java:S106í"9Replace this use of System.out or System.err by a logger.(ÂÌ¯„øÿÿÿÿH’²RMAJORZ
+CODE_SMELL
+k	java:S106Æ"9Replace this use of System.out or System.err by a logger.(ú‘ãûÿÿÿÿHø°RMAJORZ
+CODE_SMELL
+k	java:S106ù"9Replace this use of System.out or System.err by a logger.(ßìÆ¥øÿÿÿÿH‡±RMAJORZ
+CODE_SMELL
+V	java:S131e""Add a default case to this switch.(Ëë¡ÛúÿÿÿÿHú°RCRITICALZ
+CODE_SMELL
+f	java:S106¨"9Replace this use of System.out or System.err by a logger.(šº”ÃH‘±RMAJORZ
+CODE_SMELL
+f	java:S106ö"9Replace this use of System.out or System.err by a logger.(ƒ²óØH†±RMAJORZ
+CODE_SMELL
+k	java:S106«"9Replace this use of System.out or System.err by a logger.(âû‚ÇøÿÿÿÿH²RMAJORZ
+CODE_SMELL
+j	java:S106R"9Replace this use of System.out or System.err by a logger.(şİƒùÿÿÿÿHò°RMAJORZ
+CODE_SMELL
+k	java:S106÷"9Replace this use of System.out or System.err by a logger.(ÿõ€âøÿÿÿÿH‹±RMAJORZ
+CODE_SMELL
+ˆ
+java:S3776Š"RRefactor this method to reduce its Cognitive Complexity from 82 to the 15 allowed.(×Ò•¢ûÿÿÿÿH–±RCRITICALZ
+CODE_SMELL
+k	java:S106¢"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHÇ±RMAJORZ
+CODE_SMELL
+e	java:S106u"9Replace this use of System.out or System.err by a logger.(ÏÀšÉHŒ²RMAJORZ
+CODE_SMELL
+e	java:S106:"9Replace this use of System.out or System.err by a logger.(·ô»H¼±RMAJORZ
+CODE_SMELL
+p
+java:S6201½"BReplace this instanceof check and cast with 'instanceof Coro coro'(šáƒşH½±RMINORZ
+CODE_SMELL
+j	java:S1065"9Replace this use of System.out or System.err by a logger.(“Åğ”üÿÿÿÿH‰²RMAJORZ
+CODE_SMELL
+
+java:S6201ì"LReplace this instanceof check and cast with 'instanceof Romancero romancero'(Œ¶´üıÿÿÿÿH²RMINORZ
+CODE_SMELL
+e	java:S106Ó"9Replace this use of System.out or System.err by a logger.(©í½NH•±RMAJORZ
+CODE_SMELL
+f	java:S106À"9Replace this use of System.out or System.err by a logger.(¼Ëä“H±RMAJORZ
+CODE_SMELL
+j	java:S106~"9Replace this use of System.out or System.err by a logger.(õ°ıÿÿÿÿH’±RMAJORZ
+CODE_SMELL
+k	java:S106Ø"9Replace this use of System.out or System.err by a logger.(•Ñè£üÿÿÿÿHÆ±RMAJORZ
+CODE_SMELL
+r	java:S106"9Replace this use of System.out or System.err by a logger.(¦ÜÏşûÿÿÿÿ8Ò³ÀŒå0H…±RMAJORZ
+CODE_SMELL
+p
+java:S6201½"BReplace this instanceof check and cast with 'instanceof Coro coro'(šáƒşH‰±RMINORZ
+CODE_SMELL
+e	java:S106h"9Replace this use of System.out or System.err by a logger.(û‹§ìHŠ²RMAJORZ
+CODE_SMELL
+k	java:S106Æ"9Replace this use of System.out or System.err by a logger.(ıúÒúÿÿÿÿH®±RMAJORZ
+CODE_SMELL
+k	java:S106á"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿH“±RMAJORZ
+CODE_SMELL
+e	java:S106M"9Replace this use of System.out or System.err by a logger.(·ô»H†²RMAJORZ
+CODE_SMELL
+j	java:S1061"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHˆ²RMAJORZ
+CODE_SMELL
+f	java:S106æ"9Replace this use of System.out or System.err by a logger.(ºé»ÉHÊ±RMAJORZ
+CODE_SMELL
+x
+java:S6201Ğ"JReplace this instanceof check and cast with 'instanceof Comparsa comparsa'(¢–¯´HË±RMINORZ
+CODE_SMELL
+e	java:S106?"9Replace this use of System.out or System.err by a logger.(ÄÁšÏHÈ±RMAJORZ
+CODE_SMELL
+
+java:S1192q"[Define a constant instead of duplicating this literal "Introduce un valor valido!" 4 times.(õ°ıÿÿÿÿH·±RCRITICALZ
+CODE_SMELL
+j	java:S106["9Replace this use of System.out or System.err by a logger.(ñş†üÿÿÿÿH‹²RMAJORZ
+CODE_SMELL
+e	java:S106`"9Replace this use of System.out or System.err by a logger.(·ô»Hô°RMAJORZ
+CODE_SMELL
+j	java:S106n"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHü°RMAJORZ
+CODE_SMELL
+k	java:S106Û"9Replace this use of System.out or System.err by a logger.(Û¬ñĞÿÿÿÿÿHö°RMAJORZ
+CODE_SMELL
+ˆ
+java:S3776"SRefactor this method to reduce its Cognitive Complexity from 181 to the 15 allowed.(Ÿ×úúÿÿÿÿHÎ±RCRITICALZ
+CODE_SMELL

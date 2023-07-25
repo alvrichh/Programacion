@@ -1,0 +1,27 @@
+package model;
+
+public class Comparsa extends AgrupacionOficial {
+
+	public Comparsa() {
+
+	}
+
+	public Comparsa(String nombre, String autor, String autorMusica, String autorLetra, String tipo) {
+		super(nombre, autor, autorMusica, autorLetra, tipo);
+	}
+
+	@Override
+	public String cantarPresentacion() {
+		return "Cantando la presentación de la Comparsa de nombre " + getNombre();
+	}
+
+	@Override
+	public String hacerTipo() {
+		return "La Comparsa " + getNombre() + " va de " + getTipo();
+	}
+
+	@Override
+	public String caminitoFalla() {
+		return "La Comparsa " + getNombre() + " va caminito del Falla";
+	}
+}

@@ -1,0 +1,91 @@
+package model;
+
+public abstract class  Material {
+	
+	private String nombre;
+	private int masa;
+	private int capacidadQuemarse;//entre 0 y 100
+	private int capacidadDiluirse; //entre 0 y 1000
+	private boolean movible;
+	
+	
+    public abstract Material mezclarConMaterial(Material material);
+
+    public Material(String nombre, double masa, int capacidadQuemarse, int capacidadDiluirse, boolean movible) {
+        this.nombre = nombre;
+        this.masa = masa;
+        this.capacidadQuemarse = capacidadQuemarse;
+        this.capacidadDiluirse = capacidadDiluirse;
+        this.movible = movible;
+    }
+
+	
+	    @Override
+	    public int compareTo(Material otroMaterial) {
+	        return Double.compare(this.masa, otroMaterial.masa);
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "Nombre: " + nombre +
+	                "\nMasa: " + masa +
+	                "\nCapacidad de quemarse: " + quemarse +
+	                "\nCapacidad de diluirse: " + diluirse +
+	                "\nMovible: " + movible;
+	    }
+
+	
+
+	
+	//Getters & Setters
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public int getMasa() {
+		return masa;
+	}
+	public void setMasa(int masa) {
+		this.masa = masa;
+	}
+	public int getCapacidadQuemarse() {
+		return capacidadQuemarse;
+	}
+	public void setCapacidadQuemarse(int quemarse) {
+		if(quemarse < 0 || quemarse >100) {
+			quemarse = 0;
+			System.out.println("Fuera de rango");
+		}
+		this.capacidadQuemarse = capacidadQuemarse;
+
+		
+	}
+	public int getDiluirse() {
+		return capacidadDiluirse;
+	}
+	public void setDiluirse(int diluirse) {
+		if(diluirse < 0 || diluirse > 1000) {
+			diluirse = 0;
+			System.out.println("Fuera de rango");
+		}
+		this.diluirse = diluirse;
+	}
+	public boolean isMovible() {
+		return movible;
+	}
+	public void setMovible(boolean movible) {
+		this.movible = movible;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

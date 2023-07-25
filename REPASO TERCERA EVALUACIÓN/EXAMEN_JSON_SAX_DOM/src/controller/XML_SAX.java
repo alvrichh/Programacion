@@ -1,0 +1,33 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.jar.Attributes;
+
+import org.xml.sax.helpers.DefaultHandler;
+
+import model.*;
+public class XML_SAX extends DefaultHandler {
+	
+	private Categoria categoria;
+	private List<Categoria> listaCategorias = new ArrayList<Categoria>();
+	private List<Pelicula> listaPelicula = new ArrayList<Pelicula>();
+	private StringBuilder caracteresLeidos = new StringBuilder();
+	
+	
+	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+		 switch(qName) {
+		 case "categoria" -> {
+			 String nombre = attributes.getValue("nombre");
+			 categoria = new Categoria(nombre);
+			 listaCategorias.add(categoria);			 
+		 }
+		 case "pelicula" ->{
+			 Integer codigo = attributes.getValue("codigo");
+		 }
+		 }
+	}
+	
+	
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;list&apos; from expression &apos;(List&lt;Persona&gt;)new Persona(&quot;Paco&quot;,22)&apos;&#x0D;&#x0A;- Original project: &apos;XML-01&apos;&#x0D;&#x0A;- Variable name: &apos;list&apos;&#x0D;&#x0A;- Destination method: &apos;view.Principal.main(...)&apos;&#x0D;&#x0A;- Variable expression: &apos;(List&lt;Persona&gt;)new Persona(&quot;Paco&quot;,22)&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;list&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;view{Principal.java" name="list" replace="true" selection="399 39" stamp="1683630721526" varType="false" version="1.0"/>
+</session>

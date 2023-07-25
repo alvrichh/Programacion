@@ -1,0 +1,66 @@
+package controller;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import model.Casa;
+
+public class ParseJSON {
+		
+	private static Gson g = new GsonBuilder().setPrettyPrinting().create();
+	
+	public static <T> void writeJson(String fileName, T obj) {
+		BufferedReader bufferedWriter = null;
+		try {
+			bufferedWriter = new BufferedReader(new FileReader(fileName));
+			bufferedWriter.write(g.toJson(obj));
+		}
+		catch (IOException e) { System.err.println(e.getMessage()); }
+		finally {
+			try { if (bufferedWriter != null) bufferedWriter.close(); }
+			catch (IOException e) { System.err.println(e.getMessage()); }
+		}
+	}
+
+	//LEER ARCHIVO DE TIPO CASAS
+	public static List<Casa> leerCasa(String fileName) {
+		
+		List<Casa> casas = null;
+		BufferedReader bufferedReader = null;
+		try {
+			bufferedReader = new BufferedReader(new FileReader(fileName));
+			casas = (List<Casa>) fromJson(bufferedReader, Casa.class);
+		}catch (FileNotFoundException e) { System.err.println(e.getMessage()); }
+		finally {
+			try { if (bufferedReader != null) bufferedReader.close();   }
+			catch (IOException e) { System.err.println(e.getMessage()); }
+		}	
+		return casas;	
+		
+
+		}
+
+	public static List<Persona> readListadoPersonas(String fileName) {
+		List<Persona> personas = null;
+		BufferedReader bufferedReader = null;
+		try {
+			bufferedReader = new BufferedReader(new FileReader(fileName));
+			personas = Arrays.asList(g.fromJson(bufferedReader, Persona[].class));
+		}
+		catch (FileNotFoundException e) { System.err.println(e.getMessage()); }
+		finally {
+			try { if (bufferedReader != null) bufferedReader.close(); }
+			catch (IOException e) { System.err.println(e.getMessage()); }
+		}
+		return personas;
+	}
+	}
+}

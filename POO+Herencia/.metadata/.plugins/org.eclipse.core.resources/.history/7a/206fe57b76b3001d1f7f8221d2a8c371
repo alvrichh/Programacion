@@ -1,0 +1,79 @@
+package model;
+
+public class Lavadora extends Electrodomestico {
+
+	private double carga;
+
+	public Lavadora() {
+	}
+
+	public Lavadora(double precioBase, double peso) {
+		this(precioBase, peso, 5);
+	}
+
+	public Lavadora(double precioBase, double peso, double carga) {
+		super();
+		setPrecioBase(precioBase);
+		setPeso(peso);
+		setCarga(carga);
+	}
+
+	public double getPrecioFinal() {
+		double resultado = super.getPrecioBase();
+		if (this.getCarga() > 30)
+			resultado += 50;
+		return resultado;
+	}
+
+	public Lavadora(double carga) {
+		super();
+		setCarga(carga);
+	}
+
+	public Lavadora(int i, Color color, ConsumoEnergetico consumoEnergetico, int j) {
+		super(i, color, consumoEnergetico, j);
+		setCarga(carga);
+	}
+
+	public double getCarga() {
+		return carga;
+	}
+
+	protected void setCarga(double carga) {
+		this.carga = carga;
+	}
+
+	@Override
+	public String toString() {
+		return "Lavadora [getPrecioFinal()=" + this.getPrecioFinal() + ", getCarga()=" + getCarga()
+				+ ", getPrecioBase()=" + getPrecioBase() + ", getColor()=" + getColor() + ", getConsumoEnergetico()="
+				+ getConsumoEnergetico() + ", getPeso()=" + getPeso() + "]";
+	}
+
+	public int compareTo(Lavadora lavadora) {
+		int resultado;
+		if (this.getPrecioBase() > lavadora.getPrecioBase()) {
+			resultado = 1;
+		} else {
+			if (this.getPrecioBase() == lavadora.getPrecioBase()) {
+				resultado = 0;
+			} else {
+				resultado = -1;
+			}
+		}
+
+		return resultado;
+	}
+
+	public boolean equals(Lavadora lavadora) {
+		boolean resultado = false;
+		if (this.getCarga() == lavadora.getCarga() && this.getColor() == lavadora.getColor()
+				&& this.getConsumoEnergetico() == lavadora.getConsumoEnergetico()
+				&& this.getPeso() == lavadora.getPeso() && this.getPrecioBase() == lavadora.getPrecioBase()) {
+			resultado = true;
+		}
+
+			return resultado;
+	}
+
+}

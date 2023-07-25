@@ -1,0 +1,24 @@
+package view;
+
+import java.io.FileWriter;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		
+		try {
+			FileWriter archivo = new FileWriter("alumnos.xml");
+			
+			archivo.write("leña");
+			
+			archivo.close();
+			
+			System.out.println("Archivo creado correctamente");
+			
+		} catch (Exception e) {
+			System.err.println("Error en la creación del archivo" + e.getMessage());
+		}
+	
+	}
+}

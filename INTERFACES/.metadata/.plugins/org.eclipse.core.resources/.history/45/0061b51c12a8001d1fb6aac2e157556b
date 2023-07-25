@@ -1,0 +1,429 @@
+package view;
+
+import java.util.Scanner;
+
+import javax.swing.text.DefaultEditorKit.CutAction;
+
+import controller.COAC;
+import model.Agrupacion;
+import model.AgrupacionOficial;
+import model.Chirigota;
+import model.Comparsa;
+import model.Coro;
+import model.Cuarteto;
+import model.Romancero;
+
+public class Menu {
+	static Scanner entrada = new Scanner(System.in);
+
+	static Agrupacion[] agrupacion = new Agrupacion[10];
+	static COAC coac = new COAC(agrupacion);
+
+	public static void inicio() {
+		int opc;
+		boolean salir = false;
+		do {
+			System.out.println("Bienvenido al menu");
+			System.out.println("Opciones");
+			System.out.println("1. Inscribir agrupacion");
+			System.out.println("2. Eliminar agrupacion");
+			System.out.println("3. Modificar agrupacion");
+			System.out.println("4. Ordenar las agrupaciones");
+			System.out.println("5. Listar agrupaciones");
+			System.out.println("0. Salir");
+			opc = Integer.parseInt(entrada.nextLine());
+
+			switch (opc) {
+			case 1 -> salir = inscribirAgrupacion();
+			case 2 -> eliminarAgrupacion();
+			case 3 -> ModificarAgrupacion();
+			case 4 -> menuOrdenacion();
+			case 5 -> listarAgrupaciones(0);
+			}
+			if (opc < 0 || opc > 5)
+				opcIncorrecta();
+		} while (opc != 0 || !salir);
+
+	}
+
+	public static boolean inscribirAgrupacion() {
+		boolean volver = false;
+		int opc;
+		int opc2;
+		do {
+			System.out.println("Que tipo de agrupacion quieres añadir?");
+			System.out.println("1. Coro\n2. Comparsa\n3. Chirigota\n4. Cuarteto\n5. Romancero");
+			opc = Integer.parseInt(entrada.nextLine());
+			if (opc < 1 || opc > 5)
+				opcIncorrecta();
+		} while (opc < 1 || opc > 5);
+		do {
+			System.out.println("Quieres crearlo con los valores vacios o prefieres añadirlos?\n1. Vacios\n2. Rellenar");
+			opc2 = Integer.parseInt(entrada.nextLine());
+			if (opc2 < 1 || opc2 > 2)
+				opcIncorrecta();
+		} while (opc2 < 1 || opc2 > 2);
+		switch (opc2) {
+		case 1 -> volver = inscribirVacio(opc);
+		case 2 -> volver = inscribirValores(opc);
+		}
+		return volver;
+	}
+
+	public static boolean inscribirVacio(int opc) {
+		boolean isAdded = false;
+		boolean volver = false;
+		switch (opc) {
+		case 1 -> isAdded = coac.inscribir_agrupacion(new Coro());
+		case 2 -> isAdded = coac.inscribir_agrupacion(new Comparsa());
+		case 3 -> isAdded = coac.inscribir_agrupacion(new Chirigota());
+		case 4 -> isAdded = coac.inscribir_agrupacion(new Cuarteto());
+		case 5 -> isAdded = coac.inscribir_agrupacion(new Romancero());
+		}
+		volver = volver();
+		return volver;
+	}
+
+	public static boolean inscribirValores(int opc) {
+		switch (opc) {
+		case 1 -> añadirDatos(1);
+		case 2 -> añadirDatos(2);
+		case 3 -> añadirDatos(3);
+		case 4 -> añadirDatos(4);
+		case 5 -> añadirDatos(5);
+		}
+		return false;
+
+	}
+
+	// TODO
+	public static void modificarDato(Agrupacion agrupacion) {
+		String nombre = "";
+		String autor = "";
+		String autorMusica = "";
+		String autorLetra = "";
+		String tipo = "";
+		int puntosObtenidos = 0;
+		int numeroBandurrias = 0;
+		int numeroGuitarras = 0;
+		String empresaAtrezzo = "";
+		int numeroCupies = 0;
+		int numeroMiembros = 0;
+		String tematica = "";
+
+		int opc = 0;
+		if (agrupacion instanceof Coro)
+			opc = 1;
+		if (agrupacion instanceof Comparsa)
+			opc = 2;
+		if (agrupacion instanceof Chirigota)
+			opc = 3;
+		if (agrupacion instanceof Cuarteto)
+			opc = 4;
+		if (agrupacion instanceof Romancero)
+			opc = 5;
+
+		if (opc == 1 || opc == 2 || opc == 3 || opc == 4 || opc == 5) {
+			// Datos Agrupacion
+
+			System.out.print("Indica el nombre: ");
+			nombre = entrada.nextLine();
+			System.out.print("Indica el autor: ");
+			autor = entrada.nextLine();
+			System.out.print("Indica el autor de la musica: ");
+			autorMusica = entrada.nextLine();
+			System.out.print("Indica el autor de la letra: ");
+			autorLetra = entrada.nextLine();
+			System.out.print("Indica el tipo: ");
+			tipo = entrada.nextLine();
+
+		}
+		if (opc == 1 || opc == 2 || opc == 3 || opc == 4) {
+			// Datos de Agrupacion Oficial
+			System.out.print("Indica los puntos obtenidos: ");
+			puntosObtenidos = Integer.parseInt(entrada.nextLine());
+		}
+		if (opc == 1) {
+			// Datos Coro
+			System.out.print("Indica el numero de bandurrias: ");
+			numeroBandurrias = Integer.parseInt(entrada.nextLine());
+			System.out.print("Indica el numero de guitarras: ");
+			numeroGuitarras = Integer.parseInt(entrada.nextLine());
+
+			coac.inscribir_agrupacion(new Coro(numeroBandurrias, numeroGuitarras, puntosObtenidos, nombre, autor,
+					autorMusica, autorLetra, tipo));
+		}
+		if (opc == 2) {
+			// Datos comparza
+			System.out.print("Indica la empresa de atrezzo: ");
+			empresaAtrezzo = entrada.nextLine();
+			coac.inscribir_agrupacion(
+					new Comparsa(empresaAtrezzo, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+		}
+		if (opc == 3) {
+			// Datos chirigota
+			System.out.print("Indica el numero de cupies: ");
+			numeroCupies = Integer.parseInt(entrada.nextLine());
+			coac.inscribir_agrupacion(
+					new Chirigota(numeroCupies, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+		}
+		if (opc == 4) {
+			// Datos Cuarteto
+			System.out.print("Indica el numero de miembros: ");
+			numeroMiembros = Integer.parseInt(entrada.nextLine());
+			coac.inscribir_agrupacion(
+					new Cuarteto(numeroMiembros, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+		}
+		if (opc == 5) {
+			// Datos romancero
+			System.out.print("Indica la tematica: ");
+			tematica = entrada.nextLine();
+			coac.inscribir_agrupacion(new Romancero(tematica, nombre, autor, autorMusica, autorLetra, tipo));
+
+		}
+
+	}
+
+	public static void añadirDatos(int opc) {
+		String nombre = "";
+		String autor = "";
+		String autorMusica = "";
+		String autorLetra = "";
+		String tipo = "";
+		int puntosObtenidos = 0;
+		int numeroBandurrias = 0;
+		int numeroGuitarras = 0;
+		String empresaAtrezzo = "";
+		int numeroCupies = 0;
+		int numeroMiembros = 0;
+		String tematica = "";
+
+		if (opc == 1 || opc == 2 || opc == 3 || opc == 4 || opc == 5) {
+			// Datos Agrupacion
+
+			System.out.print("Indica el nombre: ");
+			nombre = entrada.nextLine();
+			System.out.print("Indica el autor: ");
+			autor = entrada.nextLine();
+			System.out.print("Indica el autor de la musica: ");
+			autorMusica = entrada.nextLine();
+			System.out.print("Indica el autor de la letra: ");
+			autorLetra = entrada.nextLine();
+			System.out.print("Indica el tipo: ");
+			tipo = entrada.nextLine();
+
+		}
+		if (opc == 1 || opc == 2 || opc == 3 || opc == 4) {
+			// Datos de Agrupacion Oficial
+			System.out.print("Indica los puntos obtenidos: ");
+			puntosObtenidos = Integer.parseInt(entrada.nextLine());
+		}
+		if (opc == 1) {
+			// Datos Coro
+			System.out.print("Indica el numero de bandurrias: ");
+			numeroBandurrias = Integer.parseInt(entrada.nextLine());
+			System.out.print("Indica el numero de guitarras: ");
+			numeroGuitarras = Integer.parseInt(entrada.nextLine());
+			coac.inscribir_agrupacion(new Coro(numeroBandurrias, numeroGuitarras, puntosObtenidos, nombre, autor,
+					autorMusica, autorLetra, tipo));
+		}
+		if (opc == 2) {
+			// Datos comparza
+			System.out.print("Indica la empresa de atrezzo: ");
+			empresaAtrezzo = entrada.nextLine();
+			coac.inscribir_agrupacion(
+					new Comparsa(empresaAtrezzo, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+		}
+		if (opc == 3) {
+			// Datos chirigota
+			System.out.print("Indica el numero de cupies: ");
+			numeroCupies = Integer.parseInt(entrada.nextLine());
+			coac.inscribir_agrupacion(
+					new Chirigota(numeroCupies, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+		}
+		if (opc == 4) {
+			// Datos Cuarteto
+			System.out.print("Indica el numero de miembros: ");
+			numeroMiembros = Integer.parseInt(entrada.nextLine());
+			coac.inscribir_agrupacion(
+					new Cuarteto(numeroMiembros, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+		}
+		if (opc == 5) {
+			// Datos romancero
+			System.out.print("Indica la tematica: ");
+			tematica = entrada.nextLine();
+			coac.inscribir_agrupacion(new Romancero(tematica, nombre, autor, autorMusica, autorLetra, tipo));
+
+		}
+
+	}
+
+	public static boolean ModificarAgrupacion() {
+		listarAgrupaciones(1);
+		int opc;
+		int pos;
+		String opcString;
+		do {
+			System.out.println("Desea eliminar por la posicion o por el nombre?  \n1. Posicion\n2. Nombre");
+			opc = Integer.parseInt(entrada.nextLine());
+			if (opc < 1 || opc > 2) {
+				System.err.println("Introduce una opcion correcta");
+
+			}
+		} while (opc < 1 || opc > 2);
+
+		if (opc == 1) {
+			System.out.print("Indica el numero de la agrupacion que deseas modificar: ");
+			pos = Integer.parseInt(entrada.nextLine());
+			if (agrupacion[pos - 1] == null) {
+				System.err.println("Esta opcion no existe");
+			} else {
+				// TODO
+				modificarDato(agrupacion[pos - 1]);
+			}
+		} else {
+			System.out.print("Indica el nombre de la agrupacion: ");
+			opcString = entrada.nextLine();
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null && agrupacion[i].getNombre().equals(opcString))
+					agrupacion[i] = null;
+			}
+		}
+
+		volverContador();
+		return false;
+	}
+
+	public static boolean eliminarAgrupacion() {
+		boolean isDeleted = false;
+		int pos = 0;
+		int opc;
+		String opcString;
+
+		if (!listarAgrupaciones(1)) {
+			do {
+				System.out.println("Desea eliminar por la posicion o por el nombre?  \n1. Posicion\n2. Nombre");
+				opc = Integer.parseInt(entrada.nextLine());
+				if (opc < 1 || opc > 2) {
+					System.err.println("Introduce una opcion correcta");
+
+				}
+			} while (opc < 1 || opc > 2);
+
+			if (opc == 1) {
+				System.out.print("Indica el numero de la agrupacion que deseas eliminar: ");
+				pos = Integer.parseInt(entrada.nextLine());
+				if (agrupacion[pos - 1] == null) {
+					System.err.println("Esta opcion no existe");
+				} else {
+					System.out.println("Has eliminado el registro numero: " + (pos));
+					agrupacion[pos - 1] = null;
+				}
+			} else {
+				System.out.print("Indica el nombre de la agrupacion: ");
+				opcString = entrada.nextLine();
+				for (int i = 0; i < agrupacion.length; i++) {
+					if (agrupacion[i] != null && agrupacion[i].getNombre().equals(opcString))
+						agrupacion[i] = null;
+				}
+			}
+
+			volverContador();
+		}
+
+		return isDeleted;
+	}
+
+	public static boolean menuOrdenacion() {
+		return false;
+	}
+
+	public static boolean listarAgrupaciones(int opc) {
+		boolean isVoid = true;
+		for (int i = 0; i < agrupacion.length; i++) {
+			if (agrupacion[i] != null)
+				isVoid = false;
+		}
+		if (isVoid) {
+			System.err.println("VACIO");
+			volverContador();
+		} else {
+			System.out.println("\n\n\n\n\n\nLista De Agrupaciones");
+			System.out.println("*********************");
+			for (int i = 0; i < agrupacion.length; i++) {
+				if (agrupacion[i] != null)
+					System.out.println("" + (i + 1) + " " + agrupacion[i]);
+			}
+			System.out.println("*********************");
+
+			if (opc != 1)
+				volver();
+		}
+		return isVoid;
+	}
+
+	// TODO
+	public static boolean volver() {
+		boolean volver = false;
+		int opc;
+		do {
+			System.out.println("\nQuieres regresar al menú anterior?\n1. Si\n2. No");
+			opc = Integer.parseInt(entrada.nextLine());
+			if (opc < 1 || opc > 2)
+				System.out.println("Introduce un valor válido");
+
+		} while (opc < 1 || opc > 2);
+		if(opc == 1) volver = true;
+		else {
+			volver = false;
+		}
+		return volver;
+	}
+
+	public static void volverContador() {
+		System.out.print("Volviendo al menu anterior en: ");
+		System.out.print("3");
+		try {
+			Thread.sleep(1 * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.print(" 2");
+		try {
+			Thread.sleep(1 * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.print(" 1");
+		try {
+			Thread.sleep(1 * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("\n\n\n\n");
+	}
+
+	public static void opcIncorrecta() {
+		System.out.println("Introduce una opcion correcta");
+		System.out.print("3");
+		try {
+			Thread.sleep(1 * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.print(" 2");
+		try {
+			Thread.sleep(1 * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.print(" 1");
+		try {
+			Thread.sleep(1 * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("\n\n\n\n");
+
+	}
+}

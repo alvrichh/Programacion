@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="model.Cristal"/>
+    <fullyQualifiedTypeName name="model.TipoCristal"/>
+    <fullyQualifiedTypeName name="model.Metal"/>
+    <fullyQualifiedTypeName name="model.Roca"/>
+    <fullyQualifiedTypeName name="controller.Materiales"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="controller.Minecraft"/>
+    <fullyQualifiedTypeName name="model.Material"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,23 @@
+package view;
+
+import model.Camion;
+import model.EjesException;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Camion c1 = new Camion(1);
+
+		try {
+			Camion c2 = new Camion(1);
+		    System.out.println("Número de ejes: " + c1.getNum_ejes());
+
+		} catch (EjesException e) { System.err.println("Error " + e.getMessage());
+		}
+	    System.out.println("Número de ejes: " + c1.getNum_ejes());
+
+	}
+
+
+}

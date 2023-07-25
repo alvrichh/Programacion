@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+D:\Users\alvar\Desktop\GRADO SUPERIOR\PROG\DAW-JAVA\RECUPERACION\.metadata\.plugins\org.eclipse.jdt.core
+3450525692.index
+2235230552.index
+1865797976.index
+2722774125.index

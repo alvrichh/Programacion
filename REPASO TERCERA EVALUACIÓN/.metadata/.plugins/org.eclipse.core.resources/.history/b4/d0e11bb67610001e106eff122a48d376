@@ -1,0 +1,50 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+public class AlumnosDOM {
+	
+	private Document docXML;
+	
+	public AlumnosDOM(String fileName) throws Exception {
+		readXML(fileName);
+	}
+	/*
+	 * LEER EL DOCUMENTO
+	 */
+
+	private void readXML(String fileName) throws Exception {
+	
+		try {
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			
+			docXML = db.parse(fileName);
+			docXML.getDocumentElement().normalize();
+			
+		} catch (Exception e) { System.err.println("Error" + e.getMessage());
+		}
+		
+		
+	}
+	private void writeXML(String fileName) throws Exception{
+		Transformer t = TransformerFactory.newInstance().newTransformer();
+		t.setOutputProperty(OutputKeys.METHOD, "xml");
+		t.setOutputProperty(OutputKeys.ENCODING, "utf-8");
+		t.transform(new DOMSource(docXML),new StreamResult(fileName));
+	}
+	/*
+	 * ESCRIBIR EL docXML en unDOCUMENTOO
+	 */
+}

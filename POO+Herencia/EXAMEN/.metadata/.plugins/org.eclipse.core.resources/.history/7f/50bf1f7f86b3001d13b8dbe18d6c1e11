@@ -1,0 +1,11 @@
+package model;
+
+public abstract class  Materiales {
+	
+	private String nombre;
+	private int masa;
+	private int fuego;
+	private int agua;
+	private boolean movible;
+
+}

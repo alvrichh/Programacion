@@ -1,0 +1,12 @@
+package controller;
+
+public class ViviendasDOM {
+	
+	public ViviendasDOM() {
+		
+	}
+	
+	public void writeXML() {
+		Transformer t
+	}
+}

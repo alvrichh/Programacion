@@ -1,0 +1,58 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import model.Alumno;
+
+public class AlumnosSAX_MAP extends DefaultHandler {
+	
+	private Map<String, List<Alumno>> mapa = new TreeMap<String, List<Alumno>>();
+	private Alumno provincia = null;
+	private String dniAlumno = null;
+	private StringBuilder carateresLeidos = new StringBuilder();
+
+	@Override
+	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+		if (qName.equals("region")) {
+			dniAlumno = attributes.getValue("nombre");
+			if (!mapa.containsKey(dniAlumno)) {
+				mapa.put(dniAlumno, new ArrayList<Alumno>());
+			}
+		}
+		if (qName.equals("provincia")) {
+			provincia = new Alumno();
+		}
+		carateresLeidos.setLength(0);
+	}
+
+	@Override
+	public void characters(char[] ch, int start, int length) throws SAXException {
+		carateresLeidos.append(ch, start, length);
+	}
+
+	@Override
+	public void endElement(String uri, String localName, String qName) throws SAXException {
+		switch (qName) {
+			case "nombre" -> provincia.setNombre(carateresLeidos.toString());
+			case "produccion" -> provincia.setProduccion(Integer.parseInt(carateresLeidos.toString()));
+		}
+		if (qName.equals("provincia")) {
+			List<Alumno> lst = mapa.get(dniAlumno);
+			lst.add(provincia);
+			mapa.put(dniAlumno, lst);
+		}
+	}
+
+	public Map<String, List<Alumno>> getJuguetes() {
+		return mapa;
+	}
+
+	
+}

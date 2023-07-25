@@ -1,0 +1,39 @@
+package exam;
+
+public class Asignatura {
+	
+	private String nombre;
+	private String aula;
+	private int maxAlumn;
+	private Alumno alumno;
+	
+	public Asignatura() {
+		
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getAula() {
+		return aula;
+	}
+	public void setAula(String aula) {
+		this.aula = aula;
+	}
+	public int getMaxAlumn() {
+		return maxAlumn;
+	}
+	public void setMaxAlumn(int maxAlumn) {
+		this.maxAlumn = maxAlumn;
+	}
+	public Alumno getAlumno() {
+		return alumno;
+	}
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
+	
+
+}

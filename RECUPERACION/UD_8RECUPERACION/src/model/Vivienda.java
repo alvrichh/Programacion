@@ -1,0 +1,30 @@
+package model;
+
+import java.util.List;
+
+public class Vivienda {
+    private int id;
+    private double precio;
+    private List<Zona> zonas;
+    
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	public List<Zona> getZonas() {
+		return zonas;
+	}
+	public void setZonas(List<Zona> zonas) {
+		this.zonas = zonas;
+	}
+
+}
+

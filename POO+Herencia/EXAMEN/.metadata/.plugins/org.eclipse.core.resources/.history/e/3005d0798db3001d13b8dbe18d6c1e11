@@ -1,0 +1,6 @@
+package view;
+
+public enum TipoCristal {
+	TRANSPARENTE, TRANSLUCIDO
+
+}

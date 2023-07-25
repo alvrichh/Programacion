@@ -1,0 +1,35 @@
+1675867359562	Rename type 'AgrupacionOficial'
+1675868347323	Encapsulate field 'numeroActual'
+1675869003664	Encapsulate field 'Integrantes'
+1675870606787	Rename type 'OrdenAutor'
+1675870690060	Copy compilation unit
+1675870780334	Encapsulate field 'puntosObtenidos'
+1675871289321	Copy compilation unit
+1675884419030	Rename method 'volver'
+1675900404820	Delete elements
+1675900412238	Delete element
+1675900964880	Rename local variable 'opc'
+1675950485865	Rename type 'Menu'
+1675958088909	Rename method 'añadirAgrupacion'
+1675984261944	Delete elements
+1675985625512	Rename local variable 'vacioChirigota'
+1675985749032	Rename local variable 'vacioCoros'
+1675985817970	Rename local variable 'vacioCuarteto'
+1675985887024	Rename local variable 'vacioCuarteto'
+1675986281074	Rename method 'Ordenar'
+1675991191659	Rename method 'ordenar'
+1675994429753	Delete element
+1676058923981	Delete element
+1676059412947	Delete element
+1676059775232	Delete element
+1676062500287	Delete elements
+1676063403589	Rename method 'numeroIntegrantes'
+1676063418398	Rename method 'getNumeroIntegrantes'
+1676063442994	Rename method 'numeroDeAgrupaciones'
+1676063463265	Rename method 'getNumeroDeIntegrantes'
+1676063469248	Rename method 'getNumeroDeAgrupaciones'
+1676063493256	Rename method 'numeroDeAgrupacionesConcurso'
+1676063829436	Rename method 'addIntegrante'
+1676064368509	Rename field 'STRDEFECTO'
+1676075479403	Delete element
+1676131511537	Delete elements

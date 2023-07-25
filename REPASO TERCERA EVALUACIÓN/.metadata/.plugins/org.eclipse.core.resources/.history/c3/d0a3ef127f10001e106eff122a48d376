@@ -1,0 +1,24 @@
+package view;
+
+import java.io.FileWriter;
+import java.util.ArrayList;
+
+import controller.AlumnosDOM;
+import model.*;
+public class Principal {
+
+	public static void main(String[] args) {
+	
+		final String FCH_NAME = "alumnos.xml";
+		
+		try {
+
+			AlumnosDOM lectura = new AlumnosDOM(FCH_NAME);
+			List<Alumno> Alumnos = new ArrayList<Alumno>();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+}

@@ -1,0 +1,66 @@
+package model;
+
+import java.io.Serializable;
+
+public class Camion implements Serializable {
+
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//VARIABLES
+	Integer num_ejes;
+	Double capacidad;
+	String frenos;
+	Double precio;
+	
+	
+
+	public Camion(Integer num_ejes, Double capacidad, String frenos, Double precio) throws EjesException {
+		setNum_ejes(num_ejes);
+		setCapacidad(capacidad);
+		setFrenos(frenos);
+		setPrecio(precio);
+	}
+	
+	public Integer getNum_ejes() {
+		return num_ejes;
+	}
+	public void setNum_ejes(Integer num_ejes) throws EjesException {
+		if(num_ejes != 4 && num_ejes != 8 && num_ejes != 16)
+		{
+			throw new EjesException();
+		}
+		this.num_ejes = num_ejes;
+	}
+	public Double getCapacidad() {
+		return capacidad;
+	}
+	public void setCapacidad(Double capacidad) {
+		if (capacidad < 20000 || capacidad > 40000 || capacidad % 2 != 0) {
+			throw new CapacidadException();
+			
+		}
+		this.capacidad = capacidad;
+	}
+	public String getFrenos() {
+		return frenos;
+	}
+	public void setFrenos(String frenos) {
+		this.frenos = frenos;
+	}
+	public Double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+	@Override
+	
+	public String toString() {
+		return "Camion [getNum_ejes()=" + getNum_ejes() + ", getCapacidad()=" + getCapacidad() + ", getFrenos()="
+				+ getFrenos() + ", getPrecio()=" + getPrecio() + "]";
+	}
+	
+}

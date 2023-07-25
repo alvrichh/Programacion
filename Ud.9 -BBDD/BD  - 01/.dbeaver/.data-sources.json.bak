@@ -1,0 +1,29 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-1882f4fada2-7187dc22090d68fd": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "sampledatabase.db",
+			"save-password": true,
+			"configuration": {
+				"database": "D:\\Users\\alvar\\Desktop\\GRADO SUPERIOR\\PROG\\DAW-JAVA\\Ud.9 -BBDD\\DB-00 - 3 Proyecto completo\\sampledatabase.db",
+				"url": "jdbc:sqlite:D:\\Users\\alvar\\Desktop\\GRADO SUPERIOR\\PROG\\DAW-JAVA\\Ud.9 -BBDD\\DB-00 - 3 Proyecto completo\\sampledatabase.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

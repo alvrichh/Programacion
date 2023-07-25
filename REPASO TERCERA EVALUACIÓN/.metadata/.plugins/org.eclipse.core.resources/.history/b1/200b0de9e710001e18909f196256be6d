@@ -1,0 +1,10 @@
+package controller;
+
+public class RecorridoDOM {
+	
+	public RecorridoDOM(String fileName){
+		readXML();
+		
+	}
+
+}

@@ -1,0 +1,33 @@
+package model;
+	public class Pico extends Herramienta implements Minar {
+	    private int grosor;
+
+	    public Pico(String nombre, int masa, int capacidadQuemarse, int capacidadDiluirse, boolean movible, int grosor) {
+	        super(nombre, masa, capacidadQuemarse, capacidadDiluirse, true);
+	        this.grosor = grosor;
+	    }
+
+	    public int getGrosor() {
+	        return grosor;
+	    }
+
+	    public void setGrosor(int grosor) {
+	        this.grosor = grosor;
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "Pico [nombre=" + getNombre() + ", masa=" + getMasa() + ", quemarse=" + getCapacidadQuemarse() + 
+	               ", diluirse=" + getCapacidadDiluirse() + ", movible=" + isMovible() + ", grosor=" + grosor + "]";
+	    }
+
+	    @Override
+	    public void hacer(Material material) {
+	        material.setMasa(material.getMasa() + 100);
+	    }
+
+	    @Override
+	    public void deshacer(Material material) {
+	        material.setMasa(material.getMasa() - 100);
+	    }
+	}

@@ -1,0 +1,70 @@
+package model;
+
+public abstract class Material {
+	
+	    private String nombre;
+	    private int masa;
+	    private int capacidadQuemarse;
+	    private int capacidadDiluirse;
+	    private boolean movible;
+
+	    public Material(String nombre, int masa, int capacidadQuemarse, int capacidadDiluirse, boolean movible) {
+	        setNombre(nombre);
+	        setMasa(masa);
+	        setCapacidadQuemarse(capacidadQuemarse);
+	        setCapacidadDiluirse(capacidadDiluirse);
+	        setMovible(movible);
+	    }
+
+	    public String getNombre() {
+	        return nombre;
+	    }
+
+	    public void setNombre(String nombre) {
+	        this.nombre = nombre;
+	    }
+
+	    public int getMasa() {
+	        return masa;
+	    }
+
+	    public void setMasa(int masa) {
+	        this.masa = masa;
+	    }
+
+	    public int getCapacidadQuemarse() {
+	        return capacidadQuemarse;
+	    }
+
+	    public void setCapacidadQuemarse(int capacidadQuemarse) {
+	        this.capacidadQuemarse = capacidadQuemarse;
+	    }
+
+	    public int getCapacidadDiluirse() {
+	        return capacidadDiluirse;
+	    }
+
+	    public void setCapacidadDiluirse(int capacidadDiluirse) {
+	        this.capacidadDiluirse = capacidadDiluirse;
+	    }
+
+	    public boolean isMovible() {
+	        return movible;
+	    }
+
+	    public void setMovible(boolean movible) {
+	        this.movible = movible;
+	    }
+
+	    @Override
+		public String toString() {
+			return "Material [nombre=" + nombre + ", masa=" + masa + ", capacidadQuemarse=" + capacidadQuemarse
+					+ ", capacidadDiluirse=" + capacidadDiluirse + ", movible=" + movible + "]";
+		}
+
+		public void mezclarConMaterial(Material material) {
+			// TODO Auto-generated method stub
+			
+		}
+	}
+

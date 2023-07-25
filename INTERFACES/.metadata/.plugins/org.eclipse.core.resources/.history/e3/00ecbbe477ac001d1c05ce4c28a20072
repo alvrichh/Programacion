@@ -1,0 +1,12 @@
+package view;
+
+import view.menu.Menu;
+
+public class Principal { // NO_UCD (unused code)
+
+	public static void main(String[] args) {
+
+		Menu.gestionPrograma();
+	}
+
+}

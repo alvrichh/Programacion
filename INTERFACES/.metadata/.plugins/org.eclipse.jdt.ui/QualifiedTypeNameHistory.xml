@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="model.PoligonoRegular"/>
+    <fullyQualifiedTypeName name="model.VehiculoTerrestre"/>
+    <fullyQualifiedTypeName name="controller.Garaje"/>
+    <fullyQualifiedTypeName name="model.Coche"/>
+    <fullyQualifiedTypeName name="model.Vehiculo"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="model.Multimedia"/>
+    <fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+    <fullyQualifiedTypeName name="javax.management.monitor.MonitorSettingException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="model.AgrupacionOficial"/>
+    <fullyQualifiedTypeName name="Calculadora"/>
+    <fullyQualifiedTypeName name="org.junit.runners.Suite.SuiteClasses"/>
+    <fullyQualifiedTypeName name="SuiteClases.CalculadoraRestaTest"/>
+    <fullyQualifiedTypeName name="model.Agrupacion"/>
+    <fullyQualifiedTypeName name="model.Chirigota"/>
+    <fullyQualifiedTypeName name="java.util.TreeMap"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+</qualifiedTypeNameHistroy>

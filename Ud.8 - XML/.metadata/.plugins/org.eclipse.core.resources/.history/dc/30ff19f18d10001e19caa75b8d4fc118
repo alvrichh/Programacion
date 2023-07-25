@@ -1,0 +1,51 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import model.Plato;
+
+public class XML_SAX extends DefaultHandler {
+
+	private List<Plato> lstPlatos = new ArrayList<>();
+	private Plato plato = null;
+	private StringBuilder carateresLeidos = new StringBuilder();
+
+	public XML_SAX() {
+	}
+
+	@Override
+	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+		if (qName.equals("plato")) {
+			plato = new Plato();
+		}
+		carateresLeidos.setLength(0);
+	}
+
+	@Override
+	public void characters(char[] ch, int start, int length) throws SAXException {
+		carateresLeidos.append(ch, start, length);
+	}
+
+	@Override
+	public void endElement(String uri, String localName, String qName) throws SAXException {
+		switch (qName) {
+			case "nombre"      -> plato.setNombre(carateresLeidos.toString());
+			case "precio"      -> plato.setPrecio(Double.parseDouble(carateresLeidos.toString()));
+			case "descripcion" -> plato.setDescripcion(carateresLeidos.toString());
+			case "calorias"    -> plato.setCalorias(Integer.parseInt(carateresLeidos.toString()));
+		}
+		if (qName.equals("plato")) {
+			lstPlatos.add(plato);
+		}
+	}
+
+	public List<Plato> getPlatos() {
+		return lstPlatos;
+	}
+
+}

@@ -1,0 +1,81 @@
+package model;
+
+/*
+ * Realiza una aplicación Java que permita crear objetos de la clase Ordenador (model), sabiendo que:
+
+Atributos = {memoria<integer>, cpu <double>, disco<string>, precio<double>}
+
+Restricciones para cada atributo:
+
+memoria: sólo serán válidos los valores: 4, 8, 16 y 32.
+cpu: entre 1.2 y 4.0 y además sea un valor par.
+disco: sólo serán válidos los valores:  "SSD" y "HD" (utilizar enumerados).
+precio: positivo y menor que 1.000'00 €
+Consideraciones:
+
+Los valores no admitidos para cada atributo deberán levantar una excepción personalizada con un mensaje que se ajuste al motivo de la no validación.
+Las excepciones personalizadas para la memoria (MemoriaException), la cpu (CpuException) y el disco (DiscoException) deberán de heredar de ComponenteException, la cual almacenará el mensaje exacto del motivo de la no validación.
+El método constructor de la clase Ordenador sólo deberá elevar las excepciones: ComponenteException y PrecioException.
+El método main (view) sólo deberá gestionar las excepciones: ComponenteException, PrecioException y Exception, para mostrar el correspondiente mensaje de no validación o error.
+Escribe en un fichero de tipo texto ("ordenadores.txt") una lista (ArrayList) que almacena 3 ordenadores con valores inventados (no hay que pedirlos al usuario ni tampoco sean valores por defecto del constructor).
+ * 
+ * 
+ * 
+ * 
+ */
+public class Ordenador {
+	
+	private Integer memoria;
+	private Double cpu;
+	private String disco;
+	private Double precio;
+	
+	
+	public void validarMemoria(Integer memoria) throws MemoriaException {
+		if (memoria != 4 && memoria != 8 && memoria != 16 && memoria != 32) {
+			throw new MemoriaException();
+		}
+	}
+	public void validarCpu(Double cpu) throws CpuException{
+		if (cpu< 1.2 && cpu> 4.0 && cpu % 2 != 0) {
+			throw new CpuException("ERROR");
+		}
+	}
+	public void validarDisco(String disco) throws DiscosException{
+		if(!disco.equals(Discos.HD) || !disco.equals(Discos.SSD)) {
+			throw new DiscosException("ERROR");
+			
+		}
+		
+	}
+	public Integer getMemoria() {
+		return memoria;
+	}
+	public void setMemoria(Integer memoria) throws ComponenteException {
+		validarMemoria(memoria);
+		this.memoria = memoria;
+	}
+	public Double getCpu() {
+		return cpu;
+	}
+	public void setCpu(Double cpu) throws CpuException {
+		validarCpu(cpu);
+		this.cpu = cpu;
+	}
+	public String getDisco() {
+		return disco;
+	}
+	public void setDisco(String disco) {
+		validarDisco(disco);
+		this.disco = disco;
+	}
+	public Double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+	
+	
+
+}

@@ -1,0 +1,23 @@
+package unico;
+//Implementar un método que calcule a elevado a n, donde a es real, y n es un entero positivo. 
+
+//Realizar una versión iterativa y otra recursiva.
+
+public class Calculo {
+	public static void main(String[] args) {
+		// VARIABLES
+		double a;
+		int n;
+		double r;
+		a = Util.leerLineaDouble("Introduzca base");
+		n = Util.leerLineaInt("Introduzca exponente");
+		r = elevar(a, n);
+		Util.solucion(sol);
+	}
+
+	private static double elevar(double a, int n) {
+		double res;
+		res = Math.pow(a, n);
+		return res;
+	}
+}

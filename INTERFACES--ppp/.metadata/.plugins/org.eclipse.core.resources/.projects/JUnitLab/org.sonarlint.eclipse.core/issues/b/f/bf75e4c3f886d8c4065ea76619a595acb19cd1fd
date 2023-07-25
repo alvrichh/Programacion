@@ -1,0 +1,100 @@
+
+š
+java:S1192…"jDefine a constant instead of duplicating this literal "La agrupaciÃ³n tipo Chirigota con nombre " 3 times.(ÀÕÂ…Hô>RCRITICALZ
+CODE_SMELL
+
+java:S1192ì"LDefine a constant instead of duplicating this literal ": Nombre: " 12 times.(äñ­ëøÿÿÿÿHø>RCRITICALZ
+CODE_SMELL
+
+java:S1192«"XDefine a constant instead of duplicating this literal " canta la presentaciÃ³n" 4 times.(­ÅÙ×şÿÿÿÿH…?RCRITICALZ
+CODE_SMELL
+‡
+java:S1192‚"WDefine a constant instead of duplicating this literal " va camino de la falla" 4 times.(’—å•HŠ?RCRITICALZ
+CODE_SMELL
+~
+java:S1192Ç"NDefine a constant instead of duplicating this literal " hace el tipo" 4 times.(©ûõ°H?RCRITICALZ
+CODE_SMELL
+•
+java:S1192‚"eDefine a constant instead of duplicating this literal "La agrupaciÃ³n tipo Coro con nombre " 3 times.(’—å•H”?RCRITICALZ
+CODE_SMELL
+
+java:S1192"iDefine a constant instead of duplicating this literal "La agrupaciÃ³n tipo Comparsa con nombre " 3 times.(ƒÕŸÒıÿÿÿÿH˜?RCRITICALZ
+CODE_SMELL
+
+java:S1192Š"iDefine a constant instead of duplicating this literal "La agrupaciÃ³n tipo Cuarteto con nombre " 3 times.(÷şŠÀúÿÿÿÿHœ?RCRITICALZ
+CODE_SMELL
+ˆ
+java:S1192í"XDefine a constant instead of duplicating this literal ", Puntos del concurso: " 6 times.(À½ò†H ?RCRITICALZ
+CODE_SMELL
+\
+java:S1066…"/Merge this if statement with the enclosing one.(»¶ÅH§?RMAJORZ
+CODE_SMELL
+\
+java:S1066–"/Merge this if statement with the enclosing one.(»¶ÅH©?RMAJORZ
+CODE_SMELL
+F
+java:S1220""Move this file to a named package.H«?RMINORZ
+CODE_SMELL
+h	java:S107Z"=Method has 13 parameters, which is greater than 7 authorized.(™¹©ïH¬?RMAJORZ
+CODE_SMELL
+~	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À÷ÒéùÿÿÿÿH­?RMINORZ
+CODE_SMELL
+~	java:S1000"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹àÁğüÿÿÿÿH®?RMINORZ
+CODE_SMELL
+~	java:S100<"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷³ÅıÿÿÿÿH¯?RMINORZ
+CODE_SMELL
+O	java:S131I""Add a default case to this switch.(©Ó¸bH°?RCRITICALZ
+CODE_SMELL
+M
+java:S6205J"Remove this redundant block.(÷¦­¹ûÿÿÿÿH±?RMINORZ
+CODE_SMELL
+M
+java:S6205M"Remove this redundant block.(ƒúä©ûÿÿÿÿH³?RMINORZ
+CODE_SMELL
+H
+java:S6205Q"Remove this redundant block.(€µ‡¥Hµ?RMINORZ
+CODE_SMELL
+g
+java:S1172["6Remove this unused method parameter "puntosObtenidos".(ù¥Û‡ÿÿÿÿÿH·?RMAJORZ
+CODE_SMELL
+v
+java:S4201"IRemove this unnecessary null check; "instanceof" returns false for nulls.(íĞÎĞH¹?RMINORZ
+CODE_SMELL
+U	java:S108Ÿ")Either remove or fill this block of code.(å¥‡Hº?RMAJORZ
+CODE_SMELL
+v
+java:S4201ª"IRemove this unnecessary null check; "instanceof" returns false for nulls.(íĞÎĞH»?RMINORZ
+CODE_SMELL
+v
+java:S4201Æ"IRemove this unnecessary null check; "instanceof" returns false for nulls.(íĞÎĞH¼?RMINORZ
+CODE_SMELL
+V	java:S131İ""Add a default case to this switch.(Ç¬ÁÅùÿÿÿÿH½?RCRITICALZ
+CODE_SMELL
+N
+java:S6205Ş"Remove this redundant block.(ÒˆÈ×ùÿÿÿÿH¾?RMINORZ
+CODE_SMELL
+N
+java:S6205á"Remove this redundant block.(÷¦­¹ûÿÿÿÿHÀ?RMINORZ
+CODE_SMELL
+N
+java:S6205å"Remove this redundant block.(ƒúä©ûÿÿÿÿHÂ?RMINORZ
+CODE_SMELL
+N
+java:S6205é"Remove this redundant block.(¬—ÌâûÿÿÿÿHÄ?RMINORZ
+CODE_SMELL
+	java:S100ğ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èÿÉÅÿÿÿÿÿHÆ?RMINORZ
+CODE_SMELL
+h	java:S125¹"<This block of commented-out lines of code should be removed.(Ì ÆHÇ?RMAJORZ
+CODE_SMELL
+‡
+java:S3776«"RRefactor this method to reduce its Cognitive Complexity from 81 to the 15 allowed.(³§İüÿÿÿÿHÈ?RCRITICALZ
+CODE_SMELL
+Q	java:S131­""Add a default case to this switch.(Ì£ÛºHè?RCRITICALZ
+CODE_SMELL
+‚
+java:S3776›"RRefactor this method to reduce its Cognitive Complexity from 81 to the 15 allowed.(Ä–ÚèHé?RCRITICALZ
+CODE_SMELL
+Q	java:S131""Add a default case to this switch.(Ì£ÛºH‰@RCRITICALZ
+CODE_SMELL
+h	java:S125¥"<This block of commented-out lines of code should be removed.(Ë©¸HŠ@RMAJORZ
+CODE_SMELL

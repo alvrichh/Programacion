@@ -1,0 +1,46 @@
+package controller;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+
+public class RecorridoDOM {
+	
+	private Document docXML;
+	
+	public RecorridoDOM(String fileName){
+		readXML(fileName);
+		
+	}
+
+	private void readXML(String fileName) {
+		
+		try {
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			
+			docXML = db.parse(fileName);
+			docXML.getDocumentElement().normalize();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	private void writeXML(String fileName) throws Exception{
+		try {
+			Transformer t = TransformerFactory.newInstance().newTransformer();
+			t.setOutputProperty(OutputKeys.METHOD, "xml");
+			t.setOutputProperty(OutputKeys.ENCODING, "utf-8");
+			t.transform(new DOMSource(docXML), new StreamResult(fileName));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

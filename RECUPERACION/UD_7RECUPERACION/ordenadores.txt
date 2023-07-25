@@ -1,0 +1,3 @@
+Ordenador [memoria=8, cpu=2.4, disco=SSD, precio=799.99]
+Ordenador [memoria=16, cpu=3.0, disco=HD, precio=599.99]
+Ordenador [memoria=32, cpu=4.0, disco=SSD, precio=899.99]

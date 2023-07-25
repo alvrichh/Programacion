@@ -1,0 +1,14 @@
+package model;
+
+@SuppressWarnings("serial")
+public class PrecioException extends Exception {
+	
+
+	public PrecioException(Double precio) {
+		String mensaje;
+		if (precio <0 ) {
+			
+		}
+
+	}
+}

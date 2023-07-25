@@ -1,0 +1,22 @@
+package controller;
+
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+
+public class ViviendasDOM {
+	
+	
+	public ViviendasDOM() {
+		
+		writeXML();
+		
+		
+	}
+	
+	public void writeXML() {
+		Transformer t = TransformerFactory.newInstance();
+		
+		
+	}
+}
+

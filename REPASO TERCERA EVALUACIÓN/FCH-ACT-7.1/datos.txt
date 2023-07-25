@@ -1,0 +1,3 @@
+mitituloA:miautorA
+mitituloB:miautorB
+mitituloC:miautorC

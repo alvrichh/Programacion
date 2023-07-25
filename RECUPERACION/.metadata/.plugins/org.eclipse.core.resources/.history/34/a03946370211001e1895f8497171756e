@@ -1,0 +1,8 @@
+package model;
+
+public class MemoriaException extends ComponenteExcepcion {
+
+	public MemoriaException() {
+		super("Error");
+	}
+}

@@ -1,0 +1,15 @@
+package controller;
+
+import java.io.FileReader;
+
+public class LeerJSON {
+			
+	try (FileReader reader = new FileReader("viviendas.json")) {
+
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
+}
+
+	
+

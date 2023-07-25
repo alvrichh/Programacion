@@ -1,0 +1,90 @@
+package controller;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import dbm.ConexionBD;
+import model.Products;
+import view.ControllerException;
+import view.Product;
+import view.ProductoNoEncontradoException;
+
+
+public class CTRLProduct {
+
+	public static List<Products> getListaProductos() {
+		List<Products> listado = new ArrayList<Products>();
+		try {
+			ConexionBD.openConnection();
+			ResultSet resultadoQuery = ConexionBD.query("SELECT * FROM products");
+			while (resultadoQuery.next()) {
+				Products elemento = new Products();
+				elemento.setProductCode(resultadoQuery.getString("productCode"));
+				elemento.setProductName(resultadoQuery.getString("productName"));
+				elemento.setProductLine(resultadoQuery.getString("productLine"));
+				elemento.setProductVendor(resultadoQuery.getString("productVendor"));
+				elemento.setProductDescription(resultadoQuery.getString("productDescription"));
+				elemento.setQuantityInStock(resultadoQuery.getInt("quantityInStock"));
+				elemento.setBuyPrice(resultadoQuery.getDouble("buyPrice"));
+				elemento.setMSRP(resultadoQuery.getDouble("MSRP"));
+
+				listado.add(elemento);
+			}
+		} catch (SQLException e) {
+			System.err.println("ERROR AL CONECTAR " + e.getMessage());
+		}
+
+		finally {
+			ConexionBD.closeConnection();
+		}
+
+		return listado;
+	}
+	
+	public Products getProductByCode(String code) throws SQLException {
+
+		Products p = null;
+
+			ConexionBD.openConnection();
+
+			ResultSet resultadoQuery = ConexionBD.query("SELECT * FROM products WHERE productCode = '" + code + "'");
+			if (resultadoQuery.next()) {
+				p = new Products();
+
+				p.setProductCode(resultadoQuery.getString("productCode"));
+				p.setProductName(resultadoQuery.getString("productName"));
+				p.setProductLine(resultadoQuery.getString("productLine"));
+				p.setProductScale(resultadoQuery.getString("productScale"));
+				p.setProductVendor(resultadoQuery.getString("productVendor"));
+				p.setProductDescription(resultadoQuery.getString("productDescription"));
+				p.setQuantityInStock(resultadoQuery.getInt("quantityInStock"));
+				p.setBuyPrice(resultadoQuery.getDouble("buyPrice"));
+				p.setMSRP(resultadoQuery.getDouble("MSRP"));
+
+			}
+			return p;
+	}
+	public static void modifyStock() {
+		ConexionBD.openConnection();
+
+		// Actualizar el stock del producto
+		String sql = "UPDATE products SET quantityInStock = quantityInStock - ?";
+		
+		prepStatement = ConexionBD.prepareStatement(sql);
+
+		
+		prepStatement.executeUpdate();
+
+		
+	}
+/*
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+}

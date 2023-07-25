@@ -1,0 +1,31 @@
+package view;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Principal {
+	public static void main(String[] args) throws IOException {
+
+//		try {
+//			
+//		FileWriter desayunos= new FileWriter("desayunos.xml");
+//			desayunos.write("ejemplo");
+//			desayunos.close();
+//			System.out.println("archivo creado correctamente");
+//
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}}
+		mostrarXML("desayunos.xml");
+		public static void mostrarXML(String fileName) {
+			
+		}
+		
+		
+}
+
+	private static void mostrarXML(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+}

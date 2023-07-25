@@ -1,0 +1,24 @@
+package unico;
+
+public class CalculoRecursivo {
+	
+	public static void main(String[] args) {
+		// VARIABLES
+		double a;
+		int n;
+		double r;
+		a = Util.leerLineaDouble("Introduzca base");
+		n = Util.leerLineaInt("Introduzca exponente");
+		r = elevarRecursivo(a,n);
+	}
+
+	static double elevarRecursivo(double a, int n) {
+		if (a==0) {
+			return 0;
+		}else if (n==0) {
+			return 0;
+		}else {
+			return Math.pow(a, n);
+		}	
+	}
+}

@@ -1,0 +1,17 @@
+package view;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		try {
+			Persona p = new Persona (n, e, p);
+		} catch (Exception e2) {
+			// TODO: handle exception
+		}
+		n = Util.leerString("¿Cómo se llama?");
+		e = Util.leerInt("¿Qué edad tiene?");
+		p = Util.leerDouble("¿Cuánto pesa?");
+		
+	}
+}

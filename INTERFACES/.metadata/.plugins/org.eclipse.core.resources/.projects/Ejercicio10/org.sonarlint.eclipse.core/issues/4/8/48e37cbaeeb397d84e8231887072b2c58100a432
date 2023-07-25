@@ -1,0 +1,86 @@
+
+j	java:S106m"9Replace this use of System.out or System.err by a logger.(š¨äûùÿÿÿÿHã·RMAJORZ
+CODE_SMELL
+”
+java:S1192I"_Define a constant instead of duplicating this literal "
+Agrupaciones antes de ordenar" 3 times.(İËïÒøÿÿÿÿHä·RCRITICALZ
+CODE_SMELL
+–
+java:S1192P"aDefine a constant instead of duplicating this literal "No hay agrupaciones para ordenar" 3 times.(š¨äûùÿÿÿÿHè·RCRITICALZ
+CODE_SMELL
+W
+java:S1444"*Make this "public static coac" field final(“§™·Hì·RMINORZ
+CODE_SMELL
+m
+java:S2589¤"8Remove this expression which always evaluates to "false"(ÿïâú8óÈË‹å0Hí·RMAJORZ
+CODE_SMELL
+j	java:S106W"9Replace this use of System.out or System.err by a logger.(İËïÒøÿÿÿÿHñ·RMAJORZ
+CODE_SMELL
+}
+java:S1104"PMake coac a static final constant or non-public and provide accessors if needed.(“§™·Hò·RMINORZ
+CODE_SMELL
+l	java:S106@"9Replace this use of System.out or System.err by a logger.(Óè¿8óÈË‹å0Hó·RMAJORZ
+CODE_SMELL
+q	java:S106P"9Replace this use of System.out or System.err by a logger.(š¨äûùÿÿÿÿ8óÈË‹å0Hô·RMAJORZ
+CODE_SMELL
+V	java:S131#""Add a default case to this switch.(Ëë¡ÛúÿÿÿÿHõ·RCRITICALZ
+CODE_SMELL
+j	java:S106^"9Replace this use of System.out or System.err by a logger.(š¨äûùÿÿÿÿHö·RMAJORZ
+CODE_SMELL
+j	java:S106+"9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿH÷·RMAJORZ
+CODE_SMELL
+j	java:S106g"9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿHø·RMAJORZ
+CODE_SMELL
+q	java:S106J"9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿ8ÉüÅ‹å0Hù·RMAJORZ
+CODE_SMELL
+j	java:S106M"9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿHú·RMAJORZ
+CODE_SMELL
+q	java:S106v"9Replace this use of System.out or System.err by a logger.(Èïº°úÿÿÿÿ8¨ã¿‹å0Hû·RMAJORZ
+CODE_SMELL
+k	java:S106—"9Replace this use of System.out or System.err by a logger.(å¾µºûÿÿÿÿHü·RMAJORZ
+CODE_SMELL
+k	java:S106Å"9Replace this use of System.out or System.err by a logger.(¦ÜÏşûÿÿÿÿHı·RMAJORZ
+CODE_SMELL
+j	java:S106"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHş·RMAJORZ
+CODE_SMELL
+g
+java:S1118":Add a private constructor to hide the implicit public one.(Ìì¢ÏHÿ·RMAJORZ
+CODE_SMELL
+j	java:S106X"9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿH€¸RMAJORZ
+CODE_SMELL
+j	java:S106j"9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿH¸RMAJORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿH‚¸RMAJORZ
+CODE_SMELL
+•
+java:S1192L"`Define a constant instead of duplicating this literal "Agrupaciones despues de ordenar" 3 times.(ŒúˆäıÿÿÿÿHƒ¸RCRITICALZ
+CODE_SMELL
+j	java:S106Z"9Replace this use of System.out or System.err by a logger.(ŒúˆäıÿÿÿÿH‡¸RMAJORZ
+CODE_SMELL
+j	java:S106I"9Replace this use of System.out or System.err by a logger.(İËïÒøÿÿÿÿHˆ¸RMAJORZ
+CODE_SMELL
+l	java:S106w"9Replace this use of System.out or System.err by a logger.(°‘«Ú8ÉüÅ‹å0H‰¸RMAJORZ
+CODE_SMELL
+q	java:S106z"9Replace this use of System.out or System.err by a logger.(¯”âóıÿÿÿÿ8ÉüÅ‹å0HŠ¸RMAJORZ
+CODE_SMELL
+j	java:S106i"9Replace this use of System.out or System.err by a logger.(ŒúˆäıÿÿÿÿH‹¸RMAJORZ
+CODE_SMELL
+j	java:S106f"9Replace this use of System.out or System.err by a logger.(İËïÒøÿÿÿÿHŒ¸RMAJORZ
+CODE_SMELL
+r	java:S106‡"9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿ8óÈË‹å0H¸RMAJORZ
+CODE_SMELL
+Š
+java:S3776€"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.( ä«ˆ8óÈË‹å0H¸RCRITICALZ
+CODE_SMELL
+k	java:S106š"9Replace this use of System.out or System.err by a logger.(ÒœìãÿÿÿÿÿH™¸RMAJORZ
+CODE_SMELL
+j	java:S106L"9Replace this use of System.out or System.err by a logger.(ŒúˆäıÿÿÿÿHš¸RMAJORZ
+CODE_SMELL
+r	java:S106 "9Replace this use of System.out or System.err by a logger.(ÿõ€âøÿÿÿÿ8óÈË‹å0H›¸RMAJORZ
+CODE_SMELL
+j	java:S106x"9Replace this use of System.out or System.err by a logger.(—û±üÿÿÿÿÿHœ¸RMAJORZ
+CODE_SMELL
+j	java:S106["9Replace this use of System.out or System.err by a logger.(Öá”ÿÿÿÿÿH¸RMAJORZ
+CODE_SMELL
+j	java:S106y"9Replace this use of System.out or System.err by a logger.(û¥ŞãûÿÿÿÿH¸RMAJORZ
+CODE_SMELL

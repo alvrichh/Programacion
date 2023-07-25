@@ -1,0 +1,7 @@
+package view;
+
+public class Principal {
+	
+	Ordenador o1 = new Ordenador(4, 1.3, "SSD", 500.0);
+
+}

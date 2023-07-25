@@ -1,0 +1,10 @@
+package view;
+
+public class Principal {
+	
+	
+	//aquí vamos a hacer las cosas:
+	
+	Pais p = new Pais;
+
+}

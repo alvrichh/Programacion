@@ -1,0 +1,10 @@
+package model;
+
+import java.io.BufferedReader;
+
+public class NombreNoValido extends Exception {
+
+	private Libro[] registro;
+	
+	BufferedReader
+}

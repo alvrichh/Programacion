@@ -1,0 +1,60 @@
+package model;
+
+public class Coro extends AgrupacionOficial {
+
+	private int numeroBandurrias;
+	private int numeroGuitarras;
+	private int puntosObtenidos;
+
+	public Coro() {
+
+	}
+
+	public Coro(int numeroBandurrias, int numeroGuitarras, int puntosObtenidos, String nombre, String autor,
+			String autorMusica, String autorLetra, String tipo) {
+		super(nombre, autor, autorMusica, autorLetra, tipo);
+		this.numeroBandurrias = numeroBandurrias;
+		this.numeroGuitarras = numeroGuitarras;
+		this.puntosObtenidos = puntosObtenidos;
+	}
+
+	public int getNumeroBandurrias() {
+		return numeroBandurrias;
+	}
+
+	public void setNumeroBandurrias(int numeroBandurrias) {
+		this.numeroBandurrias = numeroBandurrias;
+	}
+
+	public int getNumeroGuitarras() {
+		return numeroGuitarras;
+	}
+
+	public void setNumeroGuitarras(int numeroGuitarras) {
+		this.numeroGuitarras = numeroGuitarras;
+	}
+
+	public int getPuntosObtenidos() {
+		return puntosObtenidos;
+	}
+
+	public void setPuntosObtenidos(int puntosObtenidos) {
+		this.puntosObtenidos = puntosObtenidos;
+	}
+
+	@Override
+	public String cantarPresentacion() {
+		return "Cantando la presentación del Coro de nombre " + getNombre();
+	}
+
+	@Override
+	public String hacerTipo() {
+		return "El Coro " + getNombre() + " va de " + getTipo();
+	}
+
+	@Override
+	public String caminitoFalla() {
+		return "El Coro " + getNombre() + " va caminito del Falla";
+	}
+
+}

@@ -1,0 +1,10 @@
+package exam;
+
+public class Asignatura {
+	
+	private String nombre;
+	private String aula;
+	private int maxAlumn;
+	
+
+}

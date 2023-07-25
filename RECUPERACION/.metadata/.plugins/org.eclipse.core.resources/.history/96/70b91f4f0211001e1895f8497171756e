@@ -1,0 +1,20 @@
+package model;
+
+@SuppressWarnings("serial")
+public class MemoriaException extends ComponenteExcepcion {
+
+	public MemoriaException(String mensaje) {
+		super(mensaje);
+	}
+}
+/*
+ * package model;
+
+@SuppressWarnings("serial")
+public class ComponenteException extends Exception {
+	public ComponenteException(String mensaje) {
+		super(mensaje);
+	}
+
+}
+

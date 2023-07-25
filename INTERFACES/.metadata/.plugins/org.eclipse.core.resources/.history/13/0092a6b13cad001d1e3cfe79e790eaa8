@@ -1,0 +1,13 @@
+package view;
+
+import view.menu.Menu;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Double[] d = new Double[1000000000000000000000000000000000000000000000000];
+		//Menu.gestionPrograma();
+	}
+
+}

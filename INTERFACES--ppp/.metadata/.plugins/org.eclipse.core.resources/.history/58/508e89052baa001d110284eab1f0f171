@@ -1,0 +1,1125 @@
+package view;
+
+import java.util.Scanner;
+
+import controller.COAC;
+import model.AgrupacionOficial;
+import model.Chirigota;
+import model.Comparsa;
+import model.Coro;
+import model.Cuarteto;
+import model.Romancero;
+
+class Menu {
+
+	private static final int INTDEFECTO = 0;
+	private static final String STRINGDEFECTO = "VACIO";
+	private static final String MSGSTRINGDEFECTO = "VALOR INTRODUCIDO INCORRECTO, GUARDADO VALOR POR DEFECTO [ "
+			+ STRINGDEFECTO + " ]";
+	private static final String MSGINTDEFECTO = "VALOR INTRODUCIDO INCORRECTO, GUARDADO VALOR POR DEFECTO [ "
+			+ INTDEFECTO + " ]";
+
+	private static Scanner entrada = new Scanner(System.in);
+	private static COAC coac = new COAC();
+
+	// Inicio
+	static void gestionPrograma() {
+		int opc;
+		int opcT;
+		do {
+			mostrarMenuPrincipal();
+			try {
+				opc = Util.leerInt("Opción [0 - Salir] : ");
+			} catch (Exception e) {
+				System.err.println(MSGINTDEFECTO);
+				opc = INTDEFECTO;
+			}
+
+			switch (opc) {
+			case 0 -> finDelPrograma();
+			case 1 -> opcIntegrantes();
+			case 2 -> opcAñadirAgrupacion();
+			case 3 -> {
+				do {
+					Util.escribir("\n");
+					Util.escribir("┌──────────────────────────┐");
+					Util.escribir("│    ELIMINAR AGRUPACION   │");
+					Util.escribir("└──────────────────────────┘");
+					System.out.println(coac.listarTodo());
+					if (!coac.listarTodo().contains("VACIA")) {
+						try {
+							opcT = Util.leerInt("Introduce la posicion del que desea eliminar\nOpción [0 - Volver] : ");
+
+						} catch (Exception e) {
+							opcT = INTDEFECTO;
+							System.err.println(MSGINTDEFECTO);
+						}
+					} else {
+						System.out.println("Presiona enter para volver");
+						entrada.nextLine();
+						opcT = 0;
+					}
+
+					if (opcT > 0 && opcT <= coac.getNumeroDeAgrupacionesActual()) {
+						if (coac.eliminar_agrupacion(opcT)) {
+							System.out.println("\nEliminado correctamente");
+							opcT = 0;
+						} else {
+							System.err.print("\nNo se ha podido eliminar");
+							opcT = 0;
+						}
+
+					} else {
+						if (opcT != 0)
+							System.err.print("La posicion introducida no se encuentra.");
+
+						opcT = 0;
+					}
+
+				} while (opcT != 0);
+			}
+			case 4 -> opcEditarAgrupacion();
+			case 5 -> opcConcurso();
+			case 6 -> {
+				System.out.println(coac.listarTodo());
+				System.out.print("\nPulsa Intro para volver");
+				entrada.nextLine();
+			}
+			case 7 -> {
+				do {
+					System.out.println(coac.listasIndividuales("Chirigota"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+
+				} while (opcT != 0);
+			}
+			case 8 -> {
+				do {
+					System.out.println(coac.listasIndividuales("Coro"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+
+				} while (opcT != 0);
+			}
+			case 9 -> {
+				do {
+					System.out.println(coac.listasIndividuales("Cuarteto"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+
+				} while (opcT != 0);
+			}
+			case 10 -> {
+				do {
+					System.out.println(coac.listasIndividuales("Comparsa"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+
+				} while (opcT != 0);
+			}
+			case 11 -> {
+				do {
+					System.out.println(coac.listasIndividuales("Romancero"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+
+				} while (opcT != 0);
+			}
+			case 12 -> {
+				System.out.println("\nAgrupaciones antes de ordenar");
+				System.out.println(coac.listarTodo());
+
+				if (!coac.ordenarAgrupaciones("nombre")) {
+					System.out.println("Agrupaciones despues de ordenar");
+					coac.ordenarAgrupaciones("nombre");
+					System.out.println(coac.listarTodo());
+				} else {
+					System.err.println("No hay agrupaciones para ordenar");
+					System.out.println("Presiona enter para volver");
+					entrada.nextLine();
+
+				}
+			}
+			case 13 -> {
+				System.out.println("\nAgrupaciones antes de ordenar");
+				System.out.println(coac.listarTodo());
+
+				if (!coac.ordenarAgrupaciones("autor")) {
+					System.out.println("Agrupaciones despues de ordenar");
+					coac.ordenarAgrupaciones("autor");
+					System.out.println(coac.listarTodo());
+				} else {
+					System.err.println("No hay agrupaciones para ordenar");
+					System.out.println("Presiona enter para volver");
+					entrada.nextLine();
+
+				}
+			}
+			case 14 -> {
+				System.out.println("\nAgrupaciones antes de ordenar");
+				System.out.println(coac.listarTodo());
+
+				if (!coac.ordenarAgrupaciones("musicaLetra")) {
+					System.out.println("Agrupaciones despues de ordenar");
+					coac.ordenarAgrupaciones("musicaLetra");
+					System.out.println(coac.listarTodo());
+				} else {
+					System.err.println("No hay agrupaciones para ordenar");
+					System.out.println("Presiona enter para volver");
+					entrada.nextLine();
+				}
+
+			}
+			}
+			if (opc > 14 || opc < 0)
+				System.err.print("\nOpcion incorrecta!");
+		} while (opc != 0);
+
+		finDelPrograma();
+
+	}
+
+	// Opcion 1. Gestión de Participantes.
+
+	private static void opcIntegrantes() {
+		int opc;
+		int opcT;
+		do {
+			mostrarMenuIntegrantes();
+			try {
+				opc = Util.leerInt("Opción [0 - Salir] : ");
+			} catch (Exception e) {
+				System.err.println(MSGINTDEFECTO);
+				opc = INTDEFECTO;
+			}
+			switch (opc) {
+			case 1 -> {
+				String nombre;
+				int edad;
+				String localidad;
+				System.out.print("Introduce su nombre: ");
+				try {
+					nombre = entrada.nextLine();
+				} catch (Exception e) {
+					nombre = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(nombre.length() > 0))
+					nombre = STRINGDEFECTO;
+				do {
+					System.out.print("Introduce su edad(+18): ");
+					try {
+						edad = Integer.parseInt(entrada.nextLine());
+					} catch (Exception e) {
+						edad = INTDEFECTO;
+						System.err.println(MSGINTDEFECTO);
+					}
+					if(edad < 18) System.err.println("La edad minimo son 18 años");
+				} while (edad < 18);
+				System.out.print("Introduce su localidad: ");
+				try {
+					localidad = entrada.nextLine();
+				} catch (Exception e) {
+					localidad = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(localidad.length() > 0))
+					localidad = STRINGDEFECTO;
+				if (coac.añadirParticipante(nombre, edad, localidad))
+					System.out.println("\nAñadido correctamente");
+				else {
+					System.err.println("No se ha podido añadir");
+				}
+
+			}
+			case 2 -> {
+				if (!coac.listarParticipante().contains("VACIA")) {
+					int pos;
+					do {
+						System.out.println(coac.listarParticipante());
+						System.out.print(
+								"Indica la posicion del participante que quieres eliminar\nOpción [0 - Volver] : ");
+						try {
+							pos = Integer.parseInt(entrada.nextLine());
+						} catch (Exception e) {
+							pos = INTDEFECTO;
+							System.err.println(MSGINTDEFECTO);
+						}
+						if (pos > 0 && pos <= coac.getNumeroDeIntegrantesActual()) {
+							if (coac.borrarParticipante(pos)) {
+								System.out.println("\nEliminado correctamente");
+								break;
+							} else {
+								System.err.println("No se ha podido eliminar");
+							}
+						} else {
+							System.err.print("\nPosicion incorrecta");
+						}
+					} while (pos != 0);
+
+				} else {
+					System.err.println("No hay participantes");
+				}
+
+			}
+			case 3 -> {
+				int pos;
+				if (!coac.listarParticipante().contains("VACIA")) {
+					do {
+						System.out.println(coac.listarParticipante());
+						System.out.print("Indica la posicion del participante que quieres modificar");
+						try {
+							pos = Util.leerInt("\nOpción [0 - Salir] : ");
+						} catch (Exception e) {
+							System.err.println(MSGINTDEFECTO);
+							pos = INTDEFECTO;
+						}
+						if (pos > 0 && pos <= coac.getNumeroDeIntegrantesActual()) {
+							String nombre;
+							int edad;
+							String localidad;
+							System.out.println();
+							System.out.print(
+									"Introduce su nombre[" + coac.getDatosParticipante(pos).split(",")[0] + "]: ");
+							nombre = entrada.nextLine();
+							do {
+								System.out.print(
+										"Introduce su edad[" + coac.getDatosParticipante(pos).split(",")[1] + "]: ");
+								edad = Integer.parseInt(entrada.nextLine());
+								if (edad < 18)
+									if (edad < 0)
+										System.err.println("Esta muerto o que?");
+									else {
+										System.err.println("Debe ser mayor de edad");
+									}
+								if (edad > 150) {
+									System.err.println("Nada, es tutancamon, MAXIMO 150 años y ya mucho duras!!");
+								}
+
+							} while (edad < 18 || edad > 150);
+
+							System.out.print(
+									"Introduce su localidad[" + coac.getDatosParticipante(pos).split(",")[2] + "]: ");
+							localidad = entrada.nextLine();
+							if (coac.editarParticipante(pos, nombre, edad, localidad)) {
+								System.out.println("\nModificado correctamente");
+								break;
+							}
+
+							else {
+								System.err.println("No se ha podido modificar");
+
+							}
+						}
+						if (pos >= coac.getNumeroDeIntegrantesActual() || pos < 0) {
+							System.err.print("\nPosicion incorrecta");
+						}
+
+					} while (pos != 0);
+
+				} else {
+					System.err.println("No hay participantes");
+				}
+
+			}
+			case 4 -> {
+				System.out.println(coac.listarParticipante());
+				System.out.print("Pulsa enter para continuar");
+				entrada.nextLine();
+
+			}
+			case 5 -> {
+				if (coac.getNumeroDeIntegrantesActual() > 0) {
+					do {
+						System.out.print(coac.listarParticipante()
+								+ "\nQue integrante quieres comprobar?\nOpcion[0 - Volver]: ");
+						try {
+							opcT = Integer.parseInt(entrada.nextLine());
+						} catch (Exception e) {
+							opcT = INTDEFECTO;
+							System.err.println(MSGINTDEFECTO);
+						}
+						if (opcT > 0 && opcT <= coac.getNumeroDeIntegrantesActual()) {
+							System.out.println(coac.agrupacionesDeParticipante(opcT));
+
+							System.out.println("Presiona enter para volver");
+							entrada.nextLine();
+						} else {
+							System.err.println("Introduce una posicion válida");
+						}
+
+					} while (opcT != 0);
+				} else {
+					System.out.println(
+							"\n***Lista De Participantes***\n---------------------------\n        LISTA VACIA");
+				}
+			}
+			case 6 -> {
+				if (!(coac.getNumeroDeIntegrantesActual() == 1)) {
+					if (!coac.listarParticipante().contains("VACIA")) {
+						System.out.println("\nLista Anterior");
+						System.out.println(coac.listarParticipante());
+						coac.ordenarParticipantesPorNombre();
+						System.out.println("\nLista Ordenada");
+						System.out.println(coac.listarParticipante());
+						System.out.print("Pulsa enter para continuar");
+						entrada.nextLine();
+					} else {
+						System.out.println(
+								"\n***Lista De Participantes***\n---------------------------\n        LISTA VACIA");
+					}
+				} else {
+					System.err.println("Solo hay un participante, no se puede ordenar!\nPresiona enter para volver");
+					entrada.nextLine();
+
+				}
+
+			}
+
+			}
+			if (opc > 6 || opc < 0)
+				System.err.print("\nOpcion incorrecta!");
+		} while (opc != 0);
+	}
+
+	// Opcion 2. Añadir una agrupación.
+
+	private static void opcAñadirAgrupacion() {
+		int opc;
+		int opcT;
+		int temp;
+		boolean addOther = false;
+		String nombre = "";
+		String autor = "";
+		String autorMusica = "";
+		String autorLetra = "";
+		String tipo = "";
+		int puntosObtenidos = 0;
+		int numeroBandurrias = 0;
+		int numeroGuitarras = 0;
+		String empresaAtrezzo = "";
+		int numeroCupies = 0;
+		int numeroMiembros = 0;
+		String tematica = "";
+		do {
+			mostrarMenuAñadirAgrupacion();
+			try {
+				opc = Util.leerInt("Opción [0 - Volver] : ");
+
+			} catch (Exception e) {
+				opc = INTDEFECTO;
+				System.err.println(MSGINTDEFECTO);
+			}
+			if (opc > 0 && opc < 6) {
+				// Datos Agrupacion
+				System.out.print("Indica el nombre: ");
+				try {
+					nombre = entrada.nextLine();
+				} catch (Exception e) {
+					nombre = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(nombre.length() > 0))
+					nombre = STRINGDEFECTO;
+
+				System.out.print("Indica el autor: ");
+				try {
+					autor = entrada.nextLine();
+				} catch (Exception e) {
+					autor = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(autor.length() > 0))
+					autor = STRINGDEFECTO;
+				System.out.print("Indica el autor de la musica: ");
+				try {
+					autorMusica = entrada.nextLine();
+				} catch (Exception e) {
+					autorMusica = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(autorMusica.length() > 0))
+					autorMusica = STRINGDEFECTO;
+
+				System.out.print("Indica el autor de la letra: ");
+				try {
+					autorLetra = entrada.nextLine();
+				} catch (Exception e) {
+					autorLetra = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(autorLetra.length() > 0))
+					autorLetra = STRINGDEFECTO;
+				System.out.print("Indica el tipo: ");
+				try {
+					tipo = entrada.nextLine();
+				} catch (Exception e) {
+					tipo = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(tipo.length() > 0))
+					tipo = STRINGDEFECTO;
+			}
+			switch (opc) {
+			case 1 -> {
+				// Datos Coro
+				System.out.print("Indica el numero de bandurrias: ");
+				do {
+					try {
+						numeroBandurrias = Integer.parseInt(entrada.nextLine());
+					} catch (Exception e) {
+						numeroBandurrias = INTDEFECTO;
+						System.err.println(MSGINTDEFECTO);
+					}
+					if (numeroBandurrias < 0)
+						System.out.println("Introduce un valor valido!");
+				} while (numeroBandurrias < 0);
+				do {
+
+					System.out.println("Indica el numero de guitarras: ");
+					try {
+						numeroGuitarras = Integer.parseInt(entrada.nextLine());
+
+					} catch (Exception e) {
+						numeroGuitarras = INTDEFECTO;
+						System.err.println(MSGINTDEFECTO);
+					}
+					if (numeroGuitarras < 0)
+						System.out.println("Introduce un valor valido!");
+				} while (numeroGuitarras < 0);
+				coac.inscribir_agrupacion(new Coro(numeroBandurrias, numeroGuitarras, puntosObtenidos, nombre, autor,
+						autorMusica, autorLetra, tipo));
+			}
+			case 2 -> {
+				// Datos comparza
+				System.out.print("Indica la empresa de atrezzo: ");
+				try {
+					empresaAtrezzo = entrada.nextLine();
+
+				} catch (Exception e) {
+					empresaAtrezzo = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(empresaAtrezzo.length() > 0))
+					empresaAtrezzo = STRINGDEFECTO;
+				coac.inscribir_agrupacion(
+						new Comparsa(empresaAtrezzo, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+			}
+			case 3 -> {
+				// Datos chirigota
+				System.out.print("Indica el numero de cupies: ");
+				do {
+
+					try {
+						numeroCupies = Integer.parseInt(entrada.nextLine());
+
+					} catch (Exception e) {
+						numeroCupies = INTDEFECTO;
+						System.err.println(MSGINTDEFECTO);
+					}
+					if (numeroCupies < 0)
+						System.err.println("Introduce un valor valido!");
+				} while (numeroCupies < 0);
+				coac.inscribir_agrupacion(
+						new Chirigota(numeroCupies, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+			}
+			case 4 -> {
+				// Datos Cuarteto
+				do {
+
+					System.out.print("Indica el numero de miembros: ");
+					numeroMiembros = Integer.parseInt(entrada.nextLine());
+					if (numeroMiembros < 0)
+						System.err.println("Introduce un valor valido!");
+				} while (numeroMiembros < 0);
+				coac.inscribir_agrupacion(
+						new Cuarteto(numeroMiembros, puntosObtenidos, nombre, autor, autorMusica, autorLetra, tipo));
+			}
+			case 5 -> {
+				// Datos romancero
+				System.out.print("Indica la tematica: ");
+				try {
+
+					tematica = entrada.nextLine();
+				} catch (Exception e) {
+					tematica = STRINGDEFECTO;
+					System.err.println(MSGSTRINGDEFECTO);
+				}
+				if (!(tematica.length() > 0))
+					tematica = STRINGDEFECTO;
+				coac.inscribir_agrupacion(new Romancero(tematica, nombre, autor, autorMusica, autorLetra, tipo));
+			}
+			}
+			if (opc > 5) {
+				System.err.println("Opcion incorrecta");
+				opc = 0;
+			}
+			if (opc > 0 && opc < 6 && opc != 5 && coac.getNumeroDeIntegrantesActual() > 0) {
+				do {
+					if (!addOther)
+						System.out.println("Quieres añadir algun participante?\n1. Si\n2. No\nOpcion[ 0 - Volver ]: ");
+					try {
+						opcT = Integer.parseInt(entrada.nextLine());
+						if (opcT == 0)
+							opcT = 2;
+					} catch (Exception e) {
+						opcT = 2;
+						System.err.println(MSGINTDEFECTO);
+					}
+					if (opcT < 1) {
+						System.err.println("Nada, el listo que pone otra opcion, vota bien merluzo");
+					}
+					if (opcT > 2) {
+						System.err.println("Nada, el listo que pone otra opcion, vota bien merluzo");
+					}
+				} while (opcT < 1 || opcT > 2);
+				// AÑADIMOS AQUI INTEGRANTES
+				if (opcT == 1) {
+					do {
+						int pos;
+						System.out.println(coac.listarParticipante());
+						System.out.print(
+								"Introduce la posicion del integrante que deseas añadir\nOpcion: [0 - Volver]:  ");
+						try {
+							pos = Integer.parseInt(entrada.nextLine());
+						} catch (Exception e) {
+							pos = INTDEFECTO;
+							System.err.println(MSGINTDEFECTO);
+						}
+						if (pos != 0) {
+							if (pos > 0 && pos <= coac.getNumeroDeIntegrantesActual()) {
+								if (coac.addIntegranteToAgrupacion(pos)) {
+									System.out.println("Integrante añadido correctamente");
+									do {
+										System.out.println("Quieres añadir otro participante?\n1. Si\n2. No");
+										temp = Integer.parseInt(entrada.nextLine());
+										addOther = switch (temp) {
+										case 1 -> true;
+										case 2 -> false;
+										default -> false;
+										};
+										if (!addOther)
+											opc = 0;
+										if (temp < 1 || temp > 2)
+											System.err.println("Introduce una opcion correcta");
+									} while (temp < 1 || temp > 2);
+
+								} else {
+									System.err.println("No se ha podido añadir el integrante");
+								}
+							} else {
+								System.err.print("\nPon un numero correcto ¬¬");
+
+							}
+						} else {
+							break;
+						}
+
+					} while (opc != 0);
+
+				}
+			}
+
+		} while (opc != 0);
+	}
+
+	// Opcion 4. Editar datos de una agrupación.
+
+	private static void opcEditarAgrupacion() {
+		int opc;
+		String nombre = "";
+		String autor = "";
+		String autorMusica = "";
+		String autorLetra = "";
+		String tipo = "";
+		int puntosObtenidos = 0;
+		int numeroBandurrias = 0;
+		int numeroGuitarras = 0;
+		String empresaAtrezzo = "";
+		int numeroCupies = 0;
+		int numeroMiembros = 0;
+		String tematica = "";
+		do {
+			Util.escribir("\n");
+			Util.escribir("┌──────────────────────────┐");
+			Util.escribir("│   MODIFICAR AGRUPACION   │");
+			Util.escribir("└──────────────────────────┘");
+			System.out.println(coac.listarTodo());
+			if (!coac.listarTodo().contains("VACIA")) {
+				System.out.print("Selecciona la posicion de la agrupacion que quieres modificar: ");
+				try {
+					opc = Util.leerInt("Opción [0 - Salir] : ");
+				} catch (Exception e) {
+					System.err.println(MSGINTDEFECTO);
+					opc = INTDEFECTO;
+				}
+				if (opc > 0 && opc <= coac.getNumeroDeAgrupacionesActual()) {
+					// Datos Agrupacion
+					System.out.print("Indica el nombre[" + coac.getAgrupacion()[opc - 1].getNombre() + "]: ");
+					nombre = entrada.nextLine();
+					if (!(nombre.length() > 0))
+						nombre = coac.getAgrupacion()[opc - 1].getNombre();
+					System.out.print("Indica el autor[" + coac.getAgrupacion()[opc - 1].getAutor() + "]: ");
+					autor = entrada.nextLine();
+					if (!(autor.length() > 0))
+						autor = coac.getAgrupacion()[opc - 1].getAutor();
+					System.out.print(
+							"Indica el autor de la musica[" + coac.getAgrupacion()[opc - 1].getAutorMusica() + "]: ");
+					autorMusica = entrada.nextLine();
+					if (!(autorMusica.length() > 0))
+						autorMusica = coac.getAgrupacion()[opc - 1].getAutorMusica();
+					System.out.print(
+							"Indica el autor de la letra[" + coac.getAgrupacion()[opc - 1].getAutorMusica() + "]: ");
+					autorLetra = entrada.nextLine();
+					if (!(autorLetra.length() > 0))
+						autorLetra = coac.getAgrupacion()[opc - 1].getAutorLetra();
+					System.out.print("Indica el tipo[" + coac.getAgrupacion()[opc - 1].getTipo() + "]: ");
+					tipo = entrada.nextLine();
+					if (!(tipo.length() > 0))
+						tipo = coac.getAgrupacion()[opc - 1].getTipo();
+					if (coac.getAgrupacion()[opc - 1] instanceof Coro) {
+						System.out.print("Indica el numero de bandurrias["
+								+ (((Coro) coac.getAgrupacion()[opc - 1]).getNumeroBandurrias()) + "]: ");
+						try {
+							numeroBandurrias = Integer.parseInt(entrada.nextLine());
+						} catch (Exception e) {
+							numeroBandurrias = INTDEFECTO;
+							System.err.println(MSGINTDEFECTO);
+						}
+						System.out.print("Indica el numero de guitarras["
+								+ (((Coro) coac.getAgrupacion()[opc - 1]).getNumeroGuitarras()) + "]: ");
+						try {
+							numeroGuitarras = Integer.parseInt(entrada.nextLine());
+
+						} catch (Exception e) {
+							numeroGuitarras = INTDEFECTO;
+							System.err.println(MSGINTDEFECTO);
+						}
+					}
+					if (coac.getAgrupacion()[opc - 1] instanceof Comparsa) {
+						System.out.print("Indica la empresa de atrezzo["
+								+ (((Comparsa) coac.getAgrupacion()[opc - 1]).getEmpresaAtrezzo()) + "]: ");
+						empresaAtrezzo = entrada.nextLine();
+						if (!(empresaAtrezzo.length() > 0))
+							empresaAtrezzo = ((Comparsa) coac.getAgrupacion()[opc - 1]).getEmpresaAtrezzo();
+					}
+					if (coac.getAgrupacion()[opc - 1] instanceof Chirigota) {
+						System.out.print("Indica el numero de cupies["
+								+ (((Chirigota) coac.getAgrupacion()[opc - 1]).getNumeroCupies()) + "]: ");
+
+						try {
+							numeroCupies = Integer.parseInt(entrada.nextLine());
+						} catch (Exception e) {
+							numeroCupies = INTDEFECTO;
+							System.err.println(MSGINTDEFECTO);
+						}
+					}
+					if (coac.getAgrupacion()[opc - 1] instanceof Cuarteto) {
+						System.out.print("Indica el numero de miembros["
+								+ (((Cuarteto) coac.getAgrupacion()[opc - 1]).getNumeroMiembros()) + "]: ");
+						try {
+							numeroMiembros = Integer.parseInt(entrada.nextLine());
+						} catch (Exception e) {
+							numeroMiembros = INTDEFECTO;
+							System.err.println(MSGINTDEFECTO);
+						}
+					}
+					if (coac.getAgrupacion()[opc - 1] instanceof Romancero) {
+						System.out.print("Indica la tematica["
+								+ (((Romancero) coac.getAgrupacion()[opc - 1]).getTematica()) + "]: ");
+						tematica = entrada.nextLine();
+						if (!(tematica.length() > 0))
+							tematica = ((Romancero) coac.getAgrupacion()[opc - 1]).getTematica();
+					}
+					coac.editarAgrupacion(opc, nombre, autor, autorMusica, autorLetra, tipo, puntosObtenidos,
+							numeroBandurrias, numeroGuitarras, empresaAtrezzo, numeroCupies, numeroMiembros, tematica);
+					opc = 0;
+				} else {
+					System.err.print("La posicion introducida no se encuentra.");
+					opc = 0;
+				}
+			} else {
+				System.out.println("Presiona enter para volver");
+				entrada.nextLine();
+				opc = 0;
+			}
+
+		} while (opc != 0);
+	}
+	// Opcion 5. Gestión del Concurso.
+
+	private static void opcConcurso() {
+		int opc;
+		int opcT;
+		int puntos;
+		do {
+			mostrarMenuConcurso();
+			try {
+				opc = Util.leerInt("Opción [0 - Salir] : ");
+			} catch (Exception e) {
+				System.err.println(MSGINTDEFECTO);
+				opc = INTDEFECTO;
+			}
+			switch (opc) {
+			case 1 -> {
+				do {
+					System.out.println(coac.listarConcurso());
+					if (!coac.listarConcurso().contains("VACIA")) {
+						try {
+							if (!coac.listarConcurso().contains("VACIA")) {
+								opcT = Util.leerInt("Que agrupacion va a camino de falla?\n[0 - Volver] : ");
+							} else {
+								opcT = Util.leerInt("[0 - Volver] : ");
+							}
+						} catch (Exception e) {
+							System.err.println(MSGINTDEFECTO);
+							opcT = INTDEFECTO;
+						}
+						if (opcT > coac.getNumeroDeAgrupacionesConcurso()) {
+							System.err.println("Opcion incorrecta");
+						}
+						if (opcT > 0) {
+							System.out.println(coac.concursoCaminoFalla(opcT));
+							System.out.print("\nPulsa Intro para volver");
+							entrada.nextLine();
+							opcT = 0;
+						}
+					} else {
+						System.out.println("Presiona enter para regresar");
+						entrada.nextLine();
+						opcT = 0;
+					}
+
+				} while (opcT != 0);
+			}
+			case 2 -> {
+				do {
+					System.out.println(coac.listarConcurso());
+					if (!coac.listarConcurso().contains("VACIA")) {
+						try {
+							if (!coac.listarConcurso().contains("VACIA")) {
+								opcT = Util.leerInt("Que agrupacion hace tipo?\n[0 - Volver] : ");
+							} else {
+								opcT = Util.leerInt("[0 - Volver] : ");
+							}
+						} catch (Exception e) {
+							System.err.println(MSGINTDEFECTO);
+							opcT = INTDEFECTO;
+						}
+						if (opcT > coac.getNumeroDeAgrupacionesConcurso()) {
+							System.err.println("Opcion incorrecta");
+						}
+						if (opcT > 0) {
+							System.out.println(coac.concursoHaceTipo(opcT));
+							System.out.print("\nPulsa Intro para volver");
+							entrada.nextLine();
+							opcT = 0;
+						}
+					} else {
+						System.out.println("Presiona enter para volver");
+						entrada.nextLine();
+						opcT = 0;
+					}
+
+				} while (opcT != 0);
+
+			}
+			case 3 -> {
+				do {
+					System.out.println(coac.listarConcurso());
+					if (!coac.listarConcurso().contains("VACIA")) {
+						try {
+							if (!coac.listarConcurso().contains("VACIA")) {
+								opcT = Util.leerInt("Que agrupacion va a cantar la presentación?\n[0 - Volver] : ");
+							} else {
+								opcT = Util.leerInt("[0 - Volver] : ");
+							}
+						} catch (Exception e) {
+							System.err.println(MSGINTDEFECTO);
+							opcT = INTDEFECTO;
+						}
+						if (opcT > coac.getNumeroDeAgrupacionesConcurso()) {
+							System.err.println("Opcion incorrecta");
+						}
+						if (opcT > 0) {
+							System.out.println(coac.concursoCantaPresentacion(opcT));
+							System.out.print("\nPulsa Intro para volver");
+							entrada.nextLine();
+							opcT = 0;
+						}
+					} else {
+						System.out.println("Presiona enter para volver");
+						entrada.nextLine();
+						opcT = 0;
+					}
+
+				} while (opcT != 0);
+
+			}
+			case 4 -> {
+				do {
+					System.out.println(coac.listarConcurso());
+					if (!coac.listarConcurso().contains("VACIA")) {
+						try {
+							if (!coac.listarConcurso().contains("VACIA")) {
+								opcT = Util.leerInt("A que agrupacion quieres asignar los puntos?\n[0 - Volver] : ");
+							} else {
+								opcT = Util.leerInt("[0 - Volver] : ");
+							}
+						} catch (Exception e) {
+							System.err.println(MSGINTDEFECTO);
+							opcT = INTDEFECTO;
+						}
+						if (opcT > coac.getNumeroDeAgrupacionesConcurso()) {
+							System.err.println("Opcion incorrecta");
+						}
+						if (opcT > 0 && opcT <= coac.getNumeroDeAgrupacionesConcurso()) {
+							do {
+								System.out.print("Cuantos puntos quieres asignarle["
+										+ ((AgrupacionOficial) coac.getAgrupacion()[opcT - 1]).getPuntosObtenidos()
+										+ "]? : ");
+								puntos = Integer.parseInt(entrada.nextLine());
+								if (puntos < 0)
+									System.err.print("No se pueden poner menos de 0 puntos\n");
+
+							} while (puntos < 0);
+
+							if (coac.asignarPuntos(opcT, puntos)) {
+								System.out.print("Puntos asignados correctamente");
+							} else {
+								System.err.print("No se han podido asignar los puntos");
+
+							}
+
+							System.out.print("\nPulsa Intro para volver");
+							entrada.nextLine();
+							opcT = 0;
+						}
+					} else {
+						System.out.println("Presiona enter para volver");
+						entrada.nextLine();
+						opcT = 0;
+					}
+
+				} while (opcT != 0);
+
+			}
+			case 5 -> {
+				do {
+					System.out.println(coac.listarConcurso());
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+				} while (opcT != 0);
+
+			}
+			case 6 -> {
+				do {
+					System.out.println(coac.listasIndividualesConcurso("Chirigota"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+				} while (opcT != 0);
+			}
+			case 7 -> {
+				do {
+					System.out.println(coac.listasIndividualesConcurso("Coro"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+				} while (opcT != 0);
+			}
+			case 8 -> {
+				do {
+					System.out.println(coac.listasIndividualesConcurso("Cuarteto"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+				} while (opcT != 0);
+			}
+			case 9 -> {
+				do {
+					System.out.println(coac.listasIndividualesConcurso("Comparsa"));
+					System.out.print("\nPulsa Intro para volver");
+					entrada.nextLine();
+					opcT = 0;
+				} while (opcT != 0);
+			}
+			case 10 -> {
+				if (!(coac.getNumeroDeAgrupacionesConcurso() == 1)) {
+					if (!(coac.listarConcurso()).contains("VACIA")) {
+						System.out.println("Lista antes de ordenar");
+						System.out.println(coac.listarConcurso());
+						coac.ordenarConcurso("puntos");
+						System.out.println("Lista depues de ordenar");
+						System.out.println(coac.listarConcurso());
+						System.out.print("\nPulsa Intro para volver");
+						entrada.nextLine();
+					} else {
+						System.out.println(
+								"\n***Lista De Participantes***\n---------------------------\n        LISTA VACIA");
+						System.out.println("Presion enter para volver");
+						entrada.nextLine();
+					}
+				} else {
+					System.err.println("Solo hay un participante, no se puede ordenar!\nPresiona enter para volver");
+					entrada.nextLine();
+				}
+
+			}
+			case 11 -> {
+				if (!(coac.getNumeroDeAgrupacionesConcurso() == 1)) {
+					if (!(coac.listarConcurso()).contains("VACIA")) {
+						System.out.println("Lista antes de ordenar");
+						System.out.println(coac.listarConcurso());
+						coac.ordenarConcurso("nombre");
+						System.out.println("Lista depues de ordenar");
+						System.out.println(coac.listarConcurso());
+						System.out.print("\nPulsa Intro para volver");
+						entrada.nextLine();
+					} else {
+						System.out.println(
+								"\n***Lista De Participantes***\n---------------------------\n        LISTA VACIA");
+						System.out.println("Presion enter para volver");
+						entrada.nextLine();
+					}
+				} else {
+					System.err.println("Solo hay un participante, no se puede ordenar!\nPresiona enter para volver");
+					entrada.nextLine();
+				}
+
+			}
+			case 12 -> {
+				if (!(coac.getNumeroDeAgrupacionesConcurso() == 1)) {
+					if (!(coac.listarConcurso()).contains("VACIA")) {
+						System.out.println("Lista antes de ordenar");
+						System.out.println(coac.listarConcurso());
+						coac.ordenarConcurso("autor");
+						System.out.println("Lista depues de ordenar");
+						System.out.println(coac.listarConcurso());
+						System.out.print("\nPulsa Intro para volver");
+						entrada.nextLine();
+					} else {
+						System.out.println(
+								"\n***Lista De Participantes***\n---------------------------\n        LISTA VACIA");
+						System.out.println("Presion enter para volver");
+						entrada.nextLine();
+					}
+				} else {
+					System.err.println("Solo hay un participante, no se puede ordenar!\nPresiona enter para volver");
+					entrada.nextLine();
+				}
+
+			}
+			case 13 -> {
+				if (!(coac.getNumeroDeAgrupacionesConcurso() == 1)) {
+					if (!(coac.listarConcurso()).contains("VACIA")) {
+						System.out.println("Lista antes de ordenar");
+						System.out.println(coac.listarConcurso());
+						coac.ordenarConcurso("autorMusicaLetra");
+						System.out.println("Lista depues de ordenar");
+						System.out.println(coac.listarConcurso());
+						System.out.print("\nPulsa Intro para volver");
+						entrada.nextLine();
+					} else {
+						System.out.println(
+								"\n***Lista De Participantes***\n---------------------------\n        LISTA VACIA");
+						System.out.println("Presion enter para volver");
+						entrada.nextLine();
+					}
+				} else {
+					System.err.println("Solo hay un participante, no se puede ordenar!\nPresiona enter para volver");
+					entrada.nextLine();
+				}
+
+			}
+
+			}
+			if (opc > 13 || opc < 0)
+				System.err.print("\nOpcion incorrecta!");
+		} while (opc != 0);
+	}
+
+	// MENUS
+	private static void mostrarMenuAñadirAgrupacion() {
+		Util.escribir("\n");
+		Util.escribir("┌──────────────────────────┐");
+		Util.escribir("│    AÑADIR AGRUPACION     │");
+		Util.escribir("└──────────────────────────┘");
+		Util.escribir("1. Coro");
+		Util.escribir("2. Comparsa");
+		Util.escribir("3. Chirigota");
+		Util.escribir("4. Cuarteto");
+		Util.escribir("5. Romancero");
+	}
+
+	private static void mostrarMenuPrincipal() {
+		Util.escribir("\n");
+		Util.escribir("╔═══════════════════════════════════╗");
+		Util.escribir("║      GESTION DE AGRUPACIONES      ║");
+		Util.escribir("╚═══════════════════════════════════╝");
+		Util.escribir("  1. Gestión de Participantes.");
+		Util.escribir("  2. Añadir una agrupación.");
+		Util.escribir("  3. Eliminar una agrupación.");
+		Util.escribir("  4. Editar datos de una agrupación.");
+		Util.escribir("  5. Gestión del Concurso.");
+		Util.escribir("Listado de agrupaciones:");
+		Util.escribir("  6. Listar todas.");
+		Util.escribir("  7. Listar Chirigotas.");
+		Util.escribir("  8. Listar Coros.");
+		Util.escribir("  9. Listar Cuartetos.");
+		Util.escribir(" 10. Listar Comparsas.");
+		Util.escribir(" 11. Listar Romanceros.");
+		Util.escribir("Ordenar el listado:");
+		Util.escribir(" 12. Ordenar por el nombre.");
+		Util.escribir(" 13. Ordenar por el autor.");
+		Util.escribir(" 14. Ordenar por el autor de música/letra.");
+
+	}
+
+	private static void mostrarMenuIntegrantes() {
+		Util.escribir("\n");
+		Util.escribir("┌──────────────────────────┐");
+		Util.escribir("│ GESTION DE PARTICIPANTES │");
+		Util.escribir("└──────────────────────────┘");
+		Util.escribir("  1. Añadir un participante.");
+		Util.escribir("  2. Borrar un participante.");
+		Util.escribir("  3. Editar los datos de un participante.");
+		Util.escribir("  4. Listar todos los participantes.");
+		Util.escribir("  5. Listar agrupaciones donde es integrante.");
+		Util.escribir("  6. Ordenar por el nombre.");
+	}
+
+	private static void mostrarMenuConcurso() {
+		Util.escribir("\n");
+		Util.escribir("┌──────────────────────┐");
+		Util.escribir("│ GESTION DEL CONCURSO │");
+		Util.escribir("└──────────────────────┘");
+		Util.escribir("Concurso:");
+		Util.escribir("  1. Va camino del Falla.");
+		Util.escribir("  2. Hacen el Tipo.");
+		Util.escribir("  3. Canta la Presentación.");
+		Util.escribir("  4. Asignar puntos.");
+		Util.escribir("Listado de agrupaciones participantes:");
+		Util.escribir("  5. Listar todos.");
+		Util.escribir("  6. Listar Chirigotas.");
+		Util.escribir("  7. Listar Coros.");
+		Util.escribir("  8. Listar Cuartetos.");
+		Util.escribir("  9. Listar Comparsas.");
+		Util.escribir("Ordenación del listado:");
+		Util.escribir(" 10. Ordenar por puntos.");
+		Util.escribir(" 11. Ordenar por el nombre.");
+		Util.escribir(" 12. Ordenar por el autor.");
+		Util.escribir(" 13. Ordenar por autor de música/letra.");
+	}
+
+	private static void finDelPrograma() {
+		Util.escribir("\nFin del programa.");
+		System.exit(0);
+	}
+}

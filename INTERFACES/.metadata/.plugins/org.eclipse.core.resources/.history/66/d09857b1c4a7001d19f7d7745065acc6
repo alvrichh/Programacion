@@ -1,0 +1,14 @@
+package view;
+
+import model.Coro;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		
+		Coro c = new Coro();
+		
+	}
+
+}

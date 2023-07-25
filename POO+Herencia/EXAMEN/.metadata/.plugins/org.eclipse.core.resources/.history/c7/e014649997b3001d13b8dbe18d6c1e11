@@ -1,0 +1,89 @@
+package controller;
+
+import model.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Materiales {
+    
+    private ArrayList<Material> listaMateriales;
+    
+    public Materiales() {
+        listaMateriales = new ArrayList<Material>();
+    }
+    
+    public void addMaterial(Material m) {
+        if (listaMateriales.size() < 10 && m.getMasa() > 0) {
+            listaMateriales.add(m);
+            ordenarPorMasa();
+        }
+    }
+    
+    public void borrarMaterialSinMasa() {
+        for (int i = 0; i < listaMateriales.size(); i++) {
+            if (listaMateriales.get(i).getMasa() <= 0) {
+                listaMateriales.remove(i);
+                i--;
+            }
+        }
+    }
+    
+    public  void mostrarEstado() {
+        for (Material m : listaMateriales) {
+            System.out.println(m.toString());
+        }
+    }
+    
+    public Material ultimoMaterialQueQueda() {
+        Material ultimoMaterial = null;
+        int contadorMaterialesSinMasa = 0;
+        for (Material m : listaMateriales) {
+            if (m.getMasa() > 0) {
+                ultimoMaterial = m;
+                contadorMaterialesSinMasa++;
+            }
+        }
+        if (contadorMaterialesSinMasa == 1) {
+            System.out.println("Último material sin masa:");
+            System.out.println(ultimoMaterial.toString());
+            return ultimoMaterial;
+        } else {
+            return null;
+        }
+    }
+    
+    public void mezclarConMaterial(Material m1, Material m2) {
+        if (m1 != null && m2 != null && m1 != m2 && m1.getClass() == m2.getClass()) {
+            Material mMezcla = null;
+            if (m1 instanceof Cristal) {
+                mMezcla = ((Cristal) m1).mezclarConMaterial((Cristal) m2);
+            } else if (m1 instanceof Metal) {
+                mMezcla = ((Metal) m1).mezclarConMaterial((Metal) m2);
+            } else if (m1 instanceof Roca) {
+                mMezcla = ((Roca) m1).mezclarConMaterial((Roca) m2);
+            }
+            if (mMezcla != null) {
+                listaMateriales.remove(m1);
+                listaMateriales.remove(m2);
+                addMaterial(mMezcla);
+                System.out.println("Nuevo material obtenido: " + mMezcla.toString());
+            }
+        }
+    }
+    
+    public void ordenarPorMasa() {
+        Collections.sort(listaMateriales);
+    }
+    
+    public void ordenarPorQuemarseDiluirse() {
+        Collections.sort(listaMateriales, new Comparator<Material>() {
+            public int compare(Material m1, Material m2) {
+                if (m1.getCapacidadQuemarse() != m2.getCapacidadQuemarse()) {
+                    return m2.getCapacidadQuemarse() - m1.getCapacidadQuemarse();
+                } else {
+                    return m2.getCapacidadDiluirse() - m1.getCapacidadDiluirse();
+                }
+            }
+        });
+    }}

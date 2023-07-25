@@ -1,0 +1,11 @@
+package controller;
+
+import java.util.ArrayList;
+import model.*;
+public class AlumnosSAX {
+	
+	private List<Alumno> lstAlumno = new ArrayList<>();
+	private Alumno alumno;
+	
+
+}

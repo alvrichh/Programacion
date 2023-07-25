@@ -1,0 +1,45 @@
+package view;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.xml.sax.SAXException;
+
+import controller.Controller_json;
+import controller.SaxHandler;
+import model.Votacion;
+
+public class Principal {
+	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+		
+		SAXParserFactory factory = SAXParserFactory.newInstance(); 
+		SAXParser parser = factory.newSAXParser(); 
+		SaxHandler handler = new SaxHandler(); 
+		parser.parse("elecciones.xml", handler);
+		
+		List<Votacion> lista_votaciones = handler.getVotos(); 
+		System.out.println(lista_votaciones);
+		
+//		for (Votacion votacion : lista_votaciones) {
+//			System.out.println(Controller_json.printJson("elecciones.xml", lista_votaciones));
+//		}
+		
+//		Map<String , Integer> map = controller.controller_candi.map("elecciones.xml");
+//		
+//		for (Entry<String, Integer> entry : map.entrySet()) {
+//			System.out.println("PARTIDO: "+ entry.getKey());
+//			System.out.println("VOTOS: "+ entry.getValue());
+//			System.out.println();
+//			
+//		}
+		
+		
+	
+	}
+}

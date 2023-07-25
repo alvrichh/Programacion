@@ -1,0 +1,11 @@
+package model;
+
+@SuppressWarnings("serial")
+public class MemoriaException extends ComponenteException {
+Integer memoria;
+	public MemoriaException() {
+		if
+		super();
+	}
+}
+

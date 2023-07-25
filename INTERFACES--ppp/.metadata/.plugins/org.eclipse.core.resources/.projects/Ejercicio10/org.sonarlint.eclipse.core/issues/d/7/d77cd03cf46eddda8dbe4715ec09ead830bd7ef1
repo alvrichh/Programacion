@@ -1,0 +1,46 @@
+
+^
+java:S1197å"*Move the array designators [] to the type.(»Áès8¢ÓÂ…å0HÛ°RMINORZ
+CODE_SMELL
+r	java:S106ï"9Replace this use of System.out or System.err by a logger.(¦ÜÏşûÿÿÿÿ8µ¦…Œå0HŞ°RMAJORZ
+CODE_SMELL
+i	java:S107U"=Method has 12 parameters, which is greater than 7 authorized.(™¹©ïHË°RMAJORZ
+CODE_SMELL
+J
+java:S1643Ğ"Use a StringBuilder instead.(ÇÔ°´HÌ°RMINORZ
+CODE_SMELL
+O
+java:S1643¾"Use a StringBuilder instead.(Èıœ™şÿÿÿÿHÓ°RMINORZ
+CODE_SMELL
+	java:S131J"YComplete cases by adding the missing enum constants or add a default case to this switch.(©Ó¸b8¸ô¿Åä0HÄ°RCRITICALZ
+CODE_SMELL
+š
+java:S1192‡"]Define a constant instead of duplicating this literal "
+---------------------------" 3 times.(À·ëÔùÿÿÿÿ8„•ø‰å0HÀ°RCRITICALZ
+CODE_SMELL
+J
+java:S1643§"Use a StringBuilder instead.(…Ş’HÚ°RMINORZ
+CODE_SMELL
+O
+java:S1643ş"Use a StringBuilder instead.(äñ­ëøÿÿÿÿHÑ°RMINORZ
+CODE_SMELL
+
+java:S1192ş"KDefine a constant instead of duplicating this literal ": Nombre: " 3 times.(äñ­ëøÿÿÿÿHÇ°RCRITICALZ
+CODE_SMELL
+
+java:S1858‚"G"getSimpleName" returns a string, there's no need to call "toString()".(“±àûÿÿÿÿ8…ºŒå0HÅ°RMINORZ
+CODE_SMELL
+e
+java:S1144î"0Remove this unused private "introVolver" method.(¼Ç´û8©Èëå0H×°RMAJORZ
+CODE_SMELL
+d
+java:S1197Í"*Move the array designators [] to the type.(ú•¡àıÿÿÿÿ8‰òô„å0HÔ°RMINORZ
+CODE_SMELL
+O
+java:S1643“"Use a StringBuilder instead.(äñ­ëøÿÿÿÿHÙ°RMINORZ
+CODE_SMELL
+‘
+java:S1192‡"TDefine a constant instead of duplicating this literal "        LISTA VACIA" 3 times.(À·ëÔùÿÿÿÿ8„•ø‰å0HÍ°RCRITICALZ
+CODE_SMELL
+V	java:S131`""Add a default case to this switch.(·ãï§üÿÿÿÿHÒ°RCRITICALZ
+CODE_SMELL

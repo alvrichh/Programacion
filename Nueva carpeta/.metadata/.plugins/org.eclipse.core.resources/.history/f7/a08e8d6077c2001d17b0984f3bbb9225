@@ -1,0 +1,22 @@
+package controller;
+
+import java.util.Collection;
+
+public class Viajes {
+
+	
+	public static boolean addPais() {
+		Collectio
+
+	}
+	
+	addCiudad(Pais);
+	
+	addLugar(); 
+	
+	getCiudades();
+	
+	getUbicacion();
+	
+	getCiudadesConHabitantes();
+}

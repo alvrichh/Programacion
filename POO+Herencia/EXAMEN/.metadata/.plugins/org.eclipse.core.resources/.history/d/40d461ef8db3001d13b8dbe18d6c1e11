@@ -1,0 +1,100 @@
+package view;
+
+import model.Cristal;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		// Creamos los materiales
+		Cristal cristal1 = new Cristal("Cristal1", 100, 20, 80, true, TipoCristal.TRANSLUCIDO);
+		Cristal cristal2 = new Cristal("Cristal2", 200, 30, 70, false, TipoCristal.TRANSPARENTE);
+		Metal metal1 = new Metal("Metal1", 500, 60, 40, true, true);
+		Metal metal2 = new Metal("Metal2", 300, 80, 20, false, false);
+		Roca roca1 = new Roca("Roca1", 400, 40, 60, true, 8);
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// Creamos la sierra y el pico
+		Sierra sierra1 = new Sierra("Sierra1", 100, 50, 50, true, 5);
+		Pico pico1 = new Pico("Pico1", 200, 70, 30, false, 3);
+
+		// Añadimos los materiales y herramientas a la lista de materiales
+		try {
+		MinecraftController.addMaterial(cristal1);
+		MinecraftController.addMaterial(cristal2);
+		MinecraftController.addMaterial(metal1);
+		MinecraftController.addMaterial(metal2);
+		MinecraftController.addMaterial(roca1);
+		MinecraftController.addMaterial(sierra1);
+		MinecraftController.addMaterial(pico1);
+		} catch (Exception e) {
+		System.out.println("Error al añadir los materiales: " + e.getMessage());
+		}
+
+		// Mostramos el estado de los materiales
+		System.out.println("Estado de los materiales:");
+		MinecraftController.mostrarEstado();
+
+		// Mezclamos dos materiales
+		System.out.println("Mezclando " + cristal1.getNombre() + " con " + cristal2.getNombre());
+		cristal1.mezclarConMaterial(cristal2);
+		System.out.println();
+
+		System.out.println("Mezclando " + roca1.getNombre() + " con " + metal2.getNombre());
+		roca1.mezclarConMaterial(metal2);
+		System.out.println();
+
+		// Realizamos 110 procesos de hacer() y 40 procesos de deshacer() al pico1 y al sierra1
+		for (int i = 0; i < 110; i++) {
+		pico1.hacer(metal1);
+		sierra1.hacer(cristal1);
+		}
+
+		for (int i = 0; i < 40; i++) {
+		pico1.deshacer(roca1);
+		sierra1.deshacer(metal2);
+		}
+
+		// Ordenamos y mostramos los materiales por masa, por capacidad de quemarse y por capacidad de diluirse
+		System.out.println("Materiales ordenados por masa:");
+		List<Material> materialesPorMasa = MinecraftController.getMaterialesOrdenadosPorMasa();
+		for (Material material : materialesPorMasa) {
+		System.out.println(material.toString());
+		}
+
+		System.out.println("\nMateriales ordenados por capacidad de quemarse:");
+		List<Material> materialesPorCapacidadDeQuemarse = MinecraftController.getMaterialesOrdenadosPorCapacidadDeQuemarse();
+		for (Material material : materialesPorCapacidadDeQuemarse) {
+		System.out.println(material.toString());
+		}
+
+		Syste
+	}
+
+}

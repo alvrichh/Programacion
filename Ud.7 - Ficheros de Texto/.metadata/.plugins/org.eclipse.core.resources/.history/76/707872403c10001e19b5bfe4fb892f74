@@ -1,0 +1,29 @@
+package view;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class PrincipalYO {
+	
+	public static void main(String[] args) {
+		
+		String nombreFch = "";
+
+		
+		try {
+			BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Nombre del fichero: ");
+			nombreFch = teclado.readLine();
+			if(nombreFch.length() == 0) {
+				nombreFch = "probando.txt";
+			}
+			teclado.close();
+			} catch (Exception e) {
+				System.err.println("Error con el teclado. " + e.getMessage());
+			}
+		
+		
+	}
+	
+
+}

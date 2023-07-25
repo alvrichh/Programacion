@@ -1,0 +1,142 @@
+package view;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Scanner;
+
+import model.Camion;
+
+public class Principal extends Exception{
+	/*
+	 * Realiza una aplicación Java que permita crear objetos de la clase Camion,
+	 * sabiendo que:
+	 * 
+	 * Atributos = {num_ejes<integer>, capacidad <double>, frenos<string>,
+	 * precio<double>}
+	 * 
+	 * Restricciones para cada atributo:
+	 * 
+	 * num_ejes: sólo serán válidos los valores: 4, 8 y 16 (no utilizar enumerados).
+	 * capacidad: entre 2000.0 4000.0 y además sea un valor par. frenos: sólo serán
+	 * válidos los valores: "ABS" y "HDS" (en mayúsculas) (no utilizar enumerados).
+	 * precio: positivo y mayor que 50.000'00 € Consideraciones:
+	 * 
+	 * Los valores no admitidos para cada atributo deberán levantar una excepción
+	 * personalizada con un mensaje apropiado. Las excepciones personalizadas para
+	 * el num_ejes (EjesException), la capacidad (CapacidadException), los frenos
+	 * (FrenoException) deberán de heredar de ComponenteException, la cual
+	 * almacenará el mensaje exacto del error correspondiente. El método constructor
+	 * de la clase Ordenador sólo deberá elevar las excepciones: ComponenteException
+	 * y PrecioException. El método main (view) sólo deberá gestionar las
+	 * excepciones: ComponenteException, PrecioException y Exception, para mostrar
+	 * el correspondiente mensaje de error.
+	 */
+	
+
+	
+	public static void main(String[] args) {
+
+    	//VARIABLES
+    	Integer num_ejes;
+    	Double capacidad;
+    	String frenos;
+    	Double precio;
+    	
+        Scanner teclado = new Scanner(System.in);
+        try {
+            System.out.print("Introduce el número de ejes (4, 8 o 16): ");
+            num_ejes = teclado.nextInt();
+            System.out.print("Introduce la capacidad (entre 2000.0 y 4000.0, y par): ");
+            capacidad = teclado.nextDouble();
+            teclado.nextLine(); // Consumir el \n que queda en el buffer
+            System.out.print("Introduce el tipo de frenos (ABS o HDS): ");
+            String frenos = teclado.nextLine().toUpperCase();
+            System.out.print("Introduce el precio (mayor que 50,000.00 €): ");
+            precio = teclado.nextDouble();
+            Camion camion = new Camion(num_ejes, capacidad, frenos, precio);
+
+            while (num_ejes != 4 || num_ejes != 8 || num_ejes != 16) {
+            	
+            }
+		}
+	}
+
+}/*
+ * 
+public class Principal {
+
+    public static void main(String[] args) {
+        final String FILE_NAME = "trenes.dat";
+
+        ObjectOutputStream ficheroEsc = null;
+        ObjectInputStream ficheroLec = null;
+
+        try {
+            System.out.println("Escribiendo en el fichero: " + FILE_NAME);
+
+            ficheroEsc = new ObjectOutputStream(new FileOutputStream(FILE_NAME));
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Ingrese el nombre del tren: ");
+            String nombreTren = scanner.nextLine();
+            Tren t1 = new Tren(nombreTren, 845);
+            Tren t2 = new Tren("AVANT-01", 217);
+            Tren t3 = new Tren("AVANT-02", 304);
+            Tren t4 = new Tren("AVE", 791);
+
+            ficheroEsc.writeObject(t1);
+            ficheroEsc.writeObject(t2);
+            ficheroEsc.writeObject(t3);
+            ficheroEsc.writeObject(t4);
+
+            System.out.println("Fin de la escritura.");
+        } catch (IOException ioe) {
+            System.err.println("Fallo con el dispositivo E/S. " + ioe.getMessage());
+        } catch (Exception e) {
+            System.err.println("Fallo general. " + e.getMessage());
+        } finally {
+            try {
+                if (ficheroEsc != null)
+                    ficheroEsc.close();
+            } catch (IOException ioe) {
+                System.err.println("Fallo cerrando el dispositivo E/S. " + ioe.getMessage());
+            }
+        }
+
+        try {
+
+            System.out.println("\nLeyendo del fichero: " + FILE_NAME);
+
+            ficheroLec = new ObjectInputStream(new FileInputStream(FILE_NAME));
+
+            Tren t1 = (Tren) ficheroLec.readObject();
+            Tren t2 = (Tren) ficheroLec.readObject();
+            Tren t3 = (Tren) ficheroLec.readObject();
+            Tren t4 = (Tren) ficheroLec.readObject();
+
+            System.out.println("\t" + t1.toString());
+            System.out.println("\t" + t2.toString());
+            System.out.println("\t" + t3.toString());
+            System.out.println("\t" + t4.toString());
+
+            System.out.println("Fin de la lectura.");
+
+        } catch (FileNotFoundException fnfe) 	{ System.err.println("Fallo al acceder al fichero: " + FILE_NAME + " " + fnfe.getMessage());
+        } catch (ClassNotFoundException cnfe) 	{ System.err.println("Fallo en el casting de lectura. " + cnfe.getMessage());
+        } catch (IOException ioe) 				{ System.err.println("Fallo con el dispositivo E/S. " + ioe.getMessage());
+        } catch (Exception e) 					{ System.err.println("Fallo general. " + e.getMessage()); }
+		finally {
+			try {
+				if (ficheroLec != null)
+					ficheroLec.close();
+			} catch (IOException ioe) {
+				System.err.println("Fallo cerrando el dispositivo E/S. " + ioe.getMessage());
+			}
+		}
+
+		System.out.println("\nPrograma finalizado con éxito.");
+	}
+}
+*/
+
+

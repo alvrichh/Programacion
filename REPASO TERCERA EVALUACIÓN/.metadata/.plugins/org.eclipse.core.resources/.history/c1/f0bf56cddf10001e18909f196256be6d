@@ -1,0 +1,10 @@
+package model;
+
+@SuppressWarnings("serial")
+public class EjesException extends OmponenteException {
+	
+	public EjesException() {
+		super("ERROR EN LOS EJES, solo se admiten los valores 4, 8 y 16");
+	}
+
+}

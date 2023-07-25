@@ -1,0 +1,8 @@
+package model;
+
+public enum Zona {
+	
+	ASEOS, DORMITORIOS, PATIOS, OTRO
+	
+
+}

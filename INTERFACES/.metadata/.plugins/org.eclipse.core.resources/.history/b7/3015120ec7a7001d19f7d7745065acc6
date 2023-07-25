@@ -1,0 +1,56 @@
+package model;
+
+public class Comparsa extends AgrupacionOficial {
+
+	private String empresaAtrezzo;
+	private int puntos;
+
+	public Comparsa() {
+		this("", 0, "", "", "", "", "");
+	}
+
+	public Comparsa(String empresaAtrezzo, int puntos, String nombre, String autor, String autorMusica,
+			String autorLetra, String tipo) {
+		super(nombre, autor, autorMusica, autorLetra, tipo);
+		this.empresaAtrezzo = empresaAtrezzo;
+		this.puntos = puntos;
+	}
+
+	public String getEmpresaAtrezzo() {
+		return empresaAtrezzo;
+	}
+
+	public void setEmpresaAtrezzo(String empresaAtrezzo) {
+		this.empresaAtrezzo = empresaAtrezzo;
+	}
+
+	public int getPuntos() {
+		return puntos;
+	}
+
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
+
+	@Override
+	public String cantarPresentacion() {
+		return "Cantando la presentación de la Comparsa de nombre " + getNombre();
+	}
+
+	@Override
+	public String hacerTipo() {
+		return "La Comparsa " + getNombre() + " va de " + getTipo();
+	}
+
+	@Override
+	public String caminitoFalla() {
+		return "La Comparsa " + getNombre() + " va caminito del Falla";
+	}
+
+	@Override
+	public String toString() {
+		return "Comparsa [getEmpresaAtrezzo()=" + getEmpresaAtrezzo() + ", getPuntos()=" + getPuntos() + ", toString()="
+				+ super.toString() + "]";
+	}
+
+}

@@ -1,0 +1,61 @@
+package model;
+
+public abstract class  Material {
+	
+	private String nombre;
+	private int masa;
+	private int quemarse;//entre 0 y 100
+	private int diluirse; //entre 0 y 1000
+	private boolean movible;
+
+	
+	
+	
+	//Getters & Setters
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public int getMasa() {
+		return masa;
+	}
+	public void setMasa(int masa) {
+		this.masa = masa;
+	}
+	public int getQuemarse() {
+		return quemarse;
+	}
+	public void setQuemarse(int quemarse) {
+		if(quemarse < 0 || quemarse >100) {
+			quemarse = 0;
+			System.out.println("No entra dentro");
+		}
+		this.quemarse = quemarse;
+
+		
+	}
+	public int getDiluirse() {
+		return diluirse;
+	}
+	public void setDiluirse(int diluirse) {
+		this.diluirse = diluirse;
+	}
+	public boolean isMovible() {
+		return movible;
+	}
+	public void setMovible(boolean movible) {
+		this.movible = movible;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

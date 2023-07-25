@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.List;
+
+enum Zona {
+    ASEOS, DORMITORIOS, PATIOS, OTRO
+}
+
+class Vivienda {
+    private String tipo;
+    private List<Zona> zonas;
+
+    public Vivienda(String tipo, List<Zona> zonas) {
+        this.tipo = tipo;
+        this.zonas = zonas;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public List<Zona> getZonas() {
+        return zonas;
+    }
+}
+
+
+List<Vivienda> viviendas = new ArrayList<>();
+
+for (Object viviendaObj : viviendasArray) {
+    JSONObject viviendaJson = (JSONObject) viviendaObj;
+    String tipo = (String) viviendaJson.get("tipo");
+
+    JSONArray zonasArray = (JSONArray) viviendaJson.get("zonas");
+    List<Zona> zonas = new ArrayList<>();
+
+    for (Object zonaObj : zonasArray) {
+        String zonaStr = (String) zonaObj;
+        Zona zona = Zona.valueOf(zonaStr.toUpperCase());
+        zonas.add(zona);
+    }
+
+    Vivienda vivienda = new Vivienda(tipo, zonas);
+    viviendas.add(vivienda);
+}

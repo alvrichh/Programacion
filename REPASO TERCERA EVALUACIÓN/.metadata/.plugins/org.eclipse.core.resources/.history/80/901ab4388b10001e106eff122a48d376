@@ -1,0 +1,24 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.*;
+public class AlumnosSAX extends DefaultHandler {
+	
+	private List<Alumno> lstAlumno = new ArrayList<>();
+	private Alumno alumno = null;
+	private StringBuilder caracteresLeidos = new StringBuilder();
+	
+	public AlumnosSAX() {
+		
+	}
+	
+	
+	public List<Alumno> getAlumnos() {
+		return lstAlumno;
+	}
+
+
+
+}

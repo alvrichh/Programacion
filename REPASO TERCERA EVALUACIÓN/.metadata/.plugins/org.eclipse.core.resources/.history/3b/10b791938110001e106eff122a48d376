@@ -1,0 +1,29 @@
+package view;
+
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import controller.AlumnosDOM;
+import controller.AlumnosJSON;
+import model.*;
+public class Principal {
+
+	public static void main(String[] args) {
+	
+		final String FCH_NAME = "alumnos.xml";
+		
+		try {
+			AlumnosDOM a = new AlumnosDOM(FCH_NAME);
+			List<Alumno> lstAlumnos = a.getAlumnos();
+			lstAlumnos.stream().forEach(System.out::println);
+			for (Alumno alumno : lstAlumnos) {
+				System.out.println(AlumnosJSON.printJson(FCH_NAME, lstAlumnos));
+			}
+			} catch (Exception e) {
+		}
+			
+		
+	}
+}
+

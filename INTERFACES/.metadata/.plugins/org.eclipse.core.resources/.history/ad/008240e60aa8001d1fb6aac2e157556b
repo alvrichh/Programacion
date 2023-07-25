@@ -1,0 +1,13 @@
+package view;
+
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		
+		// No es especifica el tamaño asi que pongo 10
+		Menu.inicio();
+	}
+
+}

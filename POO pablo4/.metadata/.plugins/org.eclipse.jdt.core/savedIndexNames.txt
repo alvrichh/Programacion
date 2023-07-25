@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+G:\Mi unidad\1DAW\Programación\EclipseProyectos\POO\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+4205322057.index
+1921277972.index

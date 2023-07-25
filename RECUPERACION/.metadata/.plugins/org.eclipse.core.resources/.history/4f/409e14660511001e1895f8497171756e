@@ -1,0 +1,13 @@
+package model;
+
+@SuppressWarnings("serial")
+public class PrecioException extends Exception {
+	
+
+	public precioException(String) {
+		if (condition) {
+			
+		}
+
+	}
+}

@@ -1,0 +1,11 @@
+package model;
+
+public interface Minar {
+    default void hacer(Material material) {
+        material.setMasa(material.getMasa() + 100);
+    }
+
+    default void deshacer(Material material) {
+        material.setMasa(material.getMasa() - 100);
+    }
+}

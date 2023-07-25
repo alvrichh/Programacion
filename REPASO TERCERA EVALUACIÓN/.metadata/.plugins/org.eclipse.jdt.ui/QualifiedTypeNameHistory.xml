@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="model.Libro"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="view.Util"/>
+    <fullyQualifiedTypeName name="model.Persona"/>
+    <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalAccessException"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="model.ComponenteException"/>
+    <fullyQualifiedTypeName name="view.ComponenteException"/>
+    <fullyQualifiedTypeName name="model.CapacidadException"/>
+    <fullyQualifiedTypeName name="model.Camion"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
+    <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.Transformer"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.TransformerFactory"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.OutputKeys"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.stream.StreamResult"/>
+    <fullyQualifiedTypeName name="javax.xml.transform.dom.DOMSource"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javax.xml.xpath.XPathFactory"/>
+    <fullyQualifiedTypeName name="model.Desayuno"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
+    <fullyQualifiedTypeName name="javax.xml.xpath.XPathConstants"/>
+    <fullyQualifiedTypeName name="controller.RecorridoDOM"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+    <fullyQualifiedTypeName name="org.xml.sax.helpers.DefaultHandler"/>
+</qualifiedTypeNameHistroy>

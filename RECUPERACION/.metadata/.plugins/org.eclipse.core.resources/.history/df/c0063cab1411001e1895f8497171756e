@@ -1,0 +1,28 @@
+package view;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.*;
+public class Principal {
+	
+	public static void main(String[] args) {
+	
+		
+		List<Vivienda> viviendas = new ArrayList<Vivienda>();
+		
+		for (Vivienda vivienda : viviendas) {
+		    System.out.println("ID: " + vivienda.getId());
+		    System.out.println("Precio: " + vivienda.getPrecio());
+		    System.out.println("Zonas:");
+
+		    for (Zona zona : vivienda.getZona()) {
+		        System.out.println("- " + zona);
+		    }
+
+		    System.out.println();
+		}
+
+	}
+
+}

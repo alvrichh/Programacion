@@ -1,0 +1,44 @@
+package exam;
+
+import java.time.LocalDateTime;
+
+public class Alumno {
+	
+	public enum Tipo{
+		NORMAL, REPETIDOR, OYENTE
+	}
+	
+
+	private DatoPers datos;
+	private String segSoc;
+	private int DatoContact;
+	private LocalDateTime fecha;
+	private Tipo tipo;
+	
+	
+	public Alumno(){
+		
+		setTipo(Tipo.NORMAL);
+		
+	}
+	
+
+
+	public String getSegSoc() {
+		return segSoc;
+	}
+
+	public void setSegSoc(String segSoc) {
+		this.segSoc = segSoc;
+	}
+
+	public LocalDateTime getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(LocalDateTime fecha) {
+		this.fecha = fecha;
+	}
+}
+
+

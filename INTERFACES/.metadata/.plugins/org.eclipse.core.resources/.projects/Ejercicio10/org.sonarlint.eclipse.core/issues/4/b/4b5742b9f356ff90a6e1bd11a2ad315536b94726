@@ -1,0 +1,116 @@
+
+j	java:S106_"9Replace this use of System.out or System.err by a logger.(²Ëâ”ùÿÿÿÿH½¶RMAJORZ
+CODE_SMELL
+}
+java:S1104"PMake coac a static final constant or non-public and provide accessors if needed.(åùúœH·¶RMINORZ
+CODE_SMELL
+e	java:S1062"9Replace this use of System.out or System.err by a logger.(Óè¿HĞ¶RMAJORZ
+CODE_SMELL
+j	java:S106>"9Replace this use of System.out or System.err by a logger.(¢ìÖÅûÿÿÿÿH¼¶RMAJORZ
+CODE_SMELL
+j	java:S106s"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿH¶RMAJORZ
+CODE_SMELL
+W
+java:S1444"*Make this "public static coac" field final(åùúœH¬¶RMINORZ
+CODE_SMELL
+l
+java:S1118":Add a private constructor to hide the implicit public one.(¸Íš£ûÿÿÿÿHª¶RMAJORZ
+CODE_SMELL
+b
+java:S1481")Remove this unused "opcT" local variable.(ÚÜµùÿÿÿÿ8¦å‡å0H¡¶RMINORZ
+CODE_SMELL
+j	java:S106="9Replace this use of System.out or System.err by a logger.(ñæ…èÿÿÿÿÿHÑ¶RMAJORZ
+CODE_SMELL
+j	java:S106D"9Replace this use of System.out or System.err by a logger.(É·ïÉüÿÿÿÿH¦¶RMAJORZ
+CODE_SMELL
+‰
+java:S3776c"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.( ä«ˆ8¦å‡å0H‰¶RCRITICALZ
+CODE_SMELL
+e	java:S106w"9Replace this use of System.out or System.err by a logger.(³ë…¨HÔ¶RMAJORZ
+CODE_SMELL
+k	java:S106¥"9Replace this use of System.out or System.err by a logger.(¢ìÖÅûÿÿÿÿHÄ¶RMAJORZ
+CODE_SMELL
+j	java:S106Z"9Replace this use of System.out or System.err by a logger.(ááÜÃùÿÿÿÿHÀ¶RMAJORZ
+CODE_SMELL
+j	java:S106"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHÅ¶RMAJORZ
+CODE_SMELL
+e	java:S106t"9Replace this use of System.out or System.err by a logger.(¥ÀÓìH¢¶RMAJORZ
+CODE_SMELL
+e	java:S106W"9Replace this use of System.out or System.err by a logger.(ÉÏ‹ÕHÎ¶RMAJORZ
+CODE_SMELL
+V	java:S131!""Add a default case to this switch.(Ëë¡ÛúÿÿÿÿHÓ¶RCRITICALZ
+CODE_SMELL
+e	java:S106:"9Replace this use of System.out or System.err by a logger.(¿ÛºHÆ¶RMAJORZ
+CODE_SMELL
+j	java:S106l"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿH«¶RMAJORZ
+CODE_SMELL
+{
+java:S11929"FDefine a constant instead of duplicating this literal "VACIA" 3 times.(¾ÖÑıÿÿÿÿH¸¶RCRITICALZ
+CODE_SMELL
+e	java:S106N"9Replace this use of System.out or System.err by a logger.(³ë…¨HÏ¶RMAJORZ
+CODE_SMELL
+j	java:S106T"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿHŸ¶RMAJORZ
+CODE_SMELL
+j	java:S106A"9Replace this use of System.out or System.err by a logger.(²Ëâ”ùÿÿÿÿH¥¶RMAJORZ
+CODE_SMELL
+j	java:S106g"9Replace this use of System.out or System.err by a logger.(¢ìÖÅûÿÿÿÿHÃ¶RMAJORZ
+CODE_SMELL
+j	java:S106)"9Replace this use of System.out or System.err by a logger.(¢ìÖÅûÿÿÿÿHÊ¶RMAJORZ
+CODE_SMELL
+j	java:S106h"9Replace this use of System.out or System.err by a logger.(Ñëä¥ûÿÿÿÿHœ¶RMAJORZ
+CODE_SMELL
+j	java:S106;"9Replace this use of System.out or System.err by a logger.(¢ìÖÅûÿÿÿÿHˆ¶RMAJORZ
+CODE_SMELL
+k	java:S106|"9Replace this use of System.out or System.err by a logger.(òºñ_8ÉÑ¥å0Hï¶RMAJORZ
+CODE_SMELL
+l	java:S106~"9Replace this use of System.out or System.err by a logger.(‚ê‡ 8ÉÑ¥å0Hğ¶RMAJORZ
+CODE_SMELL
+r	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(Î³èƒûÿÿÿÿ8ÉÑ¥å0Hñ¶RMAJORZ
+CODE_SMELL
+r	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(Û¬ñĞÿÿÿÿÿ8ÉÑ¥å0Hò¶RMAJORZ
+CODE_SMELL
+r	java:S106Œ"9Replace this use of System.out or System.err by a logger.(ƒˆÜ²úÿÿÿÿ8ÉÑ¥å0Hó¶RMAJORZ
+CODE_SMELL
+r	java:S106‘"9Replace this use of System.out or System.err by a logger.(º‡ƒ³úÿÿÿÿ8ÉÑ¥å0Hô¶RMAJORZ
+CODE_SMELL
+r	java:S106–"9Replace this use of System.out or System.err by a logger.(ğœïËşÿÿÿÿ8ÉÑ¥å0Hõ¶RMAJORZ
+CODE_SMELL
+m	java:S106œ"9Replace this use of System.out or System.err by a logger.(¿ÕÔ’8ÉÑ¥å0Hö¶RMAJORZ
+CODE_SMELL
+Š
+java:S3776¡"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(“Ø²·8ÉÑ¥å0H÷¶RCRITICALZ
+CODE_SMELL
+m	java:S106¦"9Replace this use of System.out or System.err by a logger.(°ïª8ÉÑ¥å0H·RMAJORZ
+CODE_SMELL
+r	java:S106«"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿ8ÉÑ¥å0H‚·RMAJORZ
+CODE_SMELL
+r	java:S106¯"9Replace this use of System.out or System.err by a logger.(å¾µºûÿÿÿÿ8ÉÑ¥å0Hƒ·RMAJORZ
+CODE_SMELL
+r	java:S106²"9Replace this use of System.out or System.err by a logger.(‘ÎµØşÿÿÿÿ8ÉÑ¥å0H„·RMAJORZ
+CODE_SMELL
+r	java:S106µ"9Replace this use of System.out or System.err by a logger.(ğœïËşÿÿÿÿ8ÉÑ¥å0H…·RMAJORZ
+CODE_SMELL
+m	java:S106º"9Replace this use of System.out or System.err by a logger.(¿ÕÔ’8ÉÑ¥å0H†·RMAJORZ
+CODE_SMELL
+m	java:S106Ã"9Replace this use of System.out or System.err by a logger.(¥Ò¬Ò8ÉÑ¥å0H‡·RMAJORZ
+CODE_SMELL
+m	java:S106È"9Replace this use of System.out or System.err by a logger.(·ô»8ÉÑ¥å0Hˆ·RMAJORZ
+CODE_SMELL
+m	java:S106Í"9Replace this use of System.out or System.err by a logger.(íüëî8ÉÑ¥å0H‰·RMAJORZ
+CODE_SMELL
+r	java:S106Ò"9Replace this use of System.out or System.err by a logger.(°İó™ıÿÿÿÿ8ÉÑ¥å0HŠ·RMAJORZ
+CODE_SMELL
+r	java:S106Õ"9Replace this use of System.out or System.err by a logger.(ÕğË¤ûÿÿÿÿ8ÉÑ¥å0H‹·RMAJORZ
+CODE_SMELL
+m	java:S106×"9Replace this use of System.out or System.err by a logger.(òõ¥8ÉÑ¥å0HŒ·RMAJORZ
+CODE_SMELL
+r	java:S106Ù"9Replace this use of System.out or System.err by a logger.(ø•»’úÿÿÿÿ8ÉÑ¥å0H·RMAJORZ
+CODE_SMELL
+m	java:S106Ş"9Replace this use of System.out or System.err by a logger.(·ô»8ÉÑ¥å0H·RMAJORZ
+CODE_SMELL
+l	java:S106ã"9Replace this use of System.out or System.err by a logger.(·®¤ 8ÉÑ¥å0H·RMAJORZ
+CODE_SMELL
+r	java:S106å"9Replace this use of System.out or System.err by a logger.(‡ÈÄúúÿÿÿÿ8ÉÑ¥å0H·RMAJORZ
+CODE_SMELL
+r	java:S106ê"9Replace this use of System.out or System.err by a logger.(¦ÜÏşûÿÿÿÿ8ÉÑ¥å0H‘·RMAJORZ
+CODE_SMELL

@@ -1,0 +1,17 @@
+package view;
+
+/*
+ * Dada la base de datos que se adjunta se pide, siguiendo los patrones de diseño MVC y Singleton, una aplicación que realice lo siguiente:
+Modificar de un determinado producto, su cantidad en stock (quantityInStock) y su precio de venta (MSRP), mediante una transacción.
+Se debe verificar, antes de realizar la modificación, que ese producto exista.
+Informar al usuario si el proceso ha ido bien o no
+ */
+public class Pantalla {
+
+	public static void main(String[] args) {
+		
+		//MOSTRAR LISTA POR PANTALLA
+		
+		
+	}
+}

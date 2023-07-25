@@ -1,0 +1,13 @@
+package controller;
+
+import java.util.ArrayList;
+
+import org.xml.sax.helpers.DefaultHandler;
+
+import model.*;
+public class XML_SAX extends DefaultHandler {
+	
+	private List<Categoria> listaCategorias = new ArrayList<Categoria>();
+	
+	
+}

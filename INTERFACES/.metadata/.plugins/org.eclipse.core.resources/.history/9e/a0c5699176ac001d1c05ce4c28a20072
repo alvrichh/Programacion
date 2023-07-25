@@ -1,0 +1,14 @@
+package view;
+
+public class Snippet {
+	private static final int INTDEFECTO = 0;
+	private static final String STRINGDEFECTO = "VACIO";
+	private static final String MSGSTRINGDEFECTO = "VALOR INTRODUCIDO INCORRECTO, GUARDADO VALOR POR DEFECTO [ "
+			+ STRINGDEFECTO + " ]";
+	private static final String MSGINTDEFECTO = "VALOR INTRODUCIDO INCORRECTO, GUARDADO VALOR POR DEFECTO [ "
+			+ INTDEFECTO + " ]";
+	
+	private static Scanner entrada = new Scanner(System.in);
+	private static COAC coac = new COAC();
+}
+

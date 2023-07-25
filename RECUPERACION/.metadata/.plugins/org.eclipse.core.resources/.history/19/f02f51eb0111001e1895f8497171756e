@@ -1,0 +1,6 @@
+package model;
+
+public class MemoriaException extends ComponenteExcepcion {
+
+	public void MemoriaExcepcion
+}

@@ -1,0 +1,21 @@
+package model;
+
+import model.TipoCristal;
+
+public class Cristal extends Material implements Mezclar {
+
+    private TipoCristal tipo;
+
+    public Cristal(String nombre, int masa, int capacidadQuemarse, int capacidadDiluirse, boolean movible, TipoCristal tipo) {
+        super(nombre, masa, capacidadQuemarse, capacidadDiluirse, movible);
+        setTipo(tipo);
+    }
+
+    public TipoCristal getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoCristal tipo) {
+        this.tipo = tipo;
+    }
+}
